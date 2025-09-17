@@ -1,0 +1,415 @@
+---
+title: "WPS and WRF Installation and Working"
+categories: [WRF, WPS]
+---
+
+# WRF + WPS Installation and Setup Guide
+
+This blog provides complete instructions for installing, configuring, and running the **Weather Research and Forecasting (WRF)** model along with the **WRF Preprocessing System (WPS)**.  
+
+It is based on UCAR's Build_WRF guide and adapted for modern systems (Ubuntu/WSL).  
+
+## 1. Install Prerequisites
+
+```bash
+sudo apt update
+sudo apt install -y build-essential gfortran gcc g++ m4 tcsh csh perl 
+```
+
+Check compilers:
+```bash
+# for version check
+gcc --version
+gfortran --version
+m4 --version
+
+# for location check
+```
+
+## 2. Compiler Tests (Optional)
+
+We perform this step to check if the Fortran compiler is built properly, if it is compatible with the C compiler, if the scripting languages csh, perl and sh are working properly.
+
+For this, wel'll make another directory for the test `$HOME/TESTS`.
+
+```bash
+cd $HOME/TESTS
+wget http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/Fortran_C_tests.tar
+tar -xvf Fortran_C_tests.tar
+```
+
+### Tests 
+```bash
+# Test1 Fortran Fixed Format
+gfortran TEST_1_fortran_only_fixed.f
+./a.out
+
+# Test2 Fortran Free Format 
+gfortran TEST_2_fortran_only_free.f90
+./a.out
+
+# Test3 C.
+gcc TEST_3_c_only.c
+./a.out
+
+# Test4 Fortran calling a C function
+gcc -c -m64 TEST_4_fortran+c_c.c
+gfortran -c -m64 TEST_4_fortran+c_f.f90
+gfortran -m64 TEST_4_fortran+c_f.o TEST_4_fortran+c_c.o
+./a.out
+
+# Test5 csh.
+csh ./TEST_csh.csh
+
+# Test6 perl
+./TEST_perl.pl
+
+# Test7 sh
+./TEST_sh.sh
+```
+
+## 3. Install Required Libraries
+
+We'll install libraries in `$HOME/Build_WRF/LIBRARIES`. 
+
+For installing tar files: 
+```bash
+cd {path_to_dir}/Build_WRF/LIBRARIES
+wget http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/mpich-3.0.4.tar.gz http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/netcdf-4.1.3.tar.gz http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/jasper-1.900.1.tar.gz http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/libpng-1.2.50.tar.gz http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/zlib-1.2.7.tar.gz
+```
+
+
+### 3.1 netcdf library
+
+```bash
+cd $HOME/Build_WRF/LIBRARIES
+tar -zxvf netcdf−4.1.3.tar.gz
+cd netcdf-4.1.3
+
+# configure
+./configure --prefix=$DIR/netcdf --disable-dap --disable-netcdf-4 --disable-shared
+
+# compile and install
+make -j2
+make install
+```
+
+### 3.2 mpich library
+```bash
+cd $HOME/Build_WRF/LIBRARIES
+tar -xvzf mpich-3.0.4.tar.gz
+cd mpich-3.0.4
+
+#configure
+./configure --prefix=$DIR/mpich
+
+# compile and install
+make -j2
+make install
+```
+
+### 3.3 zlib library 
+
+```bash
+cd $HOME/Build_WRF/LIBRARIES
+tar -zxvf zlib-1.2.7.tar.gz
+cd zlib-1.2.7
+
+# configure
+./configure --prefix=$DIR/grib2
+
+# compile and install
+make -j2
+make install
+```
+
+### 3.4 libpng library
+```bash
+cd {path_to_dir}/Build_WRF/LIBRARIES
+tar -zxvf libpng-1.2.50.tar.gz
+cd libpng-1.2.50
+
+# configure
+./configure --prefix=$DIR/grib2
+
+#compile and install
+make -j2
+make install
+```
+
+### 3.5 japser library
+
+```bash
+cd {path_to_dir}/Build_WRF/LIBRARIES
+tar -zxvf jasper-1.900.1.tar.gz
+cd jasper-1.900.1
+
+# configure
+./configure --prefix=$DIR/grib2
+
+# compile and install
+make
+make install
+```
+
+## 4. Environment Variables
+
+Add the following script at the end of `~/.bashrc` using `vi ~/.bashrc`. **Do not change the existing `/.bashrc` file.**
+```bash
+
+```bash
+export DIR=$HOME/Build_WRF/LIBRARIES
+
+export CC=gcc
+export CXX=g++
+export FC=gfortran
+export FCFLAGS=-m64
+export F77=gfortran
+export FFLAGS=-m64
+
+export PATH=$DIR/netcdf/bin:$PATH
+export NETCDF=$DIR/netcdf
+export PATH=$DIR/mpich/bin:$PATH
+export LDFLAGS=-L$DIR/grib2/lib
+export CPPFLAGS=-I$DIR/grib2/include
+export JASPERLIB=$DIR/grib2/lib
+export JASPERINC=$DIR/grib2/include
+```
+Reload the file using `source ~/.bashrc`.
+
+## 5. Library compatibility tests
+
+Perform these tests to ensure libraries are able to work with compilers.
+
+### Download tests
+
+```bash
+cd $HOME/TESTS
+wget http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/Fortran_C_NETCDF_MPI_tests.tar
+tar -xvf Fortran_C_NETCDF_MPI_tests.tar
+```
+
+### 5.1 Fortran + C + NetCDF
+```bash
+cp ${NETCDF}/include/netcdf.inc .
+gfortran -c 01_fortran+c+netcdf_f.f
+gcc -c 01_fortran+c+netcdf_c.c
+gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o -L${NETCDF}/lib -lnetcdff -lnetcdf
+./a.out
+```
+
+Expected output:  
+```
+C function called by Fortran
+Values are xx = 2.00 and ii = 1
+SUCCESS test 1 fortran + c + netcdf
+```
+
+### 5.2 Fortran + C + NetCDF + MPI
+```bash
+cp ${NETCDF}/include/netcdf.inc .
+mpif90 -c 02_fortran+c+netcdf+mpi_f.f
+mpicc -c 02_fortran+c+netcdf+mpi_c.c
+mpif90 02_fortran+c+netcdf+mpi_f.o 02_fortran+c+netcdf+mpi_c.o -L${NETCDF}/lib -lnetcdff -lnetcdf
+mpirun ./a.out
+```
+
+Expected output:  
+```
+C function called by Fortran
+Values are xx = 2.00 and ii = 1
+status = 2
+SUCCESS test 2 fortran + c + netcdf + mpi
+```
+
+## 6. Build WPS
+We'll be building WRF inside `$HOME/BUILD_WRF/` directory.
+
+```bash
+cd $HOME/Build_WRF
+git clone https://github.com/wrf-model/WRF.git
+cd WPS
+```
+While configuring the WPS, you will be provided with various options for compilers. I'm selecting **option 3 which is Linux x86_64, gfortran (dmpar)**.
+
+```bash
+./configure
+./compile >& compile.log &
+tail -f compile.log
+```
+Executables in `WPS/`:
+```bash
+ls -ls *.exe
+geogrid.exe
+metgrid.exe
+ungrib.exe
+```  
+#### 6.1 Download and configure `geog_data`.
+The WPS static geography data provides terrain, land use, soil type, albedo, etc., required by `geogrid.exe`. For this we'll be using high resolution static data and storing it in `$HOME/BUILD_WRF/geog_data` directory.
+
+```bash
+cd $HOME/BUILD_WRF/geog_data
+wget http://www2.mmm.ucar.edu/wrf/src/wps_files/geog_high_res_mandatory.tar.gz
+tar -xvzf geog_high_res_mandatory.tar.gz
+```
+Verify the dataset
+```bash
+ls $HOME/Build_WRF/geog_data
+
+# output - expected folders
+albedo_ncep
+greenfrac_fpar_modis
+landuse_30s
+...
+soiltype_top
+soiltype_bot
+topo_gmted2010_30s
+```
+
+## 7. Build WRF
+We'll be building WRF inside `$HOME/BUILD_WRF/` directory. **While cloning, check if the WRF and WPS versions are same.**
+
+```bash
+cd $HOME/Build_WRF
+git clone https://github.com/wrf-model/WRF.git
+cd WRF
+git checkout v4.6.0
+tar -xvzf v4.5.1.tar.gz
+cd WRF-4.5.1
+```
+While configuring the WRF, you will be provided with various options for compilers. I'm selecting option **34 which is GNU (gfortran/gcc) (dmpar)**. 
+
+```bash
+./configure
+```
+There will be a `configure.wrf` file after configuration. For compilation, I will be compiling `em_real` as I'll be running WRF on real data.
+```bash 
+./compile em_real >& log.compile &
+tail -f compile.log
+```
+Executables in `WRF/main/`:
+```bash
+ls -las main/*.exe
+ndown.exe 
+real.exe 
+tc.exe 
+wrf.exe 
+```  
+
+## 8. WPS Preprocessing Workflow
+
+1. **Edit `namelist.wps`**  
+- Defines domain size, resolution, projection, start/end dates, and geog data path.
+- Example:
+   ```bash
+   &share
+   wrf_core = 'ARW',
+   max_dom = 2,
+   start_date = '2024-01-02_00:00:00','2024-01-02_00:00:00',
+   end_date   = '2024-01-03_00:00:00','2024-01-03_00:00:00',
+   interval_seconds = 10800,
+   io_form_geogrid = 2,  # defines output file format as NetCDF.
+   /
+   &geogrid
+   parent_id         =   1,   1,
+   parent_grid_ratio =   1,   3,
+   i_parent_start    =   1,  31,
+   j_parent_start    =   1,  31,
+   e_we              =  140, 121,
+   e_sn              =  130, 121,
+   dx = 27000,
+   dy = 27000,
+   map_proj = 'lambert',
+   ref_lat   =  22.00,
+   ref_lon   =  82.00,
+   truelat1  =  15.0,
+   truelat2  =  35.0,
+   stand_lon =  82.0,
+   geog_data_res = 'default','default',
+   geog_data_path = '$HOME/Build_WRF/geog_data'
+   /
+   ```  
+
+2. **Run Geogrid**  
+- Purpose: Generates static geographic fields (terrain height, land use, soil, etc.) for each domain.
+   ```bash
+   ./geogrid.exe
+
+   # Expected output files
+   geo_em.d01.nc
+   geo_em.d02.nc
+   ```
+
+3. **Run Ungrib**  
+- Purpose: Converts GRIB-format meteorological data (e.g., GFS, ERA5) into intermediate WPS format.
+
+- Link Correct Vtable (refer "https://www2.mmm.ucar.edu/wrf/users/download/free_data.html" for correct Vtable list):  
+   ```bash
+   ln -sf ungrib/Variable_Tables/Vtable.GFS Vtable
+   ```
+- Link GRIB files:  
+   ```bash
+   ./link_grib.csh <path_to_data>
+   ```
+- Run:  
+   ```bash
+   ./ungrib.exe
+
+   # Expected output files
+   FILE:2024-01-02_00
+   FILE:2024-01-02_03
+   ...   
+   ```
+
+4. **Run Metgrid**  
+- Purpose: Horizontally interpolates the meteorological fields from ungrib (GRIB → FILE:*) onto the model domain grid (geo_em).
+   ```bash
+   ./metgrid.exe
+
+   # Expected output files
+   met_em.d01.2024-01-02_00:00:00.nc
+   met_em.d01.2024-01-02_03:00:00.nc
+   ...
+   met_em.d02.2024-01-02_00:00:00.nc
+   ```
+
+
+## 9. Running WRF
+Once WPS preprocessing is complete (met_em files), the WRF model is run in two stages: real.exe (initialization) and wrf.exe (integration).
+1. **Prepare `namelist.input`**  
+- This file controls model physics, runtime, and output frequency.
+- Key sections:
+   - `&time_control` - defines start/end of simulation, run length, I/O settings.
+   - `&domains` - defines domain size, nesting, vertical levels, grid spacing. **Note: It must match `namelist.wps` values.**
+
+2. **Run Real**  
+- Purpose: Converts WPS meteorological fields (met_em*) into initial and boundary conditions for WRF.
+
+   ```bash
+   mpirun -np 2 ./real.exe
+
+   # Expected output files
+   wrfinput_d01
+   wrfinput_d02
+   wrfbdy_d01
+   ```
+
+3. **Run WRF**  
+   ```bash
+   mpirun -np 2 ./wrf.exe
+
+   # Expected output files
+   wrfout_d01_2024-01-02_00:00:00
+   wrfout_d01_2024-01-02_01:00:00
+   ...
+   wrfout_d02_2024-01-02_00:00:00
+   ```
+
+## 9. Troubleshooting
+
+- **libpng12.so.0 missing** -> install `libpng12-0` package  
+- **real.exe fails** -> check date range in `namelist.input` vs `met_em` files  
+- **wrf.exe crashes early** -> lower `time_step` (rule: 6 × dx in km)  
+- **wrf.exe still crashes after previous step** -> reduce -np in mpirun
+- **geogrid.exe fails** -> verify `geog_data_path` and dataset presence  
+
