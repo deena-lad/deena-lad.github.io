@@ -43,10 +43,10 @@ toc: false
 <table>
   <tr>
     <td>July 2024 - April 2025</td>
-    <td>Successfully Completed <b>Research Internship</b> at Space Application Center, ISRO, Ahmedabad</td>
+    <td>Successfully completed one year Research Internship at Space Application Center, ISRO, Ahmedabad</td>
   </tr>
   <tr>
     <td>May 2024 - July 2024</td>
-    <td>Successfully Completed <b>Summer Internship</b> at Jio Platforms Limited </td>
+    <td>Summer Intern at Jio Platforms Limited </td>
   </tr>
 </table>
