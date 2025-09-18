@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-title','listing-categories','listing-description','listing-author','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -178,7 +178,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YmxvZw==">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V1BT">WPS <span class="quarto-category-count">(2)</span></div><div class="category" data-category="V1JG">WRF <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -213,7 +213,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1756962037886" data-listing-reading-time-sort="1" data-listing-word-count-sort="95">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1758171786627" data-listing-reading-time-sort="1" data-listing-word-count-sort="95">
 <a href="../blog-posts/Comparison of monthly emission of 2019 and 2020 using EGDAR HTAP.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="Comparison of monthly emission of 2019 and 2020 using EGDAR HTAP_files\figure-html\cell-15-output-2.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -228,6 +228,63 @@ The focus is on global patterns, with focus into the…
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
 
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="V1JGJTJDV1BT" data-listing-file-modified-sort="1758171786639" data-listing-reading-time-sort="6" data-listing-word-count-sort="1180">
+<a href="../blog-posts/WPS_WRF_Guide.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+WPS and WRF Installation and Working
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('V1JG'); return false;">WRF</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('V1BT'); return false;">WPS</div>
+
+</div>
+<div class="card-text listing-description delink">
+This blog provides complete instructions for installing, configuring, and running the <strong>Weather Research and Forecasting (WRF)</strong> model along with the <strong>WRF Preprocessing System…</strong>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="V1JGJTJDV1BTJTJDYmxvZw==" data-listing-date-sort="1758047400000" data-listing-file-modified-sort="1758172064688" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1214">
+<a href="../blog-posts/WRF_WPS.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+WRF + WPS Installation and Setup
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('V1JG'); return false;">WRF</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('V1BT'); return false;">WPS</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmxvZw=='); return false;">blog</div>
+
+</div>
+<div class="card-text listing-description delink">
+This blog provides complete instructions for installing, configuring, and running the <strong>Weather Research and Forecasting (WRF)</strong> model along with the <strong>WRF Preprocessing System…</strong>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+Sep 17, 2025
 </div>
 </div>
 </div>
@@ -308,7 +365,7 @@ The focus is on global patterns, with focus into the…
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/deena-lad\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

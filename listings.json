@@ -2,7 +2,9 @@
   {
     "listing": "/blog-posts/index.html",
     "items": [
-      "/blog-posts/Comparison of monthly emission of 2019 and 2020 using EGDAR HTAP.html"
+      "/blog-posts/Comparison of monthly emission of 2019 and 2020 using EGDAR HTAP.html",
+      "/blog-posts/WPS_WRF_Guide.html",
+      "/blog-posts/WRF_WPS.html"
     ]
   }
 ]
