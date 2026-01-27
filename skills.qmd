@@ -1,0 +1,49 @@
+---
+title: "Skills"
+---
+
+## Technical Skills
+
+### Programming & Data Analysis
+- **Python:** NumPy, Pandas, Scikit-learn  
+- **SQL**
+- Data Cleaning, Feature Engineering, Feature Scaling & Normalization
+
+### Machine Learning
+- **Supervised Learning:** Linear & Logistic Regression, Ridge/Lasso/ElasticNet, kNN, SVM  
+- **Tree-based Models:** Decision Trees, Random Forest, XGBoost  
+- **Unsupervised Learning:** K-Means, Hierarchical Clustering, GMM  
+- **Dimensionality Reduction:** PCA
+
+### Model Evaluation & Optimization
+- Train/Validation/Test Design, Cross-Validation  
+- Handling Class Imbalance (SMOTE, weighting)  
+- Regularization and performance metrics
+
+### Deep Learning
+- **Frameworks:** TensorFlow/Keras, PyTorch, PyTorch Lightning  
+- **Architectures:** CNNs (VGG, ResNet, DenseNet), Sequence Models (LSTM, GRU, ConvLSTM)  
+- **Computer Vision:** Object Detection (YOLO)  
+- Transfer Learning and Fine-tuning
+
+### NLP & Transformers
+- Text Representation: BoW, TF-IDF, Word2Vec  
+- Transformer Models: BERT, RoBERTa, DistilBERT, ALBERT (GPT – conceptual)  
+- Text Classification  
+- **Libraries:** Hugging Face Transformers, NLTK
+
+### Scientific, Satellite & Geospatial Data
+- NetCDF, HDF5, xarray  
+- GeoPandas, PyProj  
+- WRF Simulations and spatio-temporal data analysis
+
+### Tools & Frameworks
+- Git & GitHub  
+- Scikit-learn, TensorFlow/Keras, PyTorch  
+- Hugging Face Transformers  
+- Jupyter Notebooks
+
+## Soft Skills
+- Research Communication  
+- Analytical Thinking & Problem Solving  
+- Collaboration & Mentorship

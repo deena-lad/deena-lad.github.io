@@ -1,0 +1,68 @@
+---
+title: "Projects"
+---
+
+## Featured Projects
+
+> *Code repositories are currently being cleaned, documented, and prepared for public release.*
+
+---
+
+<details class="project-box">
+<summary>
+
+### 🌪️ Tropical Cyclone Intensity Estimation & Forecasting (M.Tech Thesis)
+
+![](images/cyclone1.png){width=45%}
+![](images/cyclone2.png){width=45%}
+
+</summary>
+
+**Technologies:** Python, PyTorch, TensorFlow, CNNs, ConvLSTM, Satellite & Reanalysis Data
+
+- Developed deep learning models for tropical cyclone intensity estimation and next-frame forecasting  
+- Designed spatio-temporal pipelines for multi-channel satellite inputs  
+- Compared CNN, ConvLSTM, and hybrid architectures  
+- Evaluated performance using RMSE and domain-specific meteorological metrics  
+- Interpreted predictions for physical and meteorological consistency  
+
+</details>
+
+---
+
+<details class="project-box">
+<summary>
+
+### 🩻 Thoracic Disease Detection from Chest X-rays
+
+![](images/xray1.png){width=45%}
+![](images/xray2.png){width=45%}
+
+</summary>
+
+**Technologies:** Python, TensorFlow, YOLO, DICOM
+
+- YOLO-based multi-label detection across 15 diseases and 36 radiological signs  
+- Benchmarked CNN architectures (ResNet, VGG) using accuracy and AUC  
+- Focused on structured and interpretable outputs  
+
+</details>
+
+---
+
+<details class="project-box">
+<summary>
+
+### 🧠 Hate Speech Detection using Transformers
+
+![](images/nlp1.png){width=60%}
+
+</summary>
+
+**Technologies:** Python, BERT, Hugging Face Transformers, NLTK
+
+- Fine-tuned transformer models for hate speech classification  
+- Achieved improved precision and recall over traditional NLP baselines  
+- Performed error analysis for robustness and generalization  
+
+</details>

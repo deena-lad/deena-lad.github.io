@@ -3,8 +3,21 @@ project:
 
 website:
   title: "Homepage"
+
+  announcement:
+    icon: tools
+    content: "This website is under active development. I am currently updating project details, results, and documentation."
+
   navbar:
     left:
+      - text: Home
+        href: index.qmd
+      - text: Skills
+        href: skills.qmd
+      - text: Experience
+        href: experience.qmd
+      - text: Projects
+        href: projects.qmd
       - text: Blogposts
         href: blog-posts/index.qmd
     right:
@@ -15,7 +28,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
     page-layout: full

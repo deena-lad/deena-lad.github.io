@@ -7,7 +7,7 @@ toc: false
 ```{=html}
 <div class="profile-container">
   <div class="profile-image">
-    <img src="images/profile.jpg" alt="Kirtan Gangani">
+    <img src="images/profile.jpg" alt="Deena Lad">
     <div class="profile-links">
       <a href="https://github.com/deena-lad" target="_blank">
         <img src="images/github.svg">
@@ -25,12 +25,12 @@ toc: false
   </div>
   <div class="profile-text">
     <p>
-      Hi, I’m Deena 👋. I recently completed my M.Tech in Data Science and have worked on projects spanning cyclone intensity forecasting at ISRO to Prompt Engineering at Jio Platforms Limited.
+      I am a Data Science graduate with experience across applied machine learning, deep learning, and research-driven problem solving. My work spans environmental modelling using geospatial data, medical imaging with deep neural networks, and large language model applications in industry settings.
     </p>
 
     <p>
-      My interests lie in Deep Learning, Geospatial Data Analytics, Environmental Modelling, and I’m interested about applying them to solve real-world problems. For me, the beauty of data science lies in the math beneath it.
-       </p>
+      I am particularly interested in building reliable ML systems for real-world, high-impact domains such as climate, geospatial analytics, and healthcare, where model performance and interpretability matter as much as accuracy.
+    </p>
 
     <p>
       Beyond data, I am a trained Bharatanatyam dancer and enjoy immersing myself in the mysterious worlds of Agatha Christie.
@@ -38,15 +38,3 @@ toc: false
   </div>
 </div>
 ```
-## My Journey So Far
-
-<table>
-  <tr>
-    <td>July 2024 - April 2025</td>
-    <td>Successfully completed one year Research Internship at Space Application Center, ISRO, Ahmedabad</td>
-  </tr>
-  <tr>
-    <td>May 2024 - July 2024</td>
-    <td>Summer Intern at Jio Platforms Limited </td>
-  </tr>
-</table>

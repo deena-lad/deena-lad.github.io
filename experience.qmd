@@ -1,0 +1,55 @@
+---
+title: "Experience"
+toc: false
+---
+
+## Research & Industry Experience
+
+### Sustainability Lab, IIT Gandhinagar  
+**Junior Research Fellow** | Aug 2025 – Present  
+*(PI: Prof. Nipun Batra)*
+
+- Leading the development of a deep learning–based framework to learn spatio-temporal representations from WRF model outputs  
+- Conducting multi-domain WRF simulations, GDAS preprocessing, and systematic spatio-temporal evaluation of model outputs  
+- Designing and analyzing emulator architectures through spatial and temporal comparisons with WRF simulations  
+- Producing reproducible analytics, visualizations, and documentation to support research outcomes  
+- Acting as primary researcher on the project, mentoring junior students and coordinating experiments under PI supervision  
+
+---
+
+### Space Applications Centre (ISRO), Ahmedabad  
+**Research Intern** | July 2024 – April 2025
+
+- Developed and evaluated CNN-, YOLO-, and ConvLSTM-based models in PyTorch for satellite imagery analysis  
+- Worked on tropical cyclone intensity estimation and temporal forecasting using multi-channel satellite and reanalysis data  
+- Built robust preprocessing, normalization, augmentation, and class-balancing pipelines for multi-event, multi-year datasets  
+- Achieved model accuracy up to 94% while ensuring robustness across diverse cyclone scenarios  
+- Interpreted model outputs in collaboration with domain experts to ensure physical and meteorological consistency  
+
+---
+
+### Jio Platforms Limited (Reliance)  
+**Summer Intern** | May 2024 – July 2024
+
+- Conducted literature review and dataset analysis for personality detection in sports-related multimedia data  
+- Designed analytical frameworks and automated data collection and labeling workflows  
+- Applied prompt engineering techniques to generate diverse, structured datasets for downstream evaluation  
+- Gained hands-on experience deploying LLM-driven workflows in an industry research setting  
+
+---
+
+### Enlighten Infosystems, Vadodara  
+**Data Science Intern** | Feb 2023 – May 2023
+
+- Designed automated data pipelines for cleaning, integrating, and analyzing large heterogeneous datasets  
+- Developed and deployed Flask-based analytical web applications with backend databases  
+- Delivered interpretable outputs and reports within short, iterative development cycles  
+
+---
+
+### Spartificial  
+**ML Research Intern** | June 2022 – Aug 2022
+
+- Curated and analyzed multilingual datasets across seven languages to support NLP model development  
+- Performed comparative evaluation of deep learning and time-series models (DenseNet, ResNet, ARIMA)  
+- Documented performance trade-offs and insights using structured visual and analytical summaries  

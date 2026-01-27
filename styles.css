@@ -96,3 +96,26 @@ td {
     justify-content: center;
   }
 }
+
+.project-box {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.project-box summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.project-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-box[open] {
+  border-color: #4f46e5;
+  background: #f8f9ff;
+}
