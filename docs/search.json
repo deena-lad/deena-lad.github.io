@@ -4,35 +4,28 @@
     "href": "skills.html",
     "title": "Skills",
     "section": "",
-    "text": "Python: Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch\nR: tidyverse, ggplot2, caret, shiny\nOther: SQL, JavaScript, HTML/CSS\n\n\n\n\n\nMachine Learning (supervised, unsupervised)\nDeep Learning\nStatistical Analysis\nData Visualization\n\n\n\n\n\nGit/GitHub\nDocker\nCloud Platforms (AWS/GCP/Azure)\nJupyter, RStudio"
+    "text": "Python: NumPy, Pandas, Scikit-learn\n\nSQL\nData Cleaning, Feature Engineering, Feature Scaling & Normalization\n\n\n\n\n\nSupervised Learning: Linear & Logistic Regression, Ridge/Lasso/ElasticNet, kNN, SVM\n\nTree-based Models: Decision Trees, Random Forest, XGBoost\n\nUnsupervised Learning: K-Means, Hierarchical Clustering, GMM\n\nDimensionality Reduction: PCA\n\n\n\n\n\nTrain/Validation/Test Design, Cross-Validation\n\nHandling Class Imbalance (SMOTE, weighting)\n\nRegularization and performance metrics\n\n\n\n\n\nFrameworks: TensorFlow/Keras, PyTorch, PyTorch Lightning\n\nArchitectures: CNNs (VGG, ResNet, DenseNet), Sequence Models (LSTM, GRU, ConvLSTM)\n\nComputer Vision: Object Detection (YOLO)\n\nTransfer Learning and Fine-tuning\n\n\n\n\n\nText Representation: BoW, TF-IDF, Word2Vec\n\nTransformer Models: BERT, RoBERTa, DistilBERT, ALBERT (GPT – conceptual)\n\nText Classification\n\nLibraries: Hugging Face Transformers, NLTK\n\n\n\n\n\nNetCDF, HDF5, xarray\n\nGeoPandas, PyProj\n\nWRF Simulations and spatio-temporal data analysis\n\n\n\n\n\nGit & GitHub\n\nScikit-learn, TensorFlow/Keras, PyTorch\n\nHugging Face Transformers\n\nJupyter Notebooks"
   },
   {
     "objectID": "skills.html#technical-skills",
     "href": "skills.html#technical-skills",
     "title": "Skills",
     "section": "",
-    "text": "Python: Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch\nR: tidyverse, ggplot2, caret, shiny\nOther: SQL, JavaScript, HTML/CSS\n\n\n\n\n\nMachine Learning (supervised, unsupervised)\nDeep Learning\nStatistical Analysis\nData Visualization\n\n\n\n\n\nGit/GitHub\nDocker\nCloud Platforms (AWS/GCP/Azure)\nJupyter, RStudio"
+    "text": "Python: NumPy, Pandas, Scikit-learn\n\nSQL\nData Cleaning, Feature Engineering, Feature Scaling & Normalization\n\n\n\n\n\nSupervised Learning: Linear & Logistic Regression, Ridge/Lasso/ElasticNet, kNN, SVM\n\nTree-based Models: Decision Trees, Random Forest, XGBoost\n\nUnsupervised Learning: K-Means, Hierarchical Clustering, GMM\n\nDimensionality Reduction: PCA\n\n\n\n\n\nTrain/Validation/Test Design, Cross-Validation\n\nHandling Class Imbalance (SMOTE, weighting)\n\nRegularization and performance metrics\n\n\n\n\n\nFrameworks: TensorFlow/Keras, PyTorch, PyTorch Lightning\n\nArchitectures: CNNs (VGG, ResNet, DenseNet), Sequence Models (LSTM, GRU, ConvLSTM)\n\nComputer Vision: Object Detection (YOLO)\n\nTransfer Learning and Fine-tuning\n\n\n\n\n\nText Representation: BoW, TF-IDF, Word2Vec\n\nTransformer Models: BERT, RoBERTa, DistilBERT, ALBERT (GPT – conceptual)\n\nText Classification\n\nLibraries: Hugging Face Transformers, NLTK\n\n\n\n\n\nNetCDF, HDF5, xarray\n\nGeoPandas, PyProj\n\nWRF Simulations and spatio-temporal data analysis\n\n\n\n\n\nGit & GitHub\n\nScikit-learn, TensorFlow/Keras, PyTorch\n\nHugging Face Transformers\n\nJupyter Notebooks"
   },
   {
     "objectID": "skills.html#soft-skills",
     "href": "skills.html#soft-skills",
     "title": "Skills",
     "section": "Soft Skills",
-    "text": "Soft Skills\n\nCommunication\nProblem-solving\nTeam collaboration"
+    "text": "Soft Skills\n\nResearch Communication\n\nAnalytical Thinking & Problem Solving\n\nCollaboration & Mentorship"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome",
+    "title": "Deena Lad",
     "section": "",
-    "text": "Brief introduction about yourself (2-3 sentences).\n\n\n\n📊 Data analysis and visualization\n🤖 Machine learning and AI\n🔬 Research in [your field]\n\n\n\n\n\n\n Project Name\nShort description\n\n Project Name\nShort description\n\n\nSee all projects →"
-  },
-  {
-    "objectID": "index.html#data-scientist-researcher-your-role",
-    "href": "index.html#data-scientist-researcher-your-role",
-    "title": "Welcome",
-    "section": "",
-    "text": "Brief introduction about yourself (2-3 sentences).\n\n\n\n📊 Data analysis and visualization\n🤖 Machine learning and AI\n🔬 Research in [your field]\n\n\n\n\n\n\n Project Name\nShort description\n\n Project Name\nShort description\n\n\nSee all projects →"
+    "text": "GitHub\n      \n      \n        \n          LinkedIn\n      \n      \n        \n          Email\n      \n    \n  \n  \n    \n      I am a Data Science graduate with experience across applied machine learning, deep learning, and research-driven problem solving. My work spans environmental modelling using geospatial data, medical imaging with deep neural networks, and large language model applications in industry settings.\n    \n\n    \n      I am particularly interested in building reliable ML systems for real-world, high-impact domains such as climate, geospatial analytics, and healthcare, where model performance and interpretability matter as much as accuracy.\n    \n\n    \n      Beyond data, I am a trained Bharatanatyam dancer and enjoy immersing myself in the mysterious worlds of Agatha Christie."
   },
   {
     "objectID": "blog-posts/WPS_WRF_Guide.html",
@@ -128,30 +121,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About Me",
+    "title": "About",
     "section": "",
-    "text": "Your educational and professional background…"
-  },
-  {
-    "objectID": "about.html#background",
-    "href": "about.html#background",
-    "title": "About Me",
-    "section": "",
-    "text": "Your educational and professional background…"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
-    "section": "Education",
-    "text": "Education\nDegree Name - University Name (Year - Year) - Relevant coursework - Achievements"
-  },
-  {
-    "objectID": "about.html#interests",
-    "href": "about.html#interests",
-    "title": "About Me",
-    "section": "Interests",
-    "text": "Interests\n\nResearch interests\nHobbies\nOther relevant information"
+    "text": "About this site"
   },
   {
     "objectID": "blog-posts/index.html",
@@ -165,34 +137,27 @@
     "href": "experience.html",
     "title": "Experience",
     "section": "",
-    "text": "Month Year - Present\n\nResponsibility or achievement\nImpact with metrics if possible\nTechnologies used\n\n\n\n\nMonth Year - Month Year\n\nKey responsibilities\nAchievements"
+    "text": "Junior Research Fellow | Aug 2025 – Present\n(PI: Prof. Nipun Batra)\n\nLeading the development of a deep learning–based framework to learn spatio-temporal representations from WRF model outputs\n\nConducting multi-domain WRF simulations, GDAS preprocessing, and systematic spatio-temporal evaluation of model outputs\n\nDesigning and analyzing emulator architectures through spatial and temporal comparisons with WRF simulations\n\nProducing reproducible analytics, visualizations, and documentation to support research outcomes\n\nActing as primary researcher on the project, mentoring junior students and coordinating experiments under PI supervision\n\n\n\n\n\nResearch Intern | July 2024 – April 2025\n\nDeveloped and evaluated CNN-, YOLO-, and ConvLSTM-based models in PyTorch for satellite imagery analysis\n\nWorked on tropical cyclone intensity estimation and temporal forecasting using multi-channel satellite and reanalysis data\n\nBuilt robust preprocessing, normalization, augmentation, and class-balancing pipelines for multi-event, multi-year datasets\n\nAchieved model accuracy up to 94% while ensuring robustness across diverse cyclone scenarios\n\nInterpreted model outputs in collaboration with domain experts to ensure physical and meteorological consistency\n\n\n\n\n\nSummer Intern | May 2024 – July 2024\n\nConducted literature review and dataset analysis for personality detection in sports-related multimedia data\n\nDesigned analytical frameworks and automated data collection and labeling workflows\n\nApplied prompt engineering techniques to generate diverse, structured datasets for downstream evaluation\n\nGained hands-on experience deploying LLM-driven workflows in an industry research setting\n\n\n\n\n\nData Science Intern | Feb 2023 – May 2023\n\nDesigned automated data pipelines for cleaning, integrating, and analyzing large heterogeneous datasets\n\nDeveloped and deployed Flask-based analytical web applications with backend databases\n\nDelivered interpretable outputs and reports within short, iterative development cycles\n\n\n\n\n\nML Research Intern | June 2022 – Aug 2022\n\nCurated and analyzed multilingual datasets across seven languages to support NLP model development\n\nPerformed comparative evaluation of deep learning and time-series models (DenseNet, ResNet, ARIMA)\n\nDocumented performance trade-offs and insights using structured visual and analytical summaries"
   },
   {
-    "objectID": "experience.html#work-experience",
-    "href": "experience.html#work-experience",
+    "objectID": "experience.html#research-industry-experience",
+    "href": "experience.html#research-industry-experience",
     "title": "Experience",
     "section": "",
-    "text": "Month Year - Present\n\nResponsibility or achievement\nImpact with metrics if possible\nTechnologies used\n\n\n\n\nMonth Year - Month Year\n\nKey responsibilities\nAchievements"
-  },
-  {
-    "objectID": "experience.html#internships",
-    "href": "experience.html#internships",
-    "title": "Experience",
-    "section": "Internships",
-    "text": "Internships\n\nIntern Position - Company\nMonth Year - Month Year\nBrief description and achievements…"
+    "text": "Junior Research Fellow | Aug 2025 – Present\n(PI: Prof. Nipun Batra)\n\nLeading the development of a deep learning–based framework to learn spatio-temporal representations from WRF model outputs\n\nConducting multi-domain WRF simulations, GDAS preprocessing, and systematic spatio-temporal evaluation of model outputs\n\nDesigning and analyzing emulator architectures through spatial and temporal comparisons with WRF simulations\n\nProducing reproducible analytics, visualizations, and documentation to support research outcomes\n\nActing as primary researcher on the project, mentoring junior students and coordinating experiments under PI supervision\n\n\n\n\n\nResearch Intern | July 2024 – April 2025\n\nDeveloped and evaluated CNN-, YOLO-, and ConvLSTM-based models in PyTorch for satellite imagery analysis\n\nWorked on tropical cyclone intensity estimation and temporal forecasting using multi-channel satellite and reanalysis data\n\nBuilt robust preprocessing, normalization, augmentation, and class-balancing pipelines for multi-event, multi-year datasets\n\nAchieved model accuracy up to 94% while ensuring robustness across diverse cyclone scenarios\n\nInterpreted model outputs in collaboration with domain experts to ensure physical and meteorological consistency\n\n\n\n\n\nSummer Intern | May 2024 – July 2024\n\nConducted literature review and dataset analysis for personality detection in sports-related multimedia data\n\nDesigned analytical frameworks and automated data collection and labeling workflows\n\nApplied prompt engineering techniques to generate diverse, structured datasets for downstream evaluation\n\nGained hands-on experience deploying LLM-driven workflows in an industry research setting\n\n\n\n\n\nData Science Intern | Feb 2023 – May 2023\n\nDesigned automated data pipelines for cleaning, integrating, and analyzing large heterogeneous datasets\n\nDeveloped and deployed Flask-based analytical web applications with backend databases\n\nDelivered interpretable outputs and reports within short, iterative development cycles\n\n\n\n\n\nML Research Intern | June 2022 – Aug 2022\n\nCurated and analyzed multilingual datasets across seven languages to support NLP model development\n\nPerformed comparative evaluation of deep learning and time-series models (DenseNet, ResNet, ARIMA)\n\nDocumented performance trade-offs and insights using structured visual and analytical summaries"
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Technologies: Python, R, TensorFlow, etc.\nDescription of the project…\n\nKey achievement 1\nKey achievement 2\n\nGitHub Repository | Live Demo\n\n\n\n\n…"
+    "text": "Code repositories are currently being cleaned, documented, and prepared for public release.\n\n\n\n\n\n\n \n\nTechnologies: Python, PyTorch, TensorFlow, CNNs, ConvLSTM, Satellite & Reanalysis Data\n\nDeveloped deep learning models for tropical cyclone intensity estimation and next-frame forecasting\n\nDesigned spatio-temporal pipelines for multi-channel satellite inputs\n\nCompared CNN, ConvLSTM, and hybrid architectures\n\nEvaluated performance using RMSE and domain-specific meteorological metrics\n\nInterpreted predictions for physical and meteorological consistency"
   },
   {
     "objectID": "projects.html#featured-projects",
     "href": "projects.html#featured-projects",
     "title": "Projects",
     "section": "",
-    "text": "Technologies: Python, R, TensorFlow, etc.\nDescription of the project…\n\nKey achievement 1\nKey achievement 2\n\nGitHub Repository | Live Demo\n\n\n\n\n…"
+    "text": "Code repositories are currently being cleaned, documented, and prepared for public release.\n\n\n\n\n\n\n \n\nTechnologies: Python, PyTorch, TensorFlow, CNNs, ConvLSTM, Satellite & Reanalysis Data\n\nDeveloped deep learning models for tropical cyclone intensity estimation and next-frame forecasting\n\nDesigned spatio-temporal pipelines for multi-channel satellite inputs\n\nCompared CNN, ConvLSTM, and hybrid architectures\n\nEvaluated performance using RMSE and domain-specific meteorological metrics\n\nInterpreted predictions for physical and meteorological consistency"
   }
 ]
