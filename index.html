@@ -1152,6 +1152,154 @@ footer {
 }
 .project-detail-btn svg { flex-shrink: 0; }
 
+ 
+/* ─────────────────────────────────────────────
+   EXPERIENCE TIMELINE
+───────────────────────────────────────────── */
+#experience {}
+ 
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px; bottom: 8px;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), var(--border) 80%, transparent);
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.75rem;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 6px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  transform: translateX(-5px);
+  transition: background var(--transition), transform var(--transition);
+  z-index: 1;
+}
+.timeline-item:hover .timeline-dot {
+  background: var(--accent);
+  transform: translateX(-5px) scale(1.25);
+}
+.exp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.5rem 1.75rem;
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.exp-card:hover { border-color: #1a6b8a44; transform: translateX(4px); box-shadow: var(--shadow-sm); }
+.exp-card:hover::before { opacity: 1; }
+.exp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+.exp-role {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--white);
+}
+.exp-period {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted2);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  padding: 3px 9px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+.exp-org-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.exp-org { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.exp-location {
+  font-size: 0.8rem;
+  color: var(--muted2);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.exp-type {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.exp-type-research { background: #1a6b8a14; color: var(--accent); border: 1px solid #1a6b8a28; }
+.exp-type-industry { background: #1a7a3c14; color: var(--green); border: 1px solid #1a7a3c28; }
+.exp-type-academic { background: #b5860d14; color: var(--gold); border: 1px solid #b5860d28; }
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+.exp-bullets li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.exp-bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  top: 0.22em;
+}
+.exp-bullets li strong { color: var(--white); font-weight: 500; }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.exp-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
 /* ─────────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────────── */
@@ -1172,6 +1320,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#about">About</a></li>
   </ul>
@@ -1182,6 +1331,7 @@ footer {
 <div class="mobile-menu" id="mobile-menu">
   <a href="#research" class="mobile-nav-link">Research</a>
   <a href="#projects" class="mobile-nav-link">Projects</a>
+  <a href="#experience" class="mobile-nav-link">Experience</a>
   <a href="#skills" class="mobile-nav-link">Skills</a>
   <a href="#about" class="mobile-nav-link">About</a>
 </div>
@@ -1487,6 +1637,99 @@ footer {
   </div>
 </section>
 
+<!-- ═══════════════ EXPERIENCE ═══════════════ -->
+<div class="sep"></div>
+<section id="experience">
+  <div class="section-label">Career</div>
+  <h2 class="section-title">Experience</h2>
+  <p class="section-sub">Research, industry, and academic roles across ML, scientific computing, and data science.</p>
+ 
+  <div class="timeline">
+ 
+    <!-- 1 -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Junior Research Fellow</div>
+          <span class="exp-period">Aug 2025 – Present</span>
+        </div>
+        <div class="exp-org-row">
+          <span class="exp-org">IIT Gandhinagar - Sustainability Lab</span>
+          <span class="exp-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Gandhinagar, India
+          </span>
+          <span class="exp-type exp-type-research">Research</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Designed and implemented FiLMeR, a resolution and domain-invariant deep learning emulator for regional NWP, constituting the core contribution of a KDD 2026 submission.</li>
+          <li>Built end-to-end training pipelines on clusters for ERA5 reanalysis data at scale, handling multi-terabyte NetCDF archives with xarray.</li>
+          <li>Conducted systematic ablations over FiLM conditioning strategies, U-Net depths, and loss formulations, tracking many experiments via Weights &amp; Biases.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">PyTorch DDP</span><span class="exp-tag">U-Net / FiLM</span><span class="exp-tag">ERA5</span><span class="exp-tag">xarray</span><span class="exp-tag">SLURM</span><span class="exp-tag">W&B</span><span class="exp-tag">Cartopy</span>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 2 -->
+    <div class="timeline-item reveal reveal-delay-1">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Research Intern</div>
+          <span class="exp-period">July 2024 – Apr 2025</span>
+        </div>
+        <div class="exp-org-row">
+          <span class="exp-org">ISRO — Space Applications Centre (SAC)</span>
+          <span class="exp-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ahmedabad, India
+          </span>
+          <span class="exp-type exp-type-research">Research</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Developed a CNN and ConvLSTM-based spatio-temporal models for tropical cyclone intensity estimation and prediction using INSAT-3D satellite imagery.</li>
+          <li>Processed multi-channel HDF5 satellite archives from MOSDAC, engineering a custom reprojection pipeline to cyclone-centred patches using pyproj and rasterio.</li>
+          <li>Collaborated with ISRO scientists to align model evaluation with IMD best-track standards.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">PyTorch</span><span class="exp-tag">ConvLSTM</span><span class="exp-tag">INSAT-3D</span><span class="exp-tag">HDF5</span><span class="exp-tag">rasterio</span><span class="exp-tag">pyproj</span>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 3 -->
+    <div class="timeline-item reveal reveal-delay-2">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Summer Intern</div>
+          <span class="exp-period">May 2024 – July 2024</span>
+        </div>
+        <div class="exp-org-row">
+          <span class="exp-org">Jio Platforms Limited</span>
+          <span class="exp-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Remote / India
+          </span>
+          <span class="exp-type exp-type-industry">Industry</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built and deployed a <strong>multi-label text classification pipeline</strong> for internal content moderation, reducing manual review load by ~40%.</li>
+          <li>Performed EDA and feature engineering on structured tabular datasets, delivering actionable insights via interactive <strong>Plotly / Dash dashboards</strong>.</li>
+          <li>Containerised model serving endpoints with <strong>Docker + FastAPI</strong>, integrating with an existing REST API infrastructure.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Python</span><span class="exp-tag">scikit-learn</span><span class="exp-tag">FastAPI</span><span class="exp-tag">Docker</span><span class="exp-tag">Plotly / Dash</span><span class="exp-tag">SQL</span>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+
 <!-- ═══════════════ ABOUT ═══════════════ -->
 <div class="sep"></div>
 <section id="about">
@@ -1527,15 +1770,15 @@ footer {
       <div class="section-label" style="margin-bottom:1.25rem;">Education</div>
       <div class="edu-cards">
         <div class="edu-card reveal">
-          <div class="edu-degree">M.Tech — Machine Learning &amp; Data Science</div>
-          <div class="edu-uni">Dhirubhai Ambani Institute of Information &amp; Communication Technology</div>
+          <div class="edu-degree">M.Tech - Data Science</div>
+          <div class="edu-uni">Pandit Deendayal Energy University</div>
           <div class="edu-meta">
             <span class="edu-badge edu-badge-gold">🏅 Gold Medal</span>
             <span class="edu-badge edu-badge-gpa">GPA 9.61 / 10</span>
           </div>
         </div>
         <div class="edu-card reveal reveal-delay-1">
-          <div class="edu-degree">B.E. — Computer Engineering</div>
+          <div class="edu-degree">B.E. - Computer Science and Engineering</div>
           <div class="edu-uni">Gujarat Technological University</div>
           <div class="edu-meta">
             <span class="edu-badge edu-badge-gpa">GPA 9.02 / 10</span>
