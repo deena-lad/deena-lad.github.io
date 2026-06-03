@@ -1320,7 +1320,6 @@ footer {
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#writing">Writing</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#about">About</a></li>
   </ul>
@@ -1329,73 +1328,38 @@ footer {
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#writing">Writing</a>
-  <a href="#skills">Skills</a>
-  <a href="#about">About</a>
+  <a href="#projects" class="mobile-nav-link">Projects</a>
+  <a href="#experience" class="mobile-nav-link">Experience</a>
+  <a href="#skills" class="mobile-nav-link">Skills</a>
+  <a href="#about" class="mobile-nav-link">About</a>
 </div>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
   <canvas id="particle-canvas"></canvas>
-
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
   <div class="hero-orb hero-orb-3"></div>
 
   <div class="hero-content">
-
-    <!-- <div class="hero-pre">Machine Learning Engineer</div> -->
-
-    <h1 class="hero-name">
-      <span>Deena Lad</span>
-    </h1>
-
+    <div class="hero-pre">ML Research Engineer</div>
+    <h1 class="hero-name"><span>Deena Lad</span></h1>
     <p class="hero-title">
-      <strong>Generative AI</strong>
-      &nbsp;·&nbsp;
-      Scientific Machine Learning
-      &nbsp;·&nbsp;
-      Climate AI
+      <strong>Spatio-Temporal AI</strong> &nbsp;·&nbsp; Climate &amp; Scientific ML &nbsp;·&nbsp; Deep Learning
     </p>
-
     <p class="hero-bio">
-      Building AI systems for weather forecasting,
-      scientific computing, and LLM-powered applications.
-      Passionate about bridging physics-based modeling,
-      machine learning, and generative AI.
+      Building neural systems that understand the physical world - from weather dynamics to medical imaging.
     </p>
-
     <div class="hero-ctas">
       <a href="#projects" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2.5">
-          <path d="M3 3h18v18H3z"/>
-          <path d="M3 9h18M9 21V9"/>
-        </svg>
-        Featured Projects
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+        View Projects
       </a>
-
-      <a href="/assets/Deena_Lad_Resume.pdf"
-         class="btn-secondary"
-         target="_blank"
-         rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2.5">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Resume
+      <a href="/assets/Deena_Lad_Resume.pdf" class="btn-secondary" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
       </a>
     </div>
-
-    <div class="hero-notice">
-      ⚡ Portfolio currently being updated with new GenAI projects,
-      technical blogs, and engineering case studies.
-    </div>
-
   </div>
 
   <div class="hero-scroll">
@@ -1564,105 +1528,6 @@ footer {
   </div>
 </aside>
 
-<!-- ═══════════════ EXPERIENCE ═══════════════ -->
-<div class="sep"></div>
-<section id="experience">
-  <div class="section-label">Experience</div>
-  <h2 class="section-title">
-    Research and Industry Experience
-  </h2>
-  <p class="section-sub">
-    Experience spanning scientific machine learning,
-    weather forecasting, satellite imagery analysis,
-    and large-scale AI systems.
-  </p>
- 
-  <div class="timeline">
- 
-    <!-- 1 -->
-    <div class="timeline-item reveal">
-      <div class="timeline-dot"></div>
-      <div class="exp-card">
-        <div class="exp-header">
-          <div class="exp-role">Junior Research Fellow</div>
-          <span class="exp-period">Aug 2025 – Present</span>
-        </div>
-        <div class="exp-org-row">
-          <span class="exp-org">IIT Gandhinagar - Sustainability Lab</span>
-          <span class="exp-location">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Gandhinagar, India
-          </span>
-          <span class="exp-type exp-type-research">Research</span>
-        </div>
-        <ul class="exp-bullets">
-          <li>Developed deep learning emulators for accelerating Weather Research and Forecasting (WRF) simulations using multi-scale atmospheric and geographical inputs.</li>
-          <li>Built scalable training pipelines for large climate datasets, processing multi-terabyte NetCDF archives using PyTorch, xarray, and HPC clusters.</li>
-          <li>Evaluated model architectures, conditioning strategies, and loss functions to improve forecasting accuracy and cross-domain generalization.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="exp-tag">PyTorch DDP</span><span class="exp-tag">U-Net / FiLM</span><span class="exp-tag">ERA5</span><span class="exp-tag">xarray</span><span class="exp-tag">SLURM</span><span class="exp-tag">W&B</span><span class="exp-tag">Cartopy</span>
-        </div>
-      </div>
-    </div>
- 
-    <!-- 2 -->
-    <div class="timeline-item reveal reveal-delay-1">
-      <div class="timeline-dot"></div>
-      <div class="exp-card">
-        <div class="exp-header">
-          <div class="exp-role">Research Intern</div>
-          <span class="exp-period">July 2024 – Apr 2025</span>
-        </div>
-        <div class="exp-org-row">
-          <span class="exp-org">ISRO — Space Applications Centre (SAC)</span>
-          <span class="exp-location">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Ahmedabad, India
-          </span>
-          <span class="exp-type exp-type-research">Research</span>
-        </div>
-        <ul class="exp-bullets">
-          <li>Developed a CNN and ConvLSTM-based spatio-temporal models for tropical cyclone intensity estimation and prediction using INSAT-3D satellite imagery.</li>
-          <li>Processed multi-channel HDF5 satellite data of INSAT-3D, engineering a custom reprojection pipeline to cyclone-centred patches using pyproj and rasterio.</li>
-          <li>Collaborated with ISRO scientists to align model evaluation with IMD best-track standards.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="exp-tag">PyTorch</span><span class="exp-tag">ConvLSTM</span><span class="exp-tag">INSAT-3D</span><span class="exp-tag">HDF5</span><span class="exp-tag">rasterio</span><span class="exp-tag">pyproj</span>
-        </div>
-      </div>
-    </div>
- 
-    <!-- 3 -->
-    <div class="timeline-item reveal reveal-delay-2">
-      <div class="timeline-dot"></div>
-      <div class="exp-card">
-        <div class="exp-header">
-          <div class="exp-role">Summer Intern</div>
-          <span class="exp-period">May 2024 – July 2024</span>
-        </div>
-        <div class="exp-org-row">
-          <span class="exp-org">Jio Platforms Limited</span>
-          <span class="exp-location">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Remote / India
-          </span>
-          <span class="exp-type exp-type-industry">Industry</span>
-        </div>
-        <ul class="exp-bullets">
-          <li>Built and deployed a <strong>multi-label text classification pipeline</strong> for internal content moderation, reducing manual review load by ~40%.</li>
-          <li>Performed EDA and feature engineering on structured tabular datasets, delivering actionable insights.</li>
-          <li>Containerised model serving endpoints with <strong>Docker + FastAPI</strong>, integrating with an existing REST API infrastructure.</li>
-        </ul>
-        <div class="exp-tags">
-          <span class="exp-tag">Python</span><span class="exp-tag">scikit-learn</span><span class="exp-tag">FastAPI</span><span class="exp-tag">Docker</span><span class="exp-tag">Plotly / Dash</span><span class="exp-tag">SQL</span>
-        </div>
-      </div>
-    </div>
- 
-  </div>
-</section>
-
 <!-- ═══════════════ SKILLS ═══════════════ -->
 <div class="sep"></div>
 <section id="skills">
@@ -1732,6 +1597,99 @@ footer {
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ═══════════════ EXPERIENCE ═══════════════ -->
+<div class="sep"></div>
+<section id="experience">
+  <div class="section-label">Career</div>
+  <h2 class="section-title">Experience</h2>
+  <p class="section-sub">Research, industry, and academic roles across ML, scientific computing, and data science.</p>
+ 
+  <div class="timeline">
+ 
+    <!-- 1 -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Junior Research Fellow</div>
+          <span class="exp-period">Aug 2025 – Present</span>
+        </div>
+        <div class="exp-org-row">
+          <span class="exp-org">IIT Gandhinagar - Sustainability Lab</span>
+          <span class="exp-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Gandhinagar, India
+          </span>
+          <span class="exp-type exp-type-research">Research</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Designed and implemented FiLMeR, a resolution and domain-invariant deep learning emulator for regional NWP, constituting the core contribution of a KDD 2026 submission.</li>
+          <li>Built end-to-end training pipelines on clusters for ERA5 reanalysis data at scale, handling multi-terabyte NetCDF archives with xarray.</li>
+          <li>Conducted systematic ablations over FiLM conditioning strategies, U-Net depths, and loss formulations, tracking many experiments via Weights &amp; Biases.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">PyTorch DDP</span><span class="exp-tag">U-Net / FiLM</span><span class="exp-tag">ERA5</span><span class="exp-tag">xarray</span><span class="exp-tag">SLURM</span><span class="exp-tag">W&B</span><span class="exp-tag">Cartopy</span>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 2 -->
+    <div class="timeline-item reveal reveal-delay-1">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Research Intern</div>
+          <span class="exp-period">July 2024 – Apr 2025</span>
+        </div>
+        <div class="exp-org-row">
+          <span class="exp-org">ISRO — Space Applications Centre (SAC)</span>
+          <span class="exp-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ahmedabad, India
+          </span>
+          <span class="exp-type exp-type-research">Research</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Developed a CNN and ConvLSTM-based spatio-temporal models for tropical cyclone intensity estimation and prediction using INSAT-3D satellite imagery.</li>
+          <li>Processed multi-channel HDF5 satellite archives from MOSDAC, engineering a custom reprojection pipeline to cyclone-centred patches using pyproj and rasterio.</li>
+          <li>Collaborated with ISRO scientists to align model evaluation with IMD best-track standards.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">PyTorch</span><span class="exp-tag">ConvLSTM</span><span class="exp-tag">INSAT-3D</span><span class="exp-tag">HDF5</span><span class="exp-tag">rasterio</span><span class="exp-tag">pyproj</span>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 3 -->
+    <div class="timeline-item reveal reveal-delay-2">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Summer Intern</div>
+          <span class="exp-period">May 2024 – July 2024</span>
+        </div>
+        <div class="exp-org-row">
+          <span class="exp-org">Jio Platforms Limited</span>
+          <span class="exp-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Remote / India
+          </span>
+          <span class="exp-type exp-type-industry">Industry</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built and deployed a <strong>multi-label text classification pipeline</strong> for internal content moderation, reducing manual review load by ~40%.</li>
+          <li>Performed EDA and feature engineering on structured tabular datasets, delivering actionable insights via interactive <strong>Plotly / Dash dashboards</strong>.</li>
+          <li>Containerised model serving endpoints with <strong>Docker + FastAPI</strong>, integrating with an existing REST API infrastructure.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Python</span><span class="exp-tag">scikit-learn</span><span class="exp-tag">FastAPI</span><span class="exp-tag">Docker</span><span class="exp-tag">Plotly / Dash</span><span class="exp-tag">SQL</span>
+        </div>
+      </div>
+    </div>
+ 
   </div>
 </section>
 
