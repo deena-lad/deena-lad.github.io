@@ -16,7 +16,7 @@ description: "M.Tech Gold Medalist & ML Researcher specializing in Spatio-Tempor
 
     <div class="hero-content">
       <p class="hero-eyebrow">M.Tech Gold Medalist &nbsp;·&nbsp; ML Research Engineer</p>
-      <h1 class="hero-name">Your Name</h1>
+      <h1 class="hero-name">Deena Lad</h1>
       <p class="hero-tagline">
         Building AI systems that reason over space, time, and the physical world.
       </p>
@@ -30,7 +30,7 @@ description: "M.Tech Gold Medalist & ML Researcher specializing in Spatio-Tempor
       </div>
 
       <p class="hero-bio">
-        I design and train deep learning pipelines that process terabytes of geospatial and satellite data, from atmospheric reanalysis fields to INSAT-3D imagery. My research sits at the intersection of physics-informed modeling, sequence learning, and high-performance computing. Havw worked on neural weather forecasting and tropical cyclone analysis at ISRO.
+        I design and train deep learning pipelines that process terabytes of geospatial and satellite data, from atmospheric reanalysis fields to INSAT-3D imagery. My research sits at the intersection of physics-informed modeling, sequence learning, and high-performance computing. Have worked on neural weather forecasting at IITGN and tropical cyclone analysis at ISRO.
       </p>
 
       <div class="hero-links">
