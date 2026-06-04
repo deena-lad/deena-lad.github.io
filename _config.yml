@@ -1,4 +1,4 @@
-title: "Your Name | ML Research Engineer"
+title: "Deena Lad | ML Research Engineer"
 description: "M.Tech Gold Medalist & ML Research Engineer specializing in Spatio-Temporal AI, Climate ML, and Scientific ML."
 url: "https://deena-lad.github.io"
 baseurl: ""
@@ -44,7 +44,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Deena Lad"
 
 # Exclude from build
 exclude:
