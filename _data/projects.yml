@@ -2,7 +2,7 @@
   title: "AI based Emulator for weather forecasting"
   tag: "Spatio-Temporal ML"
   tag_color: "blue"
-  image: "/assets/weather.png"
+  image: "assets/weather.png"
   image_placeholder: "🌦"
   short_desc: "Research-grade pipeline for atmospheric variable prediction over 3–24 hour horizons."
   long_desc: >
@@ -23,7 +23,7 @@
   title: "Tropical Cyclone Intensity Estmation & Next Frame Forecasting"
   tag: "Computer Vision / Satellite Data"
   tag_color: "teal"
-  image: "/assets/cyclone.png"
+  image: "assets/cyclone.png"
   image_placeholder: "🌀"
   short_desc: "Tropical cyclone intensity estimation and next frame forecasting of the cyclones in the Indian Ocean at ISRO."
   long_desc: >
@@ -43,7 +43,7 @@
   title: "Thoracic Disease Detection"
   tag: "Medical AI"
   tag_color: "violet"
-  image: "/assets/xray.png"
+  image: "assets/xray.png"
   image_placeholder: "🫁"
   short_desc: "Object detection pipeline on pediatric chest X-Rays using YOLO architectures."
   long_desc: >
