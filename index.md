@@ -9,7 +9,7 @@ description: "M.Tech Gold Medalist & ML Researcher specializing in Spatio-Tempor
 
     <div class="hero-avatar">
       <div class="avatar-ring">
-        <img src="/assets/images/avatar.jpg" alt="Your Name" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <img src="/assets/images/avatar.jpg" alt="Deena Lad" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="avatar-fallback">DL</div>
       </div>
     </div>
@@ -30,7 +30,7 @@ description: "M.Tech Gold Medalist & ML Researcher specializing in Spatio-Tempor
       </div>
 
       <p class="hero-bio">
-        I design and train deep learning pipelines that process <strong>terabytes of geospatial and satellite data</strong> — from atmospheric reanalysis fields to INSAT-3D imagery. My research sits at the intersection of physics-informed modeling, sequence learning, and high-performance computing. Currently focused on neural weather forecasting and tropical cyclone analysis in collaboration with ISRO.
+        I design and train deep learning pipelines that process terabytes of geospatial and satellite data, from atmospheric reanalysis fields to INSAT-3D imagery. My research sits at the intersection of physics-informed modeling, sequence learning, and high-performance computing. Havw worked on neural weather forecasting and tropical cyclone analysis at ISRO.
       </p>
 
       <div class="hero-links">
