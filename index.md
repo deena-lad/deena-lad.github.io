@@ -3,6 +3,9 @@ layout: default
 title: "Home"
 description: "M.Tech Gold Medalist & ML Researcher specializing in Spatio-Temporal AI, Climate ML, and Scientific ML."
 ---
+<div class="site-notice">
+  🚧 Portfolio Update in Progress — I am currently redesigning and expanding this portfolio. New projects, blogs and research highlights are being added. The updated version will be completed by <strong>Monday, 8 June 2026</strong>.
+</div>
 
 <section class="hero">
   <div class="hero-inner">
