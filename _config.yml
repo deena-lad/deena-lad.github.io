@@ -1,0 +1,56 @@
+title: "Your Name | ML Research Engineer"
+description: "M.Tech Gold Medalist & ML Research Engineer specializing in Spatio-Temporal AI, Climate ML, and Scientific ML."
+url: "https://deena-lad.github.io"
+baseurl: ""
+
+author:
+  name: "Deena Lad"
+  email: "deenalad06@gmail.com"
+  linkedin: "https://www.linkedin.com/in/deena-lad-307645214/"
+  github: "https://github.com/deena-lad"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    block:
+      line_numbers: true
+  math_engine: mathjax
+
+# MathJax
+mathjax: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - README.md

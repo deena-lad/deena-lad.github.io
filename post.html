@@ -1,0 +1,129 @@
+---
+layout: default
+---
+
+<article class="post-article">
+
+  <!-- ══ POST HEADER ══ -->
+  <header class="post-header">
+    <div class="post-meta-top">
+      {% if page.categories %}
+        {% for cat in page.categories %}
+          <span class="post-category">{{ cat }}</span>
+        {% endfor %}
+      {% endif %}
+      <span class="post-reading-time" id="reading-time">⏱ Calculating…</span>
+    </div>
+
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    {% if page.excerpt %}
+      <p class="post-subtitle">{{ page.excerpt | strip_html }}</p>
+    {% endif %}
+
+    <div class="post-meta-bottom">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      {% if page.author %}
+        <span class="post-author">by {{ page.author }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <!-- ══ TWO-COLUMN LAYOUT ══ -->
+  <div class="post-layout">
+
+    <!-- ── Sidebar ToC ── -->
+    <aside class="post-toc" id="postToc">
+      <div class="toc-inner">
+        <p class="toc-label">Contents</p>
+        <nav id="tocNav"><!-- Filled by JS --></nav>
+      </div>
+    </aside>
+
+    <!-- ── Post Body ── -->
+    <div class="post-body" id="postBody">
+      {{ content }}
+    </div>
+
+  </div>
+
+  <!-- ══ POST FOOTER ══ -->
+  <footer class="post-footer">
+    {% if page.tags %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+        <span class="post-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <a href="{{ '/blog' | relative_url }}" class="btn-back">← Back to Blog</a>
+  </footer>
+
+</article>
+
+<!-- ══ TOC + READING TIME JS ══ -->
+<script>
+(function () {
+  /* ─── Reading time ─── */
+  const body = document.getElementById('postBody');
+  const words = body ? body.innerText.trim().split(/\s+/).length : 0;
+  const mins  = Math.max(1, Math.round(words / 200));
+  const rtEl  = document.getElementById('reading-time');
+  if (rtEl) rtEl.textContent = `⏱ ${mins} min read`;
+
+  /* ─── Build ToC ─── */
+  const tocNav = document.getElementById('tocNav');
+  if (!body || !tocNav) return;
+
+  const headings = body.querySelectorAll('h2, h3');
+  if (headings.length < 2) {
+    const aside = document.getElementById('postToc');
+    if (aside) aside.style.display = 'none';
+    return;
+  }
+
+  const ul = document.createElement('ul');
+  ul.className = 'toc-list';
+
+  headings.forEach((h, i) => {
+    /* Ensure each heading has an id */
+    if (!h.id) h.id = 'heading-' + i;
+
+    const li   = document.createElement('li');
+    li.className = h.tagName === 'H3' ? 'toc-item toc-h3' : 'toc-item toc-h2';
+
+    const a    = document.createElement('a');
+    a.href     = '#' + h.id;
+    a.textContent = h.textContent;
+    a.className = 'toc-link';
+
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.pushState(null, '', '#' + h.id);
+    });
+
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+
+  tocNav.appendChild(ul);
+
+  /* ─── Active heading on scroll (IntersectionObserver) ─── */
+  const links = tocNav.querySelectorAll('.toc-link');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = tocNav.querySelector(`a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '0px 0px -70% 0px' });
+
+  headings.forEach(h => observer.observe(h));
+})();
+</script>

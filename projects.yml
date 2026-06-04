@@ -1,0 +1,77 @@
+- id: neural-weather
+  title: "AI based Emulator for weather forecasting"
+  tag: "Spatio-Temporal ML"
+  tag_color: "blue"
+  image: "/assets/images/projects/weather.jpg"
+  image_placeholder: "🌦"
+  short_desc: "Research-grade pipeline for atmospheric variable prediction over 3–24 hour horizons."
+  long_desc: >
+    Architected an end-to-end ML pipeline ingesting 500+ GB WRF simulations and 2+ TB atmospheric
+    reanalysis data. Designed and trained U-Net + FiLM conditioning and Transformer architectures,
+    surpassing physics-based baselines in inference speed by 10× with an RMSE of ~2.4°C.
+    The system handles multi-variable spatio-temporal prediction across pressure levels, enabling short-to-medium range regional forecasts at sub-kilometer resolution.
+  tech_tags:
+    - PyTorch
+    - U-Net
+    - FiLM Conditioning
+    - xarray
+    - HPC
+    - NetCDF
+    - WRF
+
+- id: cyclone-analysis
+  title: "Tropical Cyclone Intensity Estmation & Next Frame Forecasting"
+  tag: "Computer Vision / Satellite Data"
+  tag_color: "teal"
+  image: "/assets/images/projects/cyclone.jpg"
+  image_placeholder: "🌀"
+  short_desc: "Tropical cyclone intensity estimation and next frame forecasting of the cyclones in the Indian Ocean at ISRO."
+  long_desc: >
+    Developed CNN and ConvLSTM models using 1.5+ TB INSAT-3D HDF5 satellite data over the Indian Ocean.
+    Engineered preprocessing and labeling pipelines using IMD track data and Advanced Dvorak Technique (ADT)
+    software, curating 10K annotated images. Custom data loaders for HDF5 satellite imagery at multiple IR bands.
+    Developed at Space Applications Centre (SAC), ISRO.
+  tech_tags:
+    - PyTorch
+    - ConvLSTM
+    - HDF5
+    - OpenCV
+    - Geospatial
+    - INSAT-3D
+
+- id: thoracic-detection
+  title: "Thoracic Disease Detection"
+  tag: "Medical AI"
+  tag_color: "violet"
+  image: "/assets/images/projects/xray.jpg"
+  image_placeholder: "🫁"
+  short_desc: "Object detection pipeline on pediatric chest X-Rays using YOLO architectures."
+  long_desc: >
+    Built a production-grade object detection pipeline on the VinDr-PCXR dataset containing 9,125 studies
+    across 36 findings. Implemented DICOM parsing, multi-label annotation handling, and radiological
+    bounding-box localization. Developed custom training loops with focal loss and class-weighted sampling
+    to address severe label imbalance. Achieved competitive mAP scores with YOLOv8 and YOLOv10 backbones,
+    evaluated against radiologist-level annotations.
+  tech_tags:
+    - Python
+    - YOLOv8 / v10
+    - TensorFlow
+    - DICOM
+    - pydicom
+    - Medical Imaging
+
+- id: rag-weather
+  title: "RAG Weather Assistant"
+  tag: "LLM / RAG"
+  tag_color: "orange"
+  image: ""
+  image_placeholder: "🤖"
+  short_desc: "LLM-powered retrieval-augmented assistant for querying atmospheric datasets and research."
+  long_desc: ""
+  coming_soon: true
+  tech_tags:
+    - LangChain
+    - RAG
+    - Vector DB
+    - LLM
+    - Python
