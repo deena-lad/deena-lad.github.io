@@ -10,7 +10,7 @@ description: "M.Tech Gold Medalist & ML Researcher specializing in Spatio-Tempor
     <div class="hero-avatar">
       <div class="avatar-ring">
         <img src="/assets/images/avatar.jpg" alt="Your Name" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="avatar-fallback">YN</div>
+        <div class="avatar-fallback">DL</div>
       </div>
     </div>
 
