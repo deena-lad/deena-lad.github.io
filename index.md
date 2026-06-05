@@ -245,7 +245,7 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
         </button>
       </div>
     </div>
-    <iframe src="/assets/files/resume.pdf" class="resume-embed" title="Deena Lad Resume PDF"></iframe>
+    <iframe src="/assets/resume/Deena_Lad_Resume.pdf" class="resume-embed" title="Deena Lad Resume PDF"></iframe>
   </div>
 </div>
 
