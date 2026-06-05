@@ -1,17 +1,16 @@
 ---
 layout: default
 title: "Projects"
-description: "ML research projects in Spatio-Temporal AI, Climate ML, Medical AI, and Scientific computing."
+description: "ML research projects spanning atmospheric AI, satellite remote sensing, medical imaging, and quantitative applications - built on multi-terabyte datasets."
 ---
 
 <section class="projects-section">
 
   <div class="page-header">
     <h1 class="page-title">Projects</h1>
-    <p class="page-subtitle">Research spanning atmospheric science, satellite remote sensing, and medical imaging — built on multi-terabyte datasets with production-grade ML pipelines.</p>
+    <p class="page-subtitle">Research spanning atmospheric science, satellite remote sensing, and medical imaging — production-grade ML pipelines built on multi-terabyte scientific datasets. Work applicable to quantitative finance (time-series, forecasting, signal extraction) and space-tech (satellite analysis, real-time inference).</p>
   </div>
 
-  <!-- ══ PROJECT GRID ══ -->
   <div class="projects-grid">
     {% for project in site.data.projects %}
     <article
@@ -23,8 +22,8 @@ description: "ML research projects in Spatio-Temporal AI, Climate ML, Medical AI
       aria-haspopup="dialog"
       aria-label="View details for {{ project.title }}"
       {% endunless %}
+      {% if project.id == 'cyclone-analysis' %}id="cyclone-analysis"{% endif %}
     >
-      <!-- Card image / placeholder -->
       <div class="card-img-wrap">
         {% if project.image and project.image != "" %}
           <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="card-img" loading="lazy" />
@@ -36,12 +35,17 @@ description: "ML research projects in Spatio-Temporal AI, Climate ML, Medical AI
         {% endif %}
       </div>
 
-      <!-- Card body -->
       <div class="card-body">
+        {% if project.badges %}
+        <div class="card-context">
+          {% for badge in project.badges %}
+            <span class="card-context-badge badge--{{ badge.style }}">{{ badge.label }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
         <span class="card-tag tag--{{ project.tag_color }}">{{ project.tag }}</span>
         <h2 class="card-title">{{ project.title }}</h2>
         <p class="card-desc">{{ project.short_desc }}</p>
-
         {% unless project.coming_soon %}
         <div class="card-tech-preview">
           {% for tag in project.tech_tags limit:3 %}
@@ -60,123 +64,91 @@ description: "ML research projects in Spatio-Temporal AI, Climate ML, Medical AI
 
 </section>
 
-<!-- ══════════════════════════════════════
-     MODAL OVERLAY
-══════════════════════════════════════ -->
+<!-- MODAL -->
 <div id="projectModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
   <div class="modal-container">
-
     <button class="modal-close" id="modalClose" aria-label="Close modal">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-
-    <div class="modal-img-wrap" id="modalImgWrap">
-      <!-- Filled by JS -->
-    </div>
-
+    <div class="modal-img-wrap" id="modalImgWrap"></div>
     <div class="modal-content">
+      <div class="modal-context" id="modalContext"></div>
       <span class="modal-tag" id="modalTag"></span>
       <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-institution" id="modalInstitution"></p>
       <p class="modal-long-desc" id="modalDesc"></p>
-
-      <div class="modal-tech-section">
-        <p class="modal-tech-label">Tech Stack</p>
-        <div class="modal-tech-tags" id="modalTechTags">
-          <!-- Filled by JS -->
-        </div>
-      </div>
+      <p class="modal-tech-label">Tech Stack</p>
+      <div class="modal-tech-tags" id="modalTechTags"></div>
     </div>
-
   </div>
 </div>
 
-<!-- ══ Data store + Modal JS ══ -->
 <script>
-(function () {
-  /* ── Project data from Jekyll ── */
+(function(){
   const projects = {
     {% for project in site.data.projects %}{% unless project.coming_soon %}"{{ project.id }}": {
-      title: {{ project.title | jsonify }},
-      tag:   {{ project.tag   | jsonify }},
-      tagColor: {{ project.tag_color | jsonify }},
-      image: {{ project.image | default: "" | jsonify }},
+      title:       {{ project.title | jsonify }},
+      tag:         {{ project.tag | jsonify }},
+      tagColor:    {{ project.tag_color | jsonify }},
+      image:       {{ project.image | default: "" | jsonify }},
       placeholder: {{ project.image_placeholder | jsonify }},
-      desc:  {{ project.long_desc  | jsonify }},
-      tech:  {{ project.tech_tags  | jsonify }}
+      desc:        {{ project.long_desc | jsonify }},
+      tech:        {{ project.tech_tags | jsonify }},
+      institution: {{ project.institution | default: "" | jsonify }},
+      badges:      {{ project.badges | jsonify }}
     },{% endunless %}{% endfor %}
   };
 
-  /* ── DOM refs ── */
-  const overlay   = document.getElementById('projectModal');
-  const closeBtn  = document.getElementById('modalClose');
-  const modalTag  = document.getElementById('modalTag');
-  const modalTitle= document.getElementById('modalTitle');
-  const modalDesc = document.getElementById('modalDesc');
-  const modalTech = document.getElementById('modalTechTags');
-  const modalImg  = document.getElementById('modalImgWrap');
-  let lastFocused = null;
+  const overlay  = document.getElementById('projectModal');
+  const closeBtn = document.getElementById('modalClose');
+  const modalTag = document.getElementById('modalTag');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc  = document.getElementById('modalDesc');
+  const modalTech  = document.getElementById('modalTechTags');
+  const modalImg   = document.getElementById('modalImgWrap');
+  const modalCtx   = document.getElementById('modalContext');
+  const modalInst  = document.getElementById('modalInstitution');
+  let lastFocused  = null;
 
-  /* ── Open ── */
-  function openModal(id) {
-    const p = projects[id];
-    if (!p) return;
-
+  function openModal(id){
+    const p = projects[id]; if(!p) return;
     lastFocused = document.activeElement;
-
-    /* Populate */
-    modalTag.textContent  = p.tag;
-    modalTag.className    = `modal-tag tag--${p.tagColor}`;
-    modalTitle.textContent= p.title;
-    modalDesc.textContent = p.desc;
-
-    /* Image */
+    modalTag.textContent = p.tag;
+    modalTag.className   = `modal-tag tag--${p.tagColor}`;
+    modalTitle.textContent = p.title;
+    modalDesc.textContent  = p.desc;
+    modalInst.textContent  = p.institution || '';
+    modalInst.style.display = p.institution ? '' : 'none';
     modalImg.innerHTML = p.image
-      ? `<img src="${p.image}" alt="${p.title}" class="modal-img" />`
+      ? `<img src="${p.image}" alt="${p.title}" class="modal-img"/>`
       : `<div class="modal-img-placeholder">${p.placeholder}</div>`;
-
-    /* Tech tags */
-    modalTech.innerHTML = p.tech
-      .map(t => `<code class="tech-chip">${t}</code>`)
-      .join('');
-
-    /* Show */
+    modalCtx.innerHTML = (p.badges||[]).map(b =>
+      `<span class="card-context-badge badge--${b.style}">${b.label}</span>`).join('');
+    modalTech.innerHTML = (p.tech||[]).map(t =>
+      `<code class="tech-chip">${t}</code>`).join('');
     overlay.hidden = false;
     document.body.classList.add('modal-open');
-
-    /* Trap focus to close button initially */
-    setTimeout(() => closeBtn.focus(), 50);
+    setTimeout(()=>closeBtn.focus(), 50);
   }
-
-  /* ── Close ── */
-  function closeModal() {
+  function closeModal(){
     overlay.hidden = true;
     document.body.classList.remove('modal-open');
-    if (lastFocused) lastFocused.focus();
+    if(lastFocused) lastFocused.focus();
   }
 
-  /* ── Event listeners ── */
-  document.querySelectorAll('.project-card[data-project]').forEach(card => {
-    card.addEventListener('click', () => openModal(card.dataset.project));
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(card.dataset.project);
-      }
+  document.querySelectorAll('.project-card[data-project]').forEach(card=>{
+    card.addEventListener('click', ()=>openModal(card.dataset.project));
+    card.addEventListener('keydown', e=>{
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openModal(card.dataset.project); }
     });
   });
-
   closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e=>{ if(e.target===overlay) closeModal(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape'&&!overlay.hidden) closeModal(); });
 
-  /* Click outside modal container */
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) closeModal();
-  });
-
-  /* Escape key */
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !overlay.hidden) closeModal();
-  });
+  /* Open cyclone card directly if URL hash matches */
+  if(window.location.hash==='#cyclone-analysis'){
+    setTimeout(()=>openModal('cyclone-analysis'), 300);
+  }
 })();
 </script>

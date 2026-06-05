@@ -1,5 +1,5 @@
 title: "Deena Lad | ML Research Engineer"
-description: "M.Tech Gold Medalist & ML Research Engineer specializing in Spatio-Temporal AI, Climate ML, and Scientific ML."
+description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientific ML. Open to applied ML roles in quantitative finance and space-tech."
 url: "https://deena-lad.github.io"
 baseurl: ""
 
@@ -8,8 +8,8 @@ author:
   email: "deenalad06@gmail.com"
   linkedin: "https://www.linkedin.com/in/deena-lad-307645214/"
   github: "https://github.com/deena-lad"
+  phone: "+91-9106773581"
 
-# Build settings
 markdown: kramdown
 highlighter: rouge
 
@@ -22,22 +22,18 @@ kramdown:
       line_numbers: true
   math_engine: mathjax
 
-# MathJax
 mathjax: true
 
-# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Collections
 collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
 
-# Defaults
 defaults:
   - scope:
       path: ""
@@ -46,7 +42,6 @@ defaults:
       layout: "post"
       author: "Deena Lad"
 
-# Exclude from build
 exclude:
   - Gemfile
   - Gemfile.lock

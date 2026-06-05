@@ -1,72 +1,99 @@
 - id: neural-weather
-  title: "AI based Emulator for weather forecasting"
+  title: "Neural Weather Forecasting"
   tag: "Spatio-Temporal ML"
   tag_color: "blue"
-  image: "/assets/weather.png"
+  image: "/assets/images/weather.png"
   image_placeholder: "🌦"
-  short_desc: "Research-grade pipeline for atmospheric variable prediction over 3–24 hour horizons."
+  institution: "IIT Gandhinagar - Sustainability Lab · Ongoing Research"
+  badges:
+    - label: "IIT Gandhinagar"
+      style: "iitgn"
+    - label: "Ongoing Research"
+      style: "ongoing"
+  short_desc: "Ongoing neural surrogate for 3–24 h atmospheric forecasting at IIT Gandhinagar — 10× faster than WRF baselines, KDD 2026 submission."
   long_desc: >
-    Architected an end-to-end ML pipeline ingesting 500+ GB WRF simulations and 2+ TB atmospheric
-    reanalysis data. Designed and trained U-Net + FiLM conditioning and Transformer architectures,
-    surpassing physics-based baselines in inference speed by 10× with an RMSE of ~2.4°C.
-    The system handles multi-variable spatio-temporal prediction across pressure levels, enabling short-to-medium range regional forecasts at sub-kilometer resolution.
+    Ongoing research at IIT Gandhinagar's Sustainability Lab (PI: Prof. Nipun Batra). Architected an end-to-end
+    ML pipeline ingesting 500 GB WRF simulations and 2+ TB ERA5 atmospheric reanalysis data using scalable NetCDF
+    loading, distributed preprocessing, and GPU-accelerated training on HPC (SLURM). Designed and trained
+    spatio-temporal surrogate models (U-Net + FiLM conditioning, Transformer architectures) for 3–24 hour regional
+    weather forecasting, achieving RMSE ≈ 2.4 °C for temperature and surpassing physics-based NWP baselines in
+    inference speed by 10×. The forecasting methodology and time-series signal extraction pipeline are directly 
+    transferable to quantitative finance applications (alpha signal generation, regime detection over structured temporal data).
   tech_tags:
     - PyTorch
     - U-Net
     - FiLM Conditioning
     - xarray
-    - HPC
+    - HPC / SLURM
     - NetCDF
-    - WRF
+    - ERA5
 
 - id: cyclone-analysis
-  title: "Tropical Cyclone Intensity Estmation & Next Frame Forecasting"
-  tag: "Computer Vision / Satellite Data"
+  title: "Tropical Cyclone Analysis"
+  tag: "Computer Vision / Space"
   tag_color: "teal"
-  image: "/assets/cyclone.png"
+  image: "/assets/images/cyclone.png"
   image_placeholder: "🌀"
-  short_desc: "Tropical cyclone intensity estimation and next frame forecasting of the cyclones in the Indian Ocean at ISRO."
+  institution: "ISRO Space Applications Centre · M.Tech Thesis Project"
+  badges:
+    - label: "ISRO SAC"
+      style: "isro"
+    - label: "M.Tech Thesis"
+      style: "thesis"
+  short_desc: "M.Tech thesis at ISRO SAC - dual-model CNN + ConvLSTM system for cyclone intensity estimation and trajectory forecasting on 1.5 TB INSAT-3D data."
   long_desc: >
-    Developed CNN and ConvLSTM models using 1.5+ TB INSAT-3D HDF5 satellite data over the Indian Ocean.
-    Engineered preprocessing and labeling pipelines using IMD track data and Advanced Dvorak Technique (ADT)
-    software, curating 10K annotated images. Custom data loaders for HDF5 satellite imagery at multiple IR bands.
-    Developed at Space Applications Centre (SAC), ISRO.
+    M.Tech thesis project conducted at ISRO's Space Applications Centre (SAC), Ahmedabad. Developed CNN and
+    ConvLSTM models for tropical cyclone intensity estimation and next-frame trajectory forecasting using 1.5+ TB
+    INSAT-3D HDF5 satellite data (2013–2023, 30-minute resolution) over Indian Ocean storms. Engineered
+    end-to-end preprocessing and labeling pipelines using IMD track data and Advanced Dvorak Technique (ADT)
+    software, curating 5K raw annotations expanded to ~10K via class-balanced augmentation. Delivered operational
+    spatio-temporal storm-evolution models demonstrating direct transfer of academic DL techniques to satellite
+    analysis at ISRO. The real-time object tracking, sequential inference, and low-latency model architecture are
+    relevant to satellite monitoring startups and space-tech applications requiring on-orbit or ground-segment ML.
   tech_tags:
     - PyTorch
     - ConvLSTM
     - HDF5
     - OpenCV
-    - Geospatial
+    - GeoPandas
     - INSAT-3D
+    - IMD / ADT
 
 - id: thoracic-detection
   title: "Thoracic Disease Detection"
   tag: "Medical AI"
   tag_color: "violet"
-  image: "/assets/xray.png"
+  image: "/assets/images/xray.png"
   image_placeholder: "🫁"
-  short_desc: "Object detection pipeline on pediatric chest X-Rays using YOLO architectures."
+  institution: "Personal Research Project"
+  badges: []
+  short_desc: "Production object-detection pipeline on VinDr-PCXR (9,125 studies, 36 findings) with YOLO architectures and DICOM parsing."
   long_desc: >
-    Built a production-grade object detection pipeline on the VinDr-PCXR dataset containing 9,125 studies
-    across 36 findings. Implemented DICOM parsing, multi-label annotation handling, and radiological
-    bounding-box localization. Developed custom training loops with focal loss and class-weighted sampling
-    to address severe label imbalance. Achieved competitive mAP scores with YOLOv8 and YOLOv10 backbones,
-    evaluated against radiologist-level annotations.
+    Built a production-grade object detection pipeline on the VinDr-PCXR dataset containing 9,125 pediatric chest
+    X-ray studies across 36 pathological findings. Implemented DICOM parsing (pydicom), multi-label annotation
+    handling, and radiological bounding-box localization. Developed custom training loops with focal loss and
+    class-weighted sampling to address severe label imbalance across 36 finding categories. Evaluated YOLOv8 and
+    YOLOv10 backbone variants against radiologist-level annotations, achieving competitive mAP scores. Demonstrates
+    production ML engineering skills — custom data pipelines, imbalanced classification, structured inference output
+    - applicable to anomaly detection in finance (fraud signals, outlier trades) and structured data QA in
+    space-tech (telemetry anomaly detection).
   tech_tags:
     - Python
     - YOLOv8 / v10
     - TensorFlow
-    - DICOM
-    - pydicom
+    - DICOM / pydicom
+    - Focal Loss
     - Medical Imaging
 
 - id: rag-weather
   title: "RAG Weather Assistant"
   tag: "LLM / RAG"
   tag_color: "orange"
-  image: ""
+  image: "/assets/images/rag.svg"
   image_placeholder: "🤖"
-  short_desc: "LLM-powered retrieval-augmented assistant for querying atmospheric datasets and research."
+  institution: ""
+  badges: []
+  short_desc: "LLM-powered retrieval-augmented assistant for querying atmospheric datasets and research papers."
   long_desc: ""
   coming_soon: true
   tech_tags:
