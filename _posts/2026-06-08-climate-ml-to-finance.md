@@ -5,14 +5,14 @@ date: 2026-06-07
 author: "Deena Lad"
 categories: [Career, Quantitative Finance, ML]
 tags: [Quantitative Finance, Time Series, Signal Processing, AlphaML, Climate ML, Career]
-excerpt: "The skills built processing terabytes of ERA5 reanalysis and INSAT-3D satellite data — spatiotemporal modelling, signal extraction, noise filtering, uncertainty quantification — are not niche. They map precisely onto the core problems of quantitative finance. Here's the proof, with code."
+excerpt: "The skills built processing terabytes of ERA5 reanalysis and INSAT-3D satellite data, spatiotemporal modelling, signal extraction, noise filtering, uncertainty quantification, are not niche. They map precisely onto the core problems of quantitative finance. Here's the proof, with code."
 ---
 
 I spent two years building ML systems that predict the future state of physical systems from noisy, high-dimensional, time-ordered data. One system forecasts temperature fields 24 hours out from atmospheric reanalysis. Another tracks the evolution of a tropical cyclone across satellite frames.
 
 When I started looking at quantitative finance problems, something immediately clicked: **these are the same problems, with different units**.
 
-This post maps the methodological parallels explicitly — and shows the code side-by-side.
+This post maps the methodological parallels explicitly and shows the code side-by-side.
 
 ---
 

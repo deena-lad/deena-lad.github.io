@@ -20,7 +20,7 @@
     inference speed by 10×. The forecasting methodology and time-series signal extraction pipeline are directly 
     transferable to quantitative finance applications (alpha signal generation, regime detection over structured temporal data).
   gallery:
-    - src: "/assets/images/projects/weather.svg"
+    - src: "/assets/images/projects/weather.png"
       caption: "Forecast vs ground truth"
     # - src: "/assets/images/projects/weather-arch.svg"
     #   caption: "U-Net + FiLM architecture with skip connections and bottleneck"
