@@ -237,6 +237,7 @@ img { max-width: 100%; display: block; }
 .comm-icon--gdsc  { background: #fef2f2; }
 .comm-icon--nss   { background: #f0fdf4; }
 .comm-icon--cert  { background: var(--amber-light); }
+/* .comm-body {} */
 .comm-title { font-size: .9rem; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
 .comm-sub   { font-size: .8rem; color: var(--color-text-muted); }
 
@@ -744,3 +745,94 @@ img { max-width: 100%; display: block; }
     grid-row: 1;
   }
 }
+
+/* ════════════════════════════════════════════════════════════
+   SAGE  — muted blue-green accent  (v5 addition)
+   Sits between violet and teal, earthy and calm.
+════════════════════════════════════════════════════════════ */
+:root {
+  --sage:        #5d8a78;
+  --sage-hover:  #3a5f52;
+  --sage-light:  #f3f8f6;
+  --sage-mid:    #8db8ac;
+  --sage-border: #c8ddd7;
+}
+
+/* ── Domain chip: 6th slot (Scientific ML) ── */
+.hero-domains .domain-chip:nth-child(6) {
+  background: var(--sage-light);
+  border-color: var(--sage-border);
+  color: var(--sage-hover);
+}
+
+/* ── Project tag: sage category ── */
+.tag--sage {
+  background: var(--sage-light);
+  color: var(--sage-hover);
+  border: 1px solid var(--sage-border);
+}
+
+/* ── Skill card: 2nd card (Scientific & Geospatial) icon bg ── */
+.skill-card:nth-child(2) .skill-icon { background: var(--sage-light); }
+
+/* ── Blog category pill: Scientific ML posts ── */
+.post-category.cat--sage {
+  background: var(--sage-light);
+  border-color: var(--sage-border);
+  color: var(--sage-hover);
+}
+
+/* ── Experience timeline: Jio intern dot ── */
+.exp-dot--sage {
+  background: var(--sage);
+  box-shadow: 0 0 0 3px var(--sage-border);
+}
+
+/* ── Sidebar nav: if a 5th section ever added ── */
+#sidebarNav li:nth-child(5) a .snav-dot { background: var(--sage); }
+#sidebarNav li:nth-child(5) a.active {
+  color: var(--sage-hover);
+  background: var(--sage-light);
+  border-left-color: var(--sage);
+}
+
+/* ── Teaser/home card accent on hover ── */
+.teaser-card:hover { border-color: var(--sage-border); }
+
+/* ── Scrollbar thumb uses sage on hover ── */
+::-webkit-scrollbar-thumb:hover { background: var(--sage); }
+
+/* ── Selection highlight ── */
+::selection {
+  background: var(--sage-light);
+  color: var(--sage-hover);
+}
+
+/* ── Focus ring: sage variant for non-primary interactive elements ── */
+.post-tag:focus-visible,
+.domain-chip:focus-visible {
+  outline-color: var(--sage);
+}
+
+/* ── Badge utility ── */
+.badge--sage {
+  background: var(--sage-light);
+  color: var(--sage-hover);
+  border: 1px solid var(--sage-border);
+}
+
+/* ── Card context badge: sage ── */
+.card-context-badge.badge--sage { background: var(--sage-light); color: var(--sage-hover); border-color: var(--sage-border); }
+
+/* ── Skill tag hover: tinted sage ── */
+.skill-card:nth-child(2) .skill-tag:hover {
+  background: var(--sage-light);
+  border-color: var(--sage-border);
+  color: var(--sage-hover);
+}
+
+/* ── Post reading time indicator ── */
+.post-reading-time { color: var(--sage); }
+
+/* ── Footer link hover ── */
+.footer-links a:nth-child(3):hover { color: var(--sage); }
