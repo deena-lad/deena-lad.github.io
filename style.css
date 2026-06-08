@@ -237,7 +237,6 @@ img { max-width: 100%; display: block; }
 .comm-icon--gdsc  { background: #fef2f2; }
 .comm-icon--nss   { background: #f0fdf4; }
 .comm-icon--cert  { background: var(--amber-light); }
-.comm-body {}
 .comm-title { font-size: .9rem; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
 .comm-sub   { font-size: .8rem; color: var(--color-text-muted); }
 
@@ -486,3 +485,262 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--accent-border); border-radius: 99px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ════════════════════════════════════════════════════════════
+   COLOUR REFRESH  v4 — richer, more cohesive palette
+   Extra semantic colours layered on top of existing tokens
+════════════════════════════════════════════════════════════ */
+:root {
+  /* Richer accent spectrum */
+  --rose:          #e11d48;
+  --rose-light:    #fff1f2;
+  --rose-border:   #fecdd3;
+
+  --amber:         #d97706;
+  --amber-light:   #fffbeb;
+  --amber-border:  #fde68a;
+
+  --emerald:       #059669;
+  --emerald-light: #ecfdf5;
+  --emerald-border:#a7f3d0;
+
+  --sky:           #0284c7;
+  --sky-light:     #f0f9ff;
+  --sky-border:    #bae6fd;
+
+  /* Section accent mapping */
+  --exp-accent:    var(--accent);       /* Indigo  */
+  --edu-accent:    var(--amber);        /* Amber   */
+  --comm-accent:   var(--emerald);      /* Emerald */
+  --proj-accent:   var(--violet);       /* Violet  */
+
+  /* Gradient mesh for hero bg */
+  --hero-mesh: radial-gradient(ellipse at 20% 50%, rgba(79,70,229,.07) 0%, transparent 60%),
+               radial-gradient(ellipse at 80% 20%, rgba(124,58,237,.06) 0%, transparent 60%),
+               radial-gradient(ellipse at 60% 80%, rgba(13,148,136,.05) 0%, transparent 60%);
+}
+
+/* ── Hero mesh background ── */
+.hero { background: var(--hero-mesh); }
+
+/* ── Section title accent stripe ── */
+.home-section#sec-experience .home-section-title { color: var(--accent); }
+.home-section#sec-education  .home-section-title { color: var(--amber); }
+.home-section#sec-projects   .home-section-title { color: var(--violet); }
+.home-section#sec-community  .home-section-title { color: var(--emerald); }
+
+/* ── Sidebar dot colours per section ── */
+#sidebarNav li:nth-child(1) a .snav-dot { background: var(--accent); }
+#sidebarNav li:nth-child(2) a .snav-dot { background: var(--amber); }
+#sidebarNav li:nth-child(3) a .snav-dot { background: var(--violet); }
+#sidebarNav li:nth-child(4) a .snav-dot { background: var(--emerald); }
+
+#sidebarNav li:nth-child(1) a.active { color: var(--accent); background: var(--accent-light); border-left-color: var(--accent); }
+#sidebarNav li:nth-child(2) a.active { color: var(--amber);  background: var(--amber-light);  border-left-color: var(--amber);  }
+#sidebarNav li:nth-child(3) a.active { color: var(--violet); background: var(--violet-light); border-left-color: var(--violet); }
+#sidebarNav li:nth-child(4) a.active { color: var(--emerald);background: var(--emerald-light);border-left-color: var(--emerald);}
+
+/* ── Experience timeline dot colours enriched ── */
+.exp-dot        { background: var(--accent);  box-shadow: 0 0 0 3px var(--accent-border); }
+.exp-dot--violet{ background: var(--violet);  box-shadow: 0 0 0 3px var(--violet-border); }
+.exp-dot--teal  { background: var(--teal);    box-shadow: 0 0 0 3px var(--teal-border); }
+
+/* ── Education medal amber ── */
+.edu-medal { background: var(--amber-light); border-color: var(--amber-border); color: var(--amber); }
+
+/* ── Section border-bottom colour stripe ── */
+.home-section#sec-experience { border-bottom-color: #e0e7ff; }
+.home-section#sec-education  { border-bottom-color: var(--amber-border); }
+.home-section#sec-projects   { border-bottom-color: var(--violet-border); }
+
+/* ── Community card icon colours ── */
+.comm-card:nth-child(1) .comm-icon { background: var(--accent-light); }
+.comm-card:nth-child(2) .comm-icon { background: var(--rose-light); }
+.comm-card:nth-child(3) .comm-icon { background: var(--emerald-light); }
+.comm-card:nth-child(4) .comm-icon { background: var(--amber-light); }
+
+/* ── Skill card icon accent per category ── */
+.skill-card:nth-child(1) .skill-icon { background: var(--accent-light); }
+.skill-card:nth-child(2) .skill-icon { background: var(--violet-light); }
+.skill-card:nth-child(3) .skill-icon { background: var(--amber-light); }
+.skill-card:nth-child(4) .skill-icon { background: var(--teal-light); }
+.skill-card:nth-child(5) .skill-icon { background: var(--sky-light); }
+.skill-card:nth-child(6) .skill-icon { background: var(--emerald-light); }
+
+/* ── Blog category pill colours ── */
+.post-category { background: var(--accent-light); border-color: var(--accent-border); color: var(--accent); }
+
+/* ── Nav resume button richer ── */
+.nav-resume-btn {
+  background: linear-gradient(135deg, var(--accent-light), var(--violet-light));
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+.nav-resume-btn:hover {
+  background: linear-gradient(135deg, var(--accent), var(--violet));
+  color: #fff; border-color: var(--accent);
+}
+
+/* ── Hero domain chips spectrum ── */
+.hero-domains .domain-chip:nth-child(1) { background: var(--accent-light); border-color: var(--accent-border); color: var(--accent); }
+.hero-domains .domain-chip:nth-child(2) { background: var(--teal-light);   border-color: var(--teal-border);   color: var(--teal); }
+.hero-domains .domain-chip:nth-child(3) { background: var(--violet-light); border-color: var(--violet-border); color: var(--violet); }
+.hero-domains .domain-chip:nth-child(4) { background: var(--amber-light);  border-color: var(--amber-border);  color: var(--amber); }
+.hero-domains .domain-chip:nth-child(5) { background: var(--sky-light);    border-color: var(--sky-border);    color: var(--sky); }
+
+/* ════════════════════════════════════════════════════════════
+   SIDEBAR POSITION FIX — sits flush under hero, not nav
+════════════════════════════════════════════════════════════ */
+.home-sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 16px);   /* was 24px — closer to nav now */
+  align-self: flex-start;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MODAL WIDE — gallery layout
+════════════════════════════════════════════════════════════ */
+.modal-wide {
+  max-width: 860px;
+  display: grid;
+  grid-template-columns: 1fr;   /* stacked on mobile */
+}
+
+/* ── Gallery ── */
+.modal-gallery {
+  position: relative;
+  background: #0f0c2a;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: opacity .2s ease;
+}
+
+.gallery-caption {
+  padding: 6px 48px;
+  background: rgba(0,0,0,.5);
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: #94a3b8;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(0,0,0,.4);
+  overflow-x: auto;
+  flex-shrink: 0;
+  scrollbar-width: none;
+}
+.gallery-thumbs::-webkit-scrollbar { display: none; }
+
+.gallery-thumb {
+  width: 56px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid rgba(255,255,255,.1);
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: #1e1a40;
+  padding: 0;
+  transition: border-color .15s, transform .15s;
+  position: relative;
+}
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-thumb.active {
+  border-color: var(--accent);
+  transform: scale(1.06);
+}
+.gallery-thumb:hover { border-color: rgba(255,255,255,.4); }
+
+.thumb-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  background: #1e1a40;
+}
+
+/* Arrow buttons */
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .15s;
+  z-index: 5;
+  margin-top: -24px; /* offset for caption + thumbs height */
+}
+.gallery-arrow:hover { background: var(--accent); border-color: var(--accent); }
+.gallery-arrow--prev { left: 10px; }
+.gallery-arrow--next { right: 10px; }
+.gallery-arrow:disabled { opacity: .3; cursor: default; }
+
+/* Placeholder thumbnail when image is 404 */
+.gallery-thumb .thumb-placeholder { display: none; }
+.gallery-thumb img[style*="opacity:.2"] + .thumb-placeholder,
+.gallery-thumb img[style*="opacity: .2"] + .thumb-placeholder { display: flex; }
+
+/* On wide screens: split gallery left / content right */
+@media (min-width: 700px) {
+  .modal-wide {
+    grid-template-columns: 420px 1fr;
+    grid-template-rows: 1fr;
+    max-height: 82vh;
+  }
+  .modal-gallery {
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    height: 100%;
+    min-height: 460px;
+  }
+  .modal-content {
+    overflow-y: auto;
+    max-height: 82vh;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+  .modal-close {
+    /* On wide layout, close button sits top-right of content pane */
+    grid-column: 2;
+    grid-row: 1;
+  }
+}

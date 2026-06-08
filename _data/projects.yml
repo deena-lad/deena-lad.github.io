@@ -2,8 +2,8 @@
   title: "Neural Weather Forecasting"
   tag: "Spatio-Temporal ML"
   tag_color: "blue"
-  image: "/assets/images/weather.png"
-  image_placeholder: "🌦"
+  # image: "/assets/images/weather.png"
+  # image_placeholder: "🌦"
   institution: "IIT Gandhinagar - Sustainability Lab · Ongoing Research"
   badges:
     - label: "IIT Gandhinagar"
@@ -19,6 +19,15 @@
     weather forecasting, achieving RMSE ≈ 2.4 °C for temperature and surpassing physics-based NWP baselines in
     inference speed by 10×. The forecasting methodology and time-series signal extraction pipeline are directly 
     transferable to quantitative finance applications (alpha signal generation, regime detection over structured temporal data).
+  gallery:
+    - src: "/assets/images/projects/weather.svg"
+      caption: "Forecast vs ground truth"
+    # - src: "/assets/images/projects/weather-arch.svg"
+    #   caption: "U-Net + FiLM architecture with skip connections and bottleneck"
+    # - src: "/assets/images/projects/placeholder-1.jpg"
+    #   caption: "ERA5 temperature field — predicted vs actual (24h horizon)"
+    # - src: "/assets/images/projects/placeholder-2.jpg"
+    #   caption: "Training loss curves: MSE + spectral term over 120 epochs"
   tech_tags:
     - PyTorch
     - U-Net
@@ -32,24 +41,33 @@
   title: "Tropical Cyclone Analysis"
   tag: "Computer Vision / Space"
   tag_color: "teal"
-  image: "/assets/images/cyclone.png"
-  image_placeholder: "🌀"
+  # image: "/assets/images/cyclone.png"
+  # image_placeholder: "🌀"
   institution: "ISRO Space Applications Centre · M.Tech Thesis Project"
   badges:
     - label: "ISRO SAC"
       style: "isro"
     - label: "M.Tech Thesis"
       style: "thesis"
-  short_desc: "M.Tech thesis at ISRO SAC - dual-model CNN + ConvLSTM system for cyclone intensity estimation and trajectory forecasting on 1.5 TB INSAT-3D data."
+  short_desc: "M.Tech thesis at ISRO SAC - dual-model CNN + ConvLSTM system for cyclone intensity estimation and next frame forecasting on 1.5 TB INSAT-3D data."
   long_desc: >
     M.Tech thesis project conducted at ISRO's Space Applications Centre (SAC), Ahmedabad. Developed CNN and
-    ConvLSTM models for tropical cyclone intensity estimation and next-frame trajectory forecasting using 1.5+ TB
+    ConvLSTM models for tropical cyclone intensity estimation and next-frame forecasting using 1.5+ TB
     INSAT-3D HDF5 satellite data (2013–2023, 30-minute resolution) over Indian Ocean storms. Engineered
     end-to-end preprocessing and labeling pipelines using IMD track data and Advanced Dvorak Technique (ADT)
     software, curating 5K raw annotations expanded to ~10K via class-balanced augmentation. Delivered operational
     spatio-temporal storm-evolution models demonstrating direct transfer of academic DL techniques to satellite
     analysis at ISRO. The real-time object tracking, sequential inference, and low-latency model architecture are
     relevant to satellite monitoring startups and space-tech applications requiring on-orbit or ground-segment ML.
+  gallery:
+    - src: "/assets/images/projects/full.png"
+      caption: "INSAT-3D full view"
+    - src: "/assets/images/projects/cropped.png"
+      caption: "INSAT-3D cropped cyclone region"
+    - src: "/assets/images/projects/bt_bands.png"
+      caption: "INSAT-3D brightness temperature bands (MIR, TIR1, TIR2, WV) used as model inputs"
+    - src: "/assets/images/projects/cyclone.png"
+      caption: "Predicted vs actual cyclone next frame(ConvLSTM model output)"
   tech_tags:
     - PyTorch
     - ConvLSTM
@@ -63,8 +81,8 @@
   title: "Thoracic Disease Detection"
   tag: "Medical AI"
   tag_color: "violet"
-  image: "/assets/images/xray.png"
-  image_placeholder: "🫁"
+  # image: "/assets/images/xray.png"
+  # image_placeholder: "🫁"
   institution: "Personal Research Project"
   badges: []
   short_desc: "Production object-detection pipeline on VinDr-PCXR (9,125 studies, 36 findings) with YOLO architectures and DICOM parsing."
@@ -77,6 +95,15 @@
     production ML engineering skills — custom data pipelines, imbalanced classification, structured inference output
     - applicable to anomaly detection in finance (fraud signals, outlier trades) and structured data QA in
     space-tech (telemetry anomaly detection).
+  gallery:
+    - src: "/assets/images/projects/xray.png"
+      caption: "Original, GRAD-CAM, and overlay for a sample chest X-ray - Sample finding: Broncholitis"
+    - src: "/assets/images/projects/xray2.png"
+      caption: "Original, GRAD-CAM, and overlay for a sample chest X-ray - Sample finding: Medistinal tumor"
+    - src: "/assets/images/projects/xray3.png"
+      caption: "Original, GRAD-CAM, and overlay for a sample chest X-ray - Sample finding: Situs inversus"
+    # - src: "/assets/images/projects/placeholder-6.jpg"
+    #   caption: "Class distribution and augmentation strategy"
   tech_tags:
     - Python
     - YOLOv8 / v10
