@@ -112,20 +112,67 @@
     - Focal Loss
     - Medical Imaging
 
+- id: climate-risk-quant
+  title: "Climate Risk Quantification"
+  tag: "Climate × Finance"
+  tag_color: "sage"
+  institution: "Personal Project · Live on HuggingFace Spaces"
+  github: "https://github.com/deena-lad/climate-risk-quant"
+  demo: "https://huggingface.co/spaces/deena-lad/climate-risk-quant"
+  badges:
+    - label: "Live Demo"
+      style: "live"
+    - label: "Finance × Climate"
+      style: "sage"
+  short_desc: "TCFD-aligned pipeline mapping ERA5 physical hazards (flood, heat, cyclone) to asset-level financial exposure — Monte Carlo Climate VaR, Streamlit dashboard, Docker + HF Spaces deployment."
+  long_desc: >
+    End-to-end climate risk quantification system built to the same standard as MSCI ESG and ECB stress-test frameworks.
+    Ingests 30+ years of ERA5 reanalysis data (global, 0.25° resolution), maps three physical hazards to the exact
+    coordinates of financial assets using KD-tree spatial snapping, and produces normalised sector-weighted risk scores (0–100).
+    Computes Monte Carlo Climate VaR (10,000 paths) and Expected Shortfall: portfolio haircut 14.8%, 95% VaR ~$292M, CVaR ~$363M.
+    Anomaly detection via IsolationForest flags ~12% compound-risk assets and ~6% critical-tier assets requiring immediate ESG review.
+    MLflow experiment tracking, full pytest suite (70+ tests), GitHub Actions CI/CD, Docker multi-stage build, and live deployment
+    on HuggingFace Spaces. Directly demonstrates TCFD, ECB climate stress test, and MSCI ESG methodology alignment —
+    the exact skills sought by climate risk desks at asset managers, insurance firms, and quant funds.
+  gallery:
+    # - src: "/assets/images/projects/climate-risk.svg"
+    #   caption: "Risk score spectrum, asset map, Monte Carlo VaR distribution, and pipeline overview"
+    - src: "/assets/images/projects/climate-risk-arch.svg"
+      caption: "Full system architecture — ingestion → preprocessing → model → dashboard → Docker/HF deploy"
+    # - src: "/assets/images/projects/placeholder-crq-1.jpg"
+    #   caption: "Streamlit dashboard — Risk Map tab with asset heatmap overlay"
+    # - src: "/assets/images/projects/placeholder-crq-2.jpg"
+    #   caption: "Score Analysis tab — sector breakdown, Gini coefficient, PCA diagnostics"
+  tech_tags:
+    - Python 3.11
+    - ERA5 / cdsapi
+    - xarray / NetCDF
+    - GeoPandas / rioxarray
+    - scikit-learn
+    - MLflow
+    - Monte Carlo VaR
+    - Streamlit
+    - Docker
+    - HuggingFace Spaces
+    - TCFD / ESG
+    - GitHub Actions
+ 
 - id: rag-weather
   title: "RAG Weather Assistant"
   tag: "LLM / RAG"
   tag_color: "orange"
-  image: "/assets/images/rag.svg"
-  image_placeholder: "🤖"
   institution: ""
   badges: []
   short_desc: "LLM-powered retrieval-augmented assistant for querying atmospheric datasets and research papers."
   long_desc: ""
   coming_soon: true
+  gallery:
+    - src: "/assets/images/projects/rag.svg"
+      caption: "RAG pipeline architecture — Vector Store → Retriever → LLM → Response"
   tech_tags:
     - LangChain
     - RAG
     - Vector DB
     - LLM
     - Python
+ 

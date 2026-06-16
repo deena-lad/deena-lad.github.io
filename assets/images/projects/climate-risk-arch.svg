@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+  <defs>
+    <linearGradient id="bgarch" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080f14"/>
+      <stop offset="100%" stop-color="#0d1a10"/>
+    </linearGradient>
+    <filter id="ag"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="420" fill="url(#bgarch)"/>
+
+  <text x="400" y="28" text-anchor="middle" font-family="DM Serif Display,serif" font-size="14" fill="#5d8a78" letter-spacing=".05em">CLIMATE RISK QUANTIFICATION — SYSTEM ARCHITECTURE</text>
+
+  <!-- LAYER 1: Data Sources -->
+  <g transform="translate(20,50)">
+    <text font-family="JetBrains Mono,monospace" font-size="8" fill="#64748b" y="10">DATA SOURCES</text>
+    <rect y="16" width="100" height="36" rx="6" fill="#0a1f1a" stroke="#5d8a78" stroke-width="1" filter="url(#ag)"/>
+    <text x="50" y="30" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#5d8a78">ERA5 / CDS API</text>
+    <text x="50" y="42" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#3a5f52">30yr · 0.25°</text>
+
+    <rect x="112" y="16" width="100" height="36" rx="6" fill="#0f1a28" stroke="#0d9488" stroke-width="1" filter="url(#ag)"/>
+    <text x="162" y="30" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#2dd4bf">Company CSV</text>
+    <text x="162" y="42" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#0d9488">lat / lon / sector</text>
+  </g>
+
+  <!-- Down arrows -->
+  <g stroke="#334155" stroke-width="1" fill="#334155">
+    <line x1="70"  y1="103" x2="70"  y2="118"/>
+    <line x1="132" y1="103" x2="132" y2="118"/>
+    <line x1="182" y1="103" x2="182" y2="118"/>
+    <polygon points="67,118 73,118 70,124"/>
+    <polygon points="129,118 135,118 132,124"/>
+    <polygon points="179,118 185,118 182,124"/>
+  </g>
+
+  <!-- LAYER 2: Ingestion -->
+  <g transform="translate(20,124)">
+    <rect width="272" height="40" rx="6" fill="#0a1f1a" stroke="#5d8a78" stroke-width="1"/>
+    <text x="136" y="16" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5d8a78" font-weight="600">INGESTION  (src/pipeline/ingest.py)</text>
+    <text x="136" y="30" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#64748b">cdsapi download · xarray lazy load · pydantic validation</text>
+  </g>
+
+  <!-- Arrow down -->
+  <line x1="156" y1="165" x2="156" y2="178" stroke="#5d8a78" stroke-width="1" stroke-dasharray="3,2"/>
+  <polygon points="153,178 159,178 156,184" fill="#5d8a78"/>
+
+  <!-- LAYER 3: Preprocessing -->
+  <g transform="translate(20,184)">
+    <rect width="272" height="40" rx="6" fill="#0a1f1a" stroke="#0d9488" stroke-width="1"/>
+    <text x="136" y="16" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#2dd4bf" font-weight="600">PREPROCESSING  (src/pipeline/preprocess.py)</text>
+    <text x="136" y="30" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#64748b">Clip → monthly max → annual max → 30yr μ/σ/p95 → z-score</text>
+  </g>
+
+  <line x1="156" y1="225" x2="156" y2="238" stroke="#0d9488" stroke-width="1" stroke-dasharray="3,2"/>
+  <polygon points="153,238 159,238 156,244" fill="#0d9488"/>
+
+  <!-- LAYER 4: Features -->
+  <g transform="translate(20,244)">
+    <rect width="272" height="40" rx="6" fill="#0a1f1a" stroke="#d97706" stroke-width="1"/>
+    <text x="136" y="16" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#fbbf24" font-weight="600">FEATURE ENGINEERING  (src/pipeline/features.py)</text>
+    <text x="136" y="30" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#64748b">KD-tree spatial snap · GeoPandas join · compound flag</text>
+  </g>
+
+  <line x1="156" y1="285" x2="156" y2="298" stroke="#d97706" stroke-width="1" stroke-dasharray="3,2"/>
+  <polygon points="153,298 159,298 156,304" fill="#d97706"/>
+
+  <!-- LAYER 5: Model -->
+  <g transform="translate(20,304)">
+    <rect width="272" height="52" rx="6" fill="#0a1f1a" stroke="#e11d48" stroke-width="1"/>
+    <text x="136" y="16" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#f87171" font-weight="600">MODEL  (src/model/)</text>
+    <text x="136" y="29" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#64748b">HazardScorer · CompositeRiskModel · AnomalyDetector</text>
+    <text x="136" y="41" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#64748b">Valuation · Monte Carlo VaR · MLflow tracking</text>
+  </g>
+
+  <!-- Arrow to Dashboard -->
+  <line x1="292" y1="330" x2="310" y2="330" stroke="#7c3aed" stroke-width="1.2"/>
+  <polygon points="310,326 310,334 320,330" fill="#7c3aed"/>
+
+  <!-- LAYER 6: Dashboard -->
+  <g transform="translate(320,304)">
+    <rect width="150" height="52" rx="6" fill="#1a0d2e" stroke="#7c3aed" stroke-width="1" filter="url(#ag)"/>
+    <text x="75" y="16" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#c4b5fd" font-weight="600">DASHBOARD</text>
+    <text x="75" y="29" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#64748b">app/streamlit_app.py</text>
+    <text x="75" y="41" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#7c3aed">5 tabs · 10+ controls</text>
+  </g>
+
+  <!-- Arrow to Deploy -->
+  <line x1="470" y1="330" x2="488" y2="330" stroke="#4f46e5" stroke-width="1.2"/>
+  <polygon points="488,326 488,334 498,330" fill="#4f46e5"/>
+
+  <!-- Deploy -->
+  <g transform="translate(498,304)">
+    <rect width="130" height="52" rx="6" fill="#0f0c2a" stroke="#4f46e5" stroke-width="1" filter="url(#ag)"/>
+    <text x="65" y="16" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#a5b4fc" font-weight="600">DEPLOY</text>
+    <text x="65" y="29" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#64748b">Docker multi-stage</text>
+    <text x="65" y="41" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" fill="#6366f1">HF Spaces · CI/CD</text>
+  </g>
+
+  <!-- Right panel: Model internals -->
+  <g transform="translate(320,44)">
+    <text font-family="JetBrains Mono,monospace" font-size="8" fill="#64748b" y="10">MODEL COMPONENTS</text>
+
+    <!-- Scorer -->
+    <rect y="16" width="152" height="30" rx="5" fill="#0f1a10" stroke="#5d8a78" stroke-width=".8"/>
+    <text x="76" y="28" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#5d8a78">HazardScorer</text>
+    <text x="76" y="39" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#3a5f52">RobustScaler → percentile 0–100</text>
+
+    <rect y="54" width="152" height="30" rx="5" fill="#0a1a10" stroke="#0d9488" stroke-width=".8"/>
+    <text x="76" y="66" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#2dd4bf">CompositeRiskModel</text>
+    <text x="76" y="77" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#0d9488">sector-weighted avg + PCA diag</text>
+
+    <rect y="92" width="152" height="30" rx="5" fill="#1a0a10" stroke="#e11d48" stroke-width=".8"/>
+    <text x="76" y="104" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#f87171">AnomalyDetector</text>
+    <text x="76" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#e11d48">IsolationForest tail-risk flags</text>
+
+    <rect y="130" width="152" height="30" rx="5" fill="#1a1000" stroke="#d97706" stroke-width=".8"/>
+    <text x="76" y="142" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#fbbf24">Valuation</text>
+    <text x="76" y="153" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#d97706">linear/convex haircut + MC VaR</text>
+
+    <rect y="168" width="152" height="30" rx="5" fill="#0f0c2a" stroke="#7c3aed" stroke-width=".8"/>
+    <text x="76" y="180" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#c4b5fd">Evaluate</text>
+    <text x="76" y="191" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#7c3aed">Gini · KS test · weight sensitivity</text>
+
+    <rect y="206" width="152" height="30" rx="5" fill="#0f0c2a" stroke="#4f46e5" stroke-width=".8"/>
+    <text x="76" y="218" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#a5b4fc">MLflow</text>
+    <text x="76" y="229" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#6366f1">params · metrics · artifacts</text>
+  </g>
+
+  <!-- Right panel 2: Standards references -->
+  <g transform="translate(490,44)">
+    <text font-family="JetBrains Mono,monospace" font-size="8" fill="#64748b" y="10">REGULATORY ALIGNMENT</text>
+    <g font-family="JetBrains Mono,monospace" font-size="8">
+      <rect y="16" width="136" height="22" rx="4" fill="#0a1500" stroke="#5d8a78" stroke-width=".7"/>
+      <text x="68" y="30" text-anchor="middle" fill="#5d8a78">TCFD Framework</text>
+
+      <rect y="44" width="136" height="22" rx="4" fill="#0a1000" stroke="#0d9488" stroke-width=".7"/>
+      <text x="68" y="58" text-anchor="middle" fill="#2dd4bf">ECB Stress Test 2022</text>
+
+      <rect y="72" width="136" height="22" rx="4" fill="#1a1000" stroke="#d97706" stroke-width=".7"/>
+      <text x="68" y="86" text-anchor="middle" fill="#fbbf24">MSCI ESG Framework</text>
+
+      <rect y="100" width="136" height="22" rx="4" fill="#0f0c2a" stroke="#7c3aed" stroke-width=".7"/>
+      <text x="68" y="114" text-anchor="middle" fill="#c4b5fd">IPCC AR6 · CMIP6</text>
+    </g>
+
+    <!-- Hazards covered -->
+    <text font-family="JetBrains Mono,monospace" font-size="8" fill="#64748b" y="144">PHYSICAL HAZARDS</text>
+    <g font-family="JetBrains Mono,monospace" font-size="8.5" fill="#64748b">
+      <rect y="152" width="136" height="22" rx="4" fill="#0a1f1a" stroke="#5d8a78" stroke-width=".7"/>
+      <text x="10" y="166" fill="#5d8a78">🌊  Flood (MSWEP + ERA5)</text>
+      <rect y="180" width="136" height="22" rx="4" fill="#1a1000" stroke="#d97706" stroke-width=".7"/>
+      <text x="10" y="194" fill="#fbbf24">🌡  Extreme Heat (T2M p99)</text>
+      <rect y="208" width="136" height="22" rx="4" fill="#0a1a28" stroke="#4f46e5" stroke-width=".7"/>
+      <text x="10" y="222" fill="#a5b4fc">🌀  Cyclone (IBTRACS track)</text>
+    </g>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="395" width="800" height="25" fill="#060d0a" opacity=".9"/>
+  <text x="400" y="411" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#334155">
+    200-asset synthetic portfolio · seed=42 · Portfolio haircut 14.8% · 95% Climate VaR $292M · CVaR $363M · Gini 0.21–0.35 · PCA PC1 ~47%
+  </text>
+</svg>

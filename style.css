@@ -16,7 +16,7 @@
   --accent-border:      #c7d2fe;
 
   /* Secondary = Violet */
-  --violet:             #7c3aed;
+  --violet:             #74ba90;
   --violet-light:       #f5f3ff;
   --violet-border:      #ddd6fe;
 
@@ -836,3 +836,53 @@ img { max-width: 100%; display: block; }
 
 /* ── Footer link hover ── */
 .footer-links a:nth-child(3):hover { color: var(--sage); }
+
+/* ════════════════════════════════════════════════════════════
+   CLIMATE RISK QUANT additions
+════════════════════════════════════════════════════════════ */
+
+/* Sage project tag (used by Climate Risk card) */
+.tag--sage {
+  background: var(--sage-light);
+  color: var(--sage-hover);
+  border: 1px solid var(--sage-border);
+}
+
+/* Live demo badge */
+.badge--live {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+.card-context-badge.badge--live { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+
+/* Modal link buttons (GitHub / Demo) */
+.modal-links {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.modal-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: .8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--t);
+}
+.modal-link-btn--github {
+  background: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+}
+.modal-link-btn--github:hover { background: #1e293b; color: #f1f5f9; }
+.modal-link-btn--demo {
+  background: var(--sage-light);
+  color: var(--sage-hover);
+  border: 1.5px solid var(--sage-border);
+}
+.modal-link-btn--demo:hover { background: var(--sage); color: #fff; border-color: var(--sage); }
