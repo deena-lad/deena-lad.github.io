@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Projects"
-description: "ML research projects spanning finance AI, satellite remote sensing, and medical imaging on multi-terabyte datasets."
+description: "ML research projects spanning atmospheric AI, satellite remote sensing, and medical imaging — production-grade pipelines on multi-terabyte datasets."
 ---
 
 <section class="projects-section">
@@ -63,29 +63,24 @@ description: "ML research projects spanning finance AI, satellite remote sensing
 <div id="projectModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
   <div class="modal-container modal-wide">
 
-    <button class="modal-close" id="modalClose" aria-label="Close modal">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-
     <!-- Image gallery -->
     <div class="modal-gallery" id="modalGallery">
-      <div class="gallery-main" id="galleryMain">
-        <!-- main image injected by JS -->
-      </div>
+      <div class="gallery-main" id="galleryMain"></div>
       <div class="gallery-caption" id="galleryCaption"></div>
-      <div class="gallery-thumbs" id="galleryThumbs">
-        <!-- thumbnails injected by JS -->
-      </div>
-      <!-- Nav arrows -->
+      <div class="gallery-thumbs" id="galleryThumbs"></div>
       <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" aria-label="Previous image">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
       <button class="gallery-arrow gallery-arrow--next" id="galleryNext" aria-label="Next image">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
     </div>
 
     <div class="modal-content">
+      <!-- Close button lives inside content so position:absolute works -->
+      <button class="modal-close" id="modalClose" aria-label="Close modal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
       <div class="modal-context" id="modalContext"></div>
       <span class="modal-tag" id="modalTag"></span>
       <h2 class="modal-title" id="modalTitle"></h2>
