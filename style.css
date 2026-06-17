@@ -1,41 +1,47 @@
 /* ════════════════════════════════════════════════════════════
-   DESIGN TOKENS  —  Deena Lad Portfolio  (v4 — funk pass)
-   Coral-red primary · Cobalt secondary · warm paper base
+   DESIGN TOKENS  —  Deena Lad Portfolio  (v5 — atmospheric duotone)
+   Inspired by satellite IR-channel overlays: deep atmospheric navy
+   + thermal/radar orange. Two colors carry the identity; everything
+   else stays quiet.
 ════════════════════════════════════════════════════════════ */
 :root {
-  --color-bg:           #fdfbf6;
+  --color-bg:           #faf8f4;
   --color-surface:      #ffffff;
-  --color-border:       #e8e2d8;
-  --color-text:         #1c1410;
-  --color-text-muted:   #6b6258;
+  --color-border:       #e3dfd6;
+  --color-text:         #14181f;
+  --color-text-muted:   #5c6270;
 
-  /* Primary = Coral-red */
-  --accent:             #e8472b;
-  --accent-hover:       #c23a22;
-  --accent-light:       #fdeae5;
-  --accent-border:      #f6c4b6;
+  /* Ink = deep atmospheric navy (dominant, used for dark sections/text-on-light) */
+  --ink:                #0b1e3d;
+  --ink-hover:           #142b52;
+  --ink-light:           #e8edf5;
+  --ink-border:          #c3d0e6;
 
-  /* Secondary = Cobalt */
-  --violet:             #2451e8;
-  --violet-light:       #e7edfd;
-  --violet-border:      #b9c9f8;
+  /* Accent = thermal/radar orange (the ONE bright color — used sparingly, with intent) */
+  --accent:             #ff6a00;
+  --accent-hover:       #e35e00;
+  --accent-light:       #fff0e3;
+  --accent-border:      #ffcfa3;
 
-  /* Tertiary = Teal (punched up) */
-  --teal:               #00897b;
-  --teal-light:         #e1f5f1;
-  --teal-border:        #9fd9ce;
+  /* Legacy variable aliases so existing component rules referencing
+     --violet / --teal / --amber still resolve to something sane —
+     all now route into the navy/orange duotone instead of a 3rd hue. */
+  --violet:             var(--ink);
+  --violet-light:       var(--ink-light);
+  --violet-border:      var(--ink-border);
+  --teal:               var(--ink);
+  --teal-light:         var(--ink-light);
+  --teal-border:        var(--ink-border);
+  --amber:              var(--accent);
+  --amber-hover:        var(--accent-hover);
+  --amber-light:        var(--accent-light);
+  --amber-border:       var(--accent-border);
 
-  /* Amber for highlights (punched up) */
-  --amber:              #c9820a;
-  --amber-hover:        #8a5c06;
-  --amber-light:        #fdf1dc;
-  --amber-border:       #f0cf8f;
-
-  /* Tags */
-  --tag-blue:   #dbeafe; --tag-blue-t:   #1d4ed8;
-  --tag-teal:   #ccfbf1; --tag-teal-t:   #0f766e;
-  --tag-violet: #ede9fe; --tag-violet-t: #6d28d9;
-  --tag-orange: #ffedd5; --tag-orange-t: #c2410c;
+  /* Tags — all routed through the duotone, no 3rd/4th hue */
+  --tag-blue:   var(--ink-light);    --tag-blue-t:   var(--ink);
+  --tag-teal:   var(--ink-light);    --tag-teal-t:   var(--ink);
+  --tag-violet: var(--ink-light);    --tag-violet-t: var(--ink);
+  --tag-orange: var(--accent-light); --tag-orange-t: var(--accent-hover);
 
   --font-sans:    "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono:    "JetBrains Mono", "Fira Code", ui-monospace, monospace;
@@ -44,14 +50,20 @@
   --nav-h:     64px;
   --max-w:     1180px;
   --max-w-post:720px;
-  --radius:    10px;
-  --radius-lg: 16px;
-  --shadow-sm: 0 1px 3px rgba(28,20,16,.08), 0 1px 2px rgba(0,0,0,.04);
-  --shadow:    0 6px 24px rgba(232,71,43,.14), 0 1px 4px rgba(0,0,0,.05);
-  --shadow-lg: 0 24px 64px rgba(232,71,43,.20), 0 4px 16px rgba(0,0,0,.07);
+  --radius:    8px;
+  --radius-lg: 4px;
+  --shadow-sm: 0 1px 3px rgba(11,30,61,.08), 0 1px 2px rgba(0,0,0,.04);
+  --shadow:    0 6px 24px rgba(11,30,61,.12), 0 1px 4px rgba(0,0,0,.05);
+  --shadow-lg: 0 24px 64px rgba(11,30,61,.18), 0 4px 16px rgba(0,0,0,.07);
   --ease:      cubic-bezier(.22,.68,0,1.2);
   --t:         .22s;
 }
+
+/* Backward-compat: every existing rule below still says var(--accent)
+   for what used to be coral — that now correctly resolves to thermal
+   orange. Rules that said var(--violet)/var(--teal) for a "second
+   color" now resolve to navy, so the file-wide duotone holds without
+   needing to touch every single selector. */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -109,7 +121,7 @@ img { max-width: 100%; display: block; }
 }
 .nav-resume-btn:hover {
   background: var(--accent); color: #fff;
-  border-color: var(--accent); box-shadow: 0 2px 10px rgba(232,71,43,.25);
+  border-color: var(--accent); box-shadow: 0 2px 10px rgba(255,106,0,.25);
 }
 
 .nav-toggle {
@@ -124,122 +136,154 @@ img { max-width: 100%; display: block; }
 .site-main { min-height: calc(100vh - var(--nav-h) - 80px); }
 
 /* ════ HERO ════ */
-.hero { max-width: var(--max-w); margin: 0 auto; padding: 72px 24px 56px; }
-.hero-inner { display: grid; grid-template-columns: 156px 1fr; gap: 48px; align-items: flex-start; }
+.hero { max-width: var(--max-w); margin: 0 auto; padding: 88px 24px 64px; position: relative; }
+.hero-inner { display: grid; grid-template-columns: 1fr 200px; gap: 56px; align-items: start; }
 
-.hero-avatar { display: flex; justify-content: center; }
+/* Avatar moves to the right, smaller role — supporting element, not
+   competing with the name for attention. Square + hard edge instead
+   of soft circle/blob: reads like a data-readout panel, not a profile pic. */
+.hero-avatar { display: flex; justify-content: flex-end; order: 2; }
 .avatar-ring {
-  width: 136px; height: 136px; border-radius: 28% 72% 65% 35% / 35% 30% 70% 65%; padding: 3px;
-  background: linear-gradient(135deg, var(--accent), var(--violet));
-  box-shadow: 0 8px 32px rgba(232,71,43,.28);
+  width: 124px; height: 124px; border-radius: var(--radius-lg); padding: 3px;
+  background: linear-gradient(160deg, var(--ink), var(--accent));
+  box-shadow: 0 8px 32px rgba(11,30,61,.24);
 }
-.avatar-img { width: 100%; height: 100%; border-radius: 28% 72% 65% 35% / 35% 30% 70% 65%; object-fit: cover; border: 3px solid #fff; }
+.avatar-img { width: 100%; height: 100%; border-radius: 2px; object-fit: cover; border: 3px solid var(--color-bg); }
 .avatar-fallback {
-  width: 100%; height: 100%; border-radius: 28% 72% 65% 35% / 35% 30% 70% 65%; background: var(--accent-light);
-  border: 3px solid #fff; display: none; align-items: center; justify-content: center;
+  width: 100%; height: 100%; border-radius: 2px; background: var(--ink);
+  border: 3px solid var(--color-bg); display: none; align-items: center; justify-content: center;
   font-family: var(--font-display); font-size: 2rem; color: var(--accent);
 }
 
-.hero-eyebrow { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); margin-bottom: 10px; position: relative; padding-left: 18px; }
-.hero-eyebrow::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 10px; background: var(--accent); transform: translateY(-50%) rotate(45deg); border-radius: 2px; }
-.hero-name { font-family: var(--font-display); font-size: clamp(2.6rem,7vw,4.6rem); line-height: 1.02; letter-spacing: -.025em; margin-bottom: 10px; }
-.hero-tagline { font-size: 1.08rem; color: var(--color-text-muted); margin-bottom: 18px; max-width: 520px; }
-
-.hero-domains { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
-.domain-chip {
-  display: inline-flex; align-items: center; padding: 4px 12px;
-  border-radius: 4px; background: var(--accent); border: none;
-  font-size: .74rem; font-weight: 800; color: #fff; letter-spacing: .03em;
+.hero-text { order: 1; }
+.hero-eyebrow {
+  font-family: var(--font-mono); font-size: .76rem; font-weight: 500; text-transform: uppercase;
+  letter-spacing: .12em; color: var(--accent); margin-bottom: 14px; position: relative; padding-left: 16px;
 }
-.domain-chip:nth-child(even) { background: var(--violet); }
+.hero-eyebrow::before { content: ''; position: absolute; left: 0; top: 50%; width: 8px; height: 8px; background: var(--accent); transform: translateY(-50%); border-radius: 50%; box-shadow: 0 0 0 3px var(--accent-light); }
+.hero-name { font-family: var(--font-display); font-size: clamp(2.8rem,7vw,4.8rem); line-height: .98; letter-spacing: -.025em; margin-bottom: 14px; color: var(--ink); }
+.hero-tagline { font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 20px; max-width: 560px; }
 
-.hero-bio { font-size: .95rem; color: var(--color-text-muted); line-height: 1.78; max-width: 600px; margin-bottom: 26px; }
-.hero-bio strong { color: var(--color-text); font-weight: 600; }
+.hero-domains { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 24px; border: 1px solid var(--ink-border); border-radius: var(--radius); overflow: hidden; width: fit-content; }
+.domain-chip {
+  display: inline-flex; align-items: center; padding: 7px 14px;
+  border-radius: 0; background: var(--color-surface); border-right: 1px solid var(--ink-border);
+  font-family: var(--font-mono); font-size: .72rem; font-weight: 500; color: var(--ink); letter-spacing: .02em;
+}
+.domain-chip:last-child { border-right: none; }
+.domain-chip:nth-child(odd) { background: var(--ink-light); }
 
-.hero-links { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
+.hero-bio { font-size: .96rem; color: var(--color-text-muted); line-height: 1.8; max-width: 600px; margin-bottom: 28px; }
+.hero-bio strong { color: var(--ink); font-weight: 600; }
+
+.hero-links { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .hero-btn {
   display: inline-flex; align-items: center; gap: 7px;
-  padding: 9px 18px; border-radius: 8px; font-size: .86rem; font-weight: 600;
+  padding: 10px 20px; border-radius: 4px; font-size: .86rem; font-weight: 600;
   text-decoration: none; transition: all var(--t) var(--ease); cursor: pointer; border: none;
   font-family: var(--font-sans);
 }
-.hero-btn--primary { background: var(--accent); color: #fff; border: 2px solid var(--color-text); box-shadow: 4px 4px 0 var(--color-text); transition: transform .15s var(--ease), box-shadow .15s var(--ease); }
-.hero-btn--primary:hover { background: var(--accent); transform: translate(-2px,-2px); color: #fff; box-shadow: 6px 6px 0 var(--color-text); }
-.hero-btn--outline { background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
-.hero-btn--outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); box-shadow: var(--shadow); }
-.hero-btn--resume { background: var(--accent-light); color: var(--accent); border: 1.5px solid var(--accent-border); }
-.hero-btn--resume:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(232,71,43,.3); }
+.hero-btn--primary { background: var(--accent); color: #fff; border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); transition: transform .15s var(--ease), box-shadow .15s var(--ease); }
+.hero-btn--primary:hover { background: var(--accent); transform: translate(-2px,-2px); color: #fff; box-shadow: 6px 6px 0 var(--ink); }
+.hero-btn--outline { background: var(--color-surface); color: var(--ink); border: 1.5px solid var(--ink-border); }
+.hero-btn--outline:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-1px); box-shadow: var(--shadow); }
+.hero-btn--resume { background: var(--ink); color: #fff; border: 1.5px solid var(--ink); }
+.hero-btn--resume:hover { background: var(--ink-hover); color: #fff; border-color: var(--ink-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(11,30,61,.3); }
 
-/* ════ HOME PAGE LAYOUT (scrollspy sidebar) ════ */
-.home-body { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: flex-start; }
-
-/* Sticky section nav sidebar */
-.home-sidebar { position: sticky; top: calc(var(--nav-h) + 8px); max-height: calc(100vh - var(--nav-h) - 24px); }
-.home-sidebar-inner { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 18px 16px; box-shadow: var(--shadow-sm); }
-.sidebar-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--color-text-muted); margin-bottom: 14px; }
-.sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 2px; }
-.sidebar-nav li a {
-  display: flex; align-items: center; gap: 8px;
-  padding: 7px 10px; border-radius: 7px; font-size: .82rem; font-weight: 500;
-  color: var(--color-text-muted); text-decoration: none; border-left: 2px solid transparent;
-  transition: color var(--t), background var(--t), border-color var(--t);
+/* ── Scan-line signature: a thin sweep evoking a radar pass / satellite
+   scanline, placed at the foot of the hero as the page's one recurring
+   motif. Reused at section boundaries instead of plain border-bottoms. ── */
+.scan-line { position: relative; height: 2px; margin: 0 auto; max-width: var(--max-w); background: var(--color-border); overflow: hidden; }
+.scan-line::after {
+  content: ''; position: absolute; top: 0; left: -20%; width: 20%; height: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: scan-sweep 5s ease-in-out infinite;
 }
-.sidebar-nav li a:hover { color: var(--accent); background: var(--accent-light); }
-.sidebar-nav li a.active { color: var(--accent); background: var(--accent-light); border-left-color: var(--accent); font-weight: 600; }
-.sidebar-nav li a .snav-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+@keyframes scan-sweep { 0% { left: -20%; } 50% { left: 100%; } 100% { left: -20%; } }
+@media (prefers-reduced-motion: reduce) { .scan-line::after { animation: none; left: 0; width: 100%; opacity: .3; } }
+
+/* ════ HOME PAGE LAYOUT — de-templated ════
+   Removed the sticky scrollspy-sidebar-plus-card-grid pattern (the
+   single most "SaaS portfolio template" signature). Replaced with a
+   single full-width column; section identity now comes from a navy
+   label strip + scan-line divider rather than a persistent sidebar. */
+.home-body { max-width: var(--max-w-post); margin: 0 auto; padding: 0 24px 80px; }
+
+/* Sticky sidebar nav retired — kept as a hidden no-op in case markup
+   still references it, so nothing breaks, but it no longer renders
+   as a visible structural device. */
+.home-sidebar { display: none; }
 
 /* ════ HOME SECTIONS ════ */
 .home-content { min-width: 0; }
-.home-section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
-.home-section:last-child { border-bottom: none; }
-.home-section-title {
-  font-family: var(--font-display); font-size: 1.9rem; letter-spacing: -.02em;
-  margin-bottom: 28px; display: flex; align-items: center; gap: 12px;
+.home-section { padding: 56px 0; position: relative; }
+.home-section:not(:last-child)::after {
+  content: ''; display: block; position: relative; height: 2px; margin-top: 56px;
+  background: var(--color-border); overflow: hidden;
 }
-.home-section-title::after { content: ''; flex: 1; height: 1px; background: var(--color-border); }
+.home-section-title {
+  font-family: var(--font-mono); font-size: .82rem; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; margin-bottom: 32px; display: inline-flex; align-items: center; gap: 10px;
+  color: #fff; background: var(--ink); padding: 8px 16px; border-radius: 4px;
+}
+.home-section-title::after { content: none; }
 
-/* ── Experience timeline ── */
-.exp-list { display: flex; flex-direction: column; gap: 28px; }
-.exp-item { display: grid; grid-template-columns: 48px 1fr; gap: 0 18px; }
-.exp-line { display: flex; flex-direction: column; align-items: center; }
-.exp-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 2px solid var(--color-surface); box-shadow: 0 0 0 3px var(--accent-border); flex-shrink: 0; margin-top: 4px; }
-.exp-dot--violet { background: var(--violet); box-shadow: 0 0 0 3px var(--violet-border); }
-.exp-dot--teal   { background: var(--teal);   box-shadow: 0 0 0 3px var(--teal-border); }
-.exp-connector { width: 2px; flex: 1; background: var(--color-border); margin: 6px 0; }
-.exp-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow-sm); margin-bottom: 0; }
-.exp-card:hover { box-shadow: var(--shadow); border-color: var(--accent-border); }
+/* ── Experience: data-readout strip, not dot-and-connector timeline ──
+   The dot/line/card timeline is one of the most generic template
+   signatures. Replaced with a fixed-width mono date column (reads
+   like a log entry / telemetry readout) and a solid navy left rule
+   instead of circles + connecting lines. */
+.exp-list { display: flex; flex-direction: column; gap: 0; }
+.exp-item { display: grid; grid-template-columns: 92px 1fr; gap: 0 24px; border-top: 1px solid var(--color-border); padding: 24px 0; }
+.exp-item:first-child { border-top: none; padding-top: 0; }
+.exp-line { display: none; }
+.exp-dot, .exp-dot--violet, .exp-dot--teal { display: none; }
+.exp-connector { display: none; }
+.exp-card {
+  background: transparent; border: none; border-left: 3px solid var(--accent);
+  border-radius: 0; padding: 4px 0 4px 20px; box-shadow: none; margin-bottom: 0;
+}
+.exp-card:hover { border-left-color: var(--ink); box-shadow: none; }
 .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
-.exp-role { font-size: 1rem; font-weight: 700; color: var(--color-text); }
-.exp-date { font-size: .75rem; font-weight: 600; color: var(--color-text-muted); white-space: nowrap; background: var(--color-bg); border: 1px solid var(--color-border); padding: 3px 9px; border-radius: 999px; }
+.exp-role { font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+.exp-date {
+  font-family: var(--font-mono); font-size: .76rem; font-weight: 500; color: var(--color-text-muted);
+  white-space: pre-line; background: none; border: none; padding: 0; border-radius: 0; line-height: 1.5;
+}
 .exp-org  { font-size: .88rem; font-weight: 600; color: var(--accent); margin-bottom: 12px; }
 .exp-org a { color: var(--accent); text-decoration: none; }
 .exp-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; }
 .exp-bullets li { font-size: .86rem; color: var(--color-text-muted); line-height: 1.65; padding-left: 18px; position: relative; }
-.exp-bullets li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); font-size: .8rem; }
-.exp-badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: .7rem; font-weight: 700; letter-spacing: .04em; margin-top: 10px; }
-.exp-badge--ongoing { background: var(--amber-light); color: var(--amber-hover); border: 1px solid var(--amber-border); }
-.exp-badge--thesis  { background: var(--violet-light); color: var(--violet); border: 1px solid var(--violet-border); }
+.exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: .8rem; font-family: var(--font-mono); }
+.exp-badge { display: inline-block; padding: 2px 9px; border-radius: 3px; font-size: .7rem; font-weight: 700; letter-spacing: .04em; margin-top: 10px; font-family: var(--font-mono); }
+.exp-badge--ongoing { background: var(--accent-light); color: var(--accent-hover); border: 1px solid var(--accent-border); }
+.exp-badge--thesis  { background: var(--ink-light); color: var(--ink); border: 1px solid var(--ink-border); }
 
-/* ── Education ── */
-.edu-list { display: flex; flex-direction: column; gap: 16px; }
-.edu-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow-sm); display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; align-items: start; }
-.edu-card:hover { box-shadow: var(--shadow); border-color: var(--accent-border); }
-.edu-degree { font-size: .98rem; font-weight: 700; color: var(--color-text); margin-bottom: 3px; }
+/* ── Education: matches the readout-strip language used above ── */
+.edu-list { display: flex; flex-direction: column; gap: 0; }
+.edu-card {
+  background: transparent; border: none; border-top: 1px solid var(--color-border);
+  border-radius: 0; padding: 20px 0; box-shadow: none;
+  display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; align-items: start;
+}
+.edu-list .edu-card:first-child { border-top: none; padding-top: 0; }
+.edu-card:hover { box-shadow: none; border-color: var(--color-border); }
+.edu-degree { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
 .edu-school { font-size: .86rem; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
 .edu-detail { font-size: .82rem; color: var(--color-text-muted); }
-.edu-detail a { color: var(--violet); font-weight: 600; }
-.edu-date  { font-size: .75rem; font-weight: 600; color: var(--color-text-muted); white-space: nowrap; background: var(--color-bg); border: 1px solid var(--color-border); padding: 3px 9px; border-radius: 999px; text-align: right; }
-.edu-medal { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; padding: 3px 10px; border-radius: 999px; background: var(--amber-light); border: 1px solid var(--amber-border); font-size: .72rem; font-weight: 700; color: var(--amber); }
+.edu-detail a { color: var(--ink); font-weight: 600; }
+.edu-date  { font-family: var(--font-mono); font-size: .76rem; font-weight: 500; color: var(--color-text-muted); white-space: nowrap; background: none; border: none; padding: 0; text-align: right; }
+.edu-medal { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; padding: 3px 10px; border-radius: 3px; background: var(--accent-light); border: 1px solid var(--accent-border); font-size: .72rem; font-weight: 700; color: var(--accent-hover); }
 
 /* ── Community ── */
 .community-list { display: flex; flex-direction: column; gap: 12px; }
 .comm-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px 20px; display: flex; align-items: flex-start; gap: 14px; box-shadow: var(--shadow-sm); }
 .comm-card:hover { box-shadow: var(--shadow); border-color: var(--accent-border); }
 .comm-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-.comm-icon--ieee  { background: #eff6ff; }
-.comm-icon--gdsc  { background: #fef2f2; }
-.comm-icon--nss   { background: #f0fdf4; }
-.comm-icon--cert  { background: var(--amber-light); }
+.comm-icon--ieee  { background: var(--ink-light); }
+.comm-icon--gdsc  { background: var(--accent-light); }
+.comm-icon--nss   { background: var(--ink-light); }
+.comm-icon--cert  { background: var(--accent-light); }
 /* .comm-body {} */
 .comm-title { font-size: .9rem; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
 .comm-sub   { font-size: .8rem; color: var(--color-text-muted); }
@@ -455,27 +499,27 @@ img { max-width: 100%; display: block; }
 .resume-embed { flex: 1; border: none; width: 100%; }
 
 /* ════ FOOTER ════ */
-.site-footer { border-top: 1px solid var(--color-border); background: var(--color-surface); padding: 24px; }
+.site-footer { border-top: none; background: var(--ink); padding: 24px; position: relative; }
+.site-footer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: .6;
+}
 .footer-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.footer-copy { font-size: .8rem; color: var(--color-text-muted); }
+.footer-copy { font-size: .8rem; color: rgba(255,255,255,.55); }
 .footer-links { display: flex; gap: 14px; }
-.footer-links a { color: var(--color-text-muted); transition: color var(--t); display: flex; }
+.footer-links a { color: rgba(255,255,255,.55); transition: color var(--t); display: flex; }
 .footer-links a:hover { color: var(--accent); }
 
 /* ════ RESPONSIVE ════ */
 @media (max-width: 960px) {
-  .home-body { grid-template-columns: 1fr; }
-  .home-sidebar { position: static; max-height: none; margin-bottom: 8px; }
-  .home-sidebar-inner { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .sidebar-label { margin-bottom: 0; white-space: nowrap; }
-  .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
-  .sidebar-nav li a { border-left: none; border-bottom: 2px solid transparent; border-radius: 6px 6px 0 0; }
-  .sidebar-nav li a.active { border-bottom-color: var(--accent); }
+  /* .home-body is now a single column by default — sidebar pattern retired */
   .post-layout { grid-template-columns: 1fr; }
   .post-toc { position: static; max-height: none; margin-bottom: 24px; }
   .hero-inner { grid-template-columns: 1fr; text-align: center; }
-  .hero-avatar { justify-content: center; }
-  .hero-domains, .hero-links { justify-content: center; }
+  .hero-avatar { justify-content: center; order: -1; margin-bottom: 8px; }
+  .hero-domains { justify-content: center; margin-left: auto; margin-right: auto; }
+  .hero-links { justify-content: center; }
   .hero-bio, .hero-tagline { max-width: 100%; }
 }
 @media (max-width: 640px) {
@@ -510,45 +554,55 @@ img { max-width: 100%; display: block; }
   --amber-light:   #fffbeb;
   --amber-border:  #fde68a;
 
-  --emerald:       #059669;
-  --emerald-light: #ecfdf5;
-  --emerald-border:#a7f3d0;
+  /* Emerald/Sky retired as brand hues — strict duotone means no 3rd/4th
+     color family. Routed into navy-tinted neutrals. A single muted
+     status-green is kept ONLY for the literal "live demo" indicator,
+     which is a status signal, not part of the visual identity. */
+  --emerald:       var(--ink);
+  --emerald-light: var(--ink-light);
+  --emerald-border:var(--ink-border);
 
-  --sky:           #0284c7;
-  --sky-light:     #f0f9ff;
-  --sky-border:    #bae6fd;
+  --sky:           var(--ink);
+  --sky-light:     var(--ink-light);
+  --sky-border:    var(--ink-border);
 
-  /* Section accent mapping */
-  --exp-accent:    var(--accent);       /* Indigo  */
-  --edu-accent:    var(--amber);        /* Amber   */
-  --comm-accent:   var(--emerald);      /* Emerald */
-  --proj-accent:   var(--violet);       /* Violet  */
+  --status-live:        #1a7a4c;
+  --status-live-light:  #e7f5ee;
+  --status-live-border: #b8e0cb;
 
-  /* Gradient mesh for hero bg */
-  --hero-mesh: radial-gradient(ellipse at 20% 50%, rgba(232,71,43,.07) 0%, transparent 60%),
-               radial-gradient(ellipse at 80% 20%, rgba(36,81,232,.06) 0%, transparent 60%),
-               radial-gradient(ellipse at 60% 80%, rgba(0,137,123,.05) 0%, transparent 60%);
+  /* Section accent mapping — alternates strictly between the two
+     duotone colors, never a 3rd hue, so each section reads as part
+     of one system rather than a rainbow of categories. */
+  --exp-accent:    var(--accent);
+  --edu-accent:    var(--ink);
+  --comm-accent:   var(--accent);
+  --proj-accent:   var(--ink);
+
+  /* Gradient mesh for hero bg — navy + orange only */
+  --hero-mesh: radial-gradient(ellipse at 20% 50%, rgba(255,106,0,.08) 0%, transparent 60%),
+               radial-gradient(ellipse at 80% 20%, rgba(11,30,61,.06) 0%, transparent 60%),
+               radial-gradient(ellipse at 60% 80%, rgba(255,106,0,.04) 0%, transparent 60%);
 }
 
 /* ── Hero mesh background ── */
 .hero { background: var(--hero-mesh); }
 
-/* ── Section title accent stripe ── */
+/* ── Section title accent stripe — strict duotone alternation ── */
 .home-section#sec-experience .home-section-title { color: var(--accent); }
-.home-section#sec-education  .home-section-title { color: var(--amber); }
-.home-section#sec-projects   .home-section-title { color: var(--violet); }
-.home-section#sec-community  .home-section-title { color: var(--emerald); }
+.home-section#sec-education  .home-section-title { color: var(--ink); }
+.home-section#sec-projects   .home-section-title { color: var(--accent); }
+.home-section#sec-community  .home-section-title { color: var(--ink); }
 
 /* ── Sidebar dot colours per section ── */
 #sidebarNav li:nth-child(1) a .snav-dot { background: var(--accent); }
-#sidebarNav li:nth-child(2) a .snav-dot { background: var(--amber); }
-#sidebarNav li:nth-child(3) a .snav-dot { background: var(--violet); }
-#sidebarNav li:nth-child(4) a .snav-dot { background: var(--emerald); }
+#sidebarNav li:nth-child(2) a .snav-dot { background: var(--ink); }
+#sidebarNav li:nth-child(3) a .snav-dot { background: var(--accent); }
+#sidebarNav li:nth-child(4) a .snav-dot { background: var(--ink); }
 
 #sidebarNav li:nth-child(1) a.active { color: var(--accent); background: var(--accent-light); border-left-color: var(--accent); }
-#sidebarNav li:nth-child(2) a.active { color: var(--amber);  background: var(--amber-light);  border-left-color: var(--amber);  }
-#sidebarNav li:nth-child(3) a.active { color: var(--violet); background: var(--violet-light); border-left-color: var(--violet); }
-#sidebarNav li:nth-child(4) a.active { color: var(--emerald);background: var(--emerald-light);border-left-color: var(--emerald);}
+#sidebarNav li:nth-child(2) a.active { color: var(--ink);    background: var(--ink-light);    border-left-color: var(--ink);    }
+#sidebarNav li:nth-child(3) a.active { color: var(--accent); background: var(--accent-light); border-left-color: var(--accent); }
+#sidebarNav li:nth-child(4) a.active { color: var(--ink);    background: var(--ink-light);    border-left-color: var(--ink);    }
 
 /* ── Experience timeline dot colours enriched ── */
 .exp-dot        { background: var(--accent);  box-shadow: 0 0 0 3px var(--accent-border); }
@@ -759,15 +813,18 @@ img { max-width: 100%; display: block; }
 }
 
 /* ════════════════════════════════════════════════════════════
-   SAGE  — muted blue-green accent  (v5 addition)
-   Sits between violet and teal, earthy and calm.
+   SAGE — retired as a brand hue (v5 duotone pass).
+   Strict 2-color identity: navy + orange only. Every former
+   sage usage (Climate×Finance tag, skill icons, scrollbar,
+   focus rings) now routes into navy so it stays consistent
+   with the rest of the system instead of introducing a 5th hue.
 ════════════════════════════════════════════════════════════ */
 :root {
-  --sage:        #5d8a78;
-  --sage-hover:  #3a5f52;
-  --sage-light:  #f3f8f6;
-  --sage-mid:    #8db8ac;
-  --sage-border: #c8ddd7;
+  --sage:        var(--ink);
+  --sage-hover:  var(--ink-hover);
+  --sage-light:  var(--ink-light);
+  --sage-mid:    var(--ink-border);
+  --sage-border: var(--ink-border);
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -891,7 +948,7 @@ img { max-width: 100%; display: block; }
 .post-reading-time { color: var(--sage); }
 
 /* ── Footer link hover ── */
-.footer-links a:nth-child(3):hover { color: var(--sage); }
+.footer-links a:nth-child(3):hover { color: var(--accent); }
 
 /* ════════════════════════════════════════════════════════════
    CLIMATE RISK QUANT additions
@@ -904,13 +961,15 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--sage-border);
 }
 
-/* Live demo badge */
+/* Live demo badge — dedicated status indicator, intentionally
+   outside the navy/orange identity since "live" is a status
+   signal, not a brand color. */
 .badge--live {
-  background: #dcfce7;
-  color: #166534;
-  border: 1px solid #bbf7d0;
+  background: var(--status-live-light);
+  color: var(--status-live);
+  border: 1px solid var(--status-live-border);
 }
-.card-context-badge.badge--live { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+.card-context-badge.badge--live { background: var(--status-live-light); color: var(--status-live); border-color: var(--status-live-border); }
 
 /* Modal link buttons (GitHub / Demo) */
 .modal-links {
