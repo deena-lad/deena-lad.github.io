@@ -20,7 +20,11 @@ permalink: /blog/
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
         {% if post.categories %}
           {% for cat in post.categories limit:2 %}
-            <span class="post-category">{{ cat }}</span>
+            {% assign cat_class = "cat--hpc" %}
+            {% if cat == "Deep Learning" or cat == "ML" %}{% assign cat_class = "cat--dl" %}{% endif %}
+            {% if cat == "Satellite Imagery" %}{% assign cat_class = "cat--sat" %}{% endif %}
+            {% if cat == "Quantitative Finance" or cat == "Career" %}{% assign cat_class = "cat--fin" %}{% endif %}
+            <span class="post-category {{ cat_class }}">{{ cat }}</span>
           {% endfor %}
         {% endif %}
       </div>

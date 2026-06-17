@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Home"
-description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientific ML. Open to ML Engineering and Applied Research roles in Finance and Space."
+description: "M.Tech Gold Medalist & ML Research Engineer - Spatio-Temporal AI, Climate ML, Scientific ML. Open to ML Engineering and Applied Research roles in Finance and Space."
 ---
 
 <!-- ══ HERO ══ -->
@@ -18,17 +18,19 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
       <p class="hero-eyebrow">M.Tech Gold Medalist &nbsp;·&nbsp; ML Research Engineer</p>
       <h1 class="hero-name">Deena Lad</h1>
       <p class="hero-tagline">
-        Building AI systems that reason over space, time, and the physical world - from satellite imagery to financial signals.
+        Building AI systems that reason over space, time, and the physical world —<br>
+        from satellite imagery to financial signals.
       </p>
       <div class="hero-domains">
         <span class="domain-chip">Spatio-Temporal AI</span>
         <span class="domain-chip">Climate &amp; Scientific ML</span>
         <span class="domain-chip">Computer Vision</span>
-        <span class="domain-chip">Quantitative ML</span>
+        <span class="domain-chip">Climate &amp; Finance</span>
         <span class="domain-chip">HPC &amp; Geospatial</span>
+        <span class="domain-chip">LLM &amp; GenAI</span>
       </div>
       <p class="hero-bio">
-        I design and train deep learning pipelines that process terabytes of scientific and satellite data - from ERA5 atmospheric reanalysis to INSAT-3D imagery. Currently a Junior Research Fellow at IIT Gandhinagar's Sustainability Lab. Previously an ML Research intern at ISRO's Space Applications Centre. Actively targeting applied ML roles in space-tech startups and quantitative finance where physical-world reasoning meets real-world impact.
+        I design and train deep learning pipelines that process terabytes of scientific and satellite data — from ERA5 atmospheric reanalysis to INSAT-3D imagery. Currently a Junior Research Fellow at IIT Gandhinagar's Sustainability Lab, co-authoring a KDD 2026 paper on neural weather forecasting. Previously an ML intern at ISRO's Space Applications Centre. Actively targeting applied ML roles in quantitative finance and space-tech startups where physical-world reasoning meets real-world impact.
       </p>
       <div class="hero-links">
         <a href="mailto:deenalad06@gmail.com" class="hero-btn hero-btn--primary">
@@ -87,13 +89,13 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
           <div class="exp-card">
             <div class="exp-header">
               <span class="exp-role">Junior Research Fellow</span>
-              <span class="exp-date">Aug 2025 – Present</span>
+              <span class="exp-date">Aug 2025 - Present</span>
             </div>
             <p class="exp-org">Sustainability Lab, IIT Gandhinagar &nbsp;·&nbsp; PI: Prof. Nipun Batra &nbsp;·&nbsp; Gandhinagar, IN</p>
             <ul class="exp-bullets">
-              <li>Architecting an end-to-end ML pipeline on 500 GB WRF simulations + 2+ TB ERA5 atmospheric reanalysis data using scalable NetCDF loading, distributed preprocessing, GPU-accelerated training on HPC (SLURM).</li>
-              <li>Designing and training spatio-temporal surrogate models (U-Net + FiLM conditioning, Transformers) for 3–24 h weather forecasting; achieved RMSE ≈ 2.4 °C — 10× faster inference than WRF physics-based baselines.</li>
-              <li>Co-authoring a research paper; collaborating with 3 students on ML best practices and geospatial data engineering.</li>
+              <li>Architecting an end-to-end ML pipeline on 500 GB WRF simulations + 2+ TB ERA5 atmospheric reanalysis data - scalable NetCDF loading, distributed preprocessing, GPU-accelerated training on HPC (SLURM).</li>
+              <li>Designing and training spatio-temporal surrogate models (U-Net + FiLM conditioning, Transformers) for 3–24 h weather forecasting; achieved RMSE ≈ 2.4 °C — <strong>10× faster inference than WRF physics-based baselines</strong>.</li>
+              <li>Co-authoring a research paper submitted to <strong>KDD 2026 (AI for Science Track)</strong>; mentoring 3 junior students on ML best practices and geospatial data engineering.</li>
               <li>Built modular, reusable ML components: data loaders, training harness, and evaluation suite adaptable across forecast horizons.</li>
             </ul>
             <span class="exp-badge exp-badge--ongoing">⬤ Ongoing Research</span>
@@ -107,14 +109,14 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
           </div>
           <div class="exp-card">
             <div class="exp-header">
-              <span class="exp-role">Research Intern </span>
-              <span class="exp-date">Jul 2024 – Apr 2025</span>
+              <span class="exp-role">Research Intern — Deep Learning for Satellite Imagery</span>
+              <span class="exp-date">Jul 2024 - Apr 2025</span>
             </div>
             <p class="exp-org">Space Applications Centre, ISRO &nbsp;·&nbsp; Ahmedabad, IN</p>
             <ul class="exp-bullets">
               <li>Developed CNN and ConvLSTM models for tropical cyclone intensity estimation and next-frame forecasting on 1.5+ TB INSAT-3D HDF5 data (2013–2023, 30-min resolution) across Indian Ocean storms.</li>
               <li>Engineered end-to-end preprocessing and labeling pipelines using IMD track data and Advanced Dvorak Technique (ADT) software, curating 10K annotated images via class-balanced augmentation.</li>
-              <li>Delivered operational spatio-temporal storm-evolution models - transferring academic DL techniques directly to satellite analysis workflows at ISRO.</li>
+              <li>Delivered operational spatio-temporal storm-evolution models — transferring academic DL techniques directly to satellite analysis workflows at ISRO.</li>
             </ul>
             <span class="exp-badge exp-badge--thesis">M.Tech Thesis Project</span>
           </div>
@@ -126,8 +128,8 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
           </div>
           <div class="exp-card">
             <div class="exp-header">
-              <span class="exp-role">Summer Intern</span>
-              <span class="exp-date">May 2024 – Jul 2024</span>
+              <span class="exp-role">ML / Data Engineering Intern</span>
+              <span class="exp-date">May 2024 - Jul 2024</span>
             </div>
             <p class="exp-org">Jio Platforms Limited, Reliance &nbsp;·&nbsp; Remote</p>
             <ul class="exp-bullets">
@@ -151,9 +153,9 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
             <p class="edu-school">Pandit Deendayal Energy University, Gandhinagar</p>
             <p class="edu-detail">GPA: 9.61 / 10</p>
             <p class="edu-detail">Thesis: <a href="/projects#cyclone-analysis">Tropical Cyclone Intensity Estimation and Next Frame Forecasting using Deep Learning</a> — conducted at ISRO SAC</p>
-            <span class="edu-medal">Gold Medalist</span>
+            <span class="edu-medal">🥇 Gold Medalist - Top Graduate of Program</span>
           </div>
-          <span class="edu-date">Jul 2023 – May 2025</span>
+          <span class="edu-date">Jul 2023 - May 2025</span>
         </div>
 
         <div class="edu-card">
@@ -162,7 +164,7 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
             <p class="edu-school">Babaria Institute of Technology (GTU), Vadodara</p>
             <p class="edu-detail">GPA: 9.02 / 10</p>
           </div>
-          <span class="edu-date">Jul 2019 – May 2023</span>
+          <span class="edu-date">Jul 2019 - May 2023</span>
         </div>
 
       </div>
@@ -195,15 +197,15 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
         <div class="comm-card">
           <div class="comm-icon comm-icon--ieee">🔬</div>
           <div class="comm-body">
-            <p class="comm-title">IEEE Computer Society, PDEU - Vice Chair → Chair → Advisor</p>
-            <p class="comm-sub">2023–2025 &nbsp;·&nbsp; Led technical workshops, hackathons, and community initiatives for 100+ student members. Progressed through all leadership roles in 2 years.</p>
+            <p class="comm-title">IEEE Computer Society, PDEU — Vice Chair → Chair → Advisor</p>
+            <p class="comm-sub">2023–2025 &nbsp;·&nbsp; Led technical workshops, hackathons, and community initiatives for 200+ student members. Progressed through all leadership roles in 2 years.</p>
           </div>
         </div>
 
         <div class="comm-card">
           <div class="comm-icon comm-icon--gdsc">🎨</div>
           <div class="comm-body">
-            <p class="comm-title">Google Developer Student Club (GDSC), BIT - Design Team</p>
+            <p class="comm-title">Google Developer Student Club (GDSC), BIT — Design Team</p>
             <p class="comm-sub">2021–2022 &nbsp;·&nbsp; Created visual assets and managed design communications for developer community events.</p>
           </div>
         </div>
@@ -211,7 +213,7 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
         <div class="comm-card">
           <div class="comm-icon comm-icon--nss">🌱</div>
           <div class="comm-body">
-            <p class="comm-title">National Service Scheme (NSS), GTU - Volunteer</p>
+            <p class="comm-title">National Service Scheme (NSS), GTU — Volunteer</p>
             <p class="comm-sub">2020–2023 &nbsp;·&nbsp; Community service, rural outreach, and social welfare programmes across three academic years.</p>
           </div>
         </div>
@@ -234,7 +236,7 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
 <div id="resumeModal" class="resume-modal-overlay" role="dialog" aria-modal="true" aria-label="Resume viewer" hidden>
   <div class="resume-modal">
     <div class="resume-modal-header">
-      <span class="resume-modal-title">Deena Lad - Résumé</span>
+      <span class="resume-modal-title">Deena Lad — Résumé</span>
       <div class="resume-modal-actions">
         <a href="/assets/resume/Deena_Lad_Resume.pdf" download class="resume-dl-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -245,7 +247,7 @@ description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI
         </button>
       </div>
     </div>
-    <iframe src="/assets/resume/Deena_Lad_Resume.pdf" class="resume-embed" title="Deena Lad Resume PDF"></iframe>
+    <iframe src="/assets/files/resume.pdf" class="resume-embed" title="Deena Lad Resume PDF"></iframe>
   </div>
 </div>
 

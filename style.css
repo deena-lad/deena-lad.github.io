@@ -3,27 +3,27 @@
    Colourful accent palette: Indigo primary · Violet/Teal secondary
 ════════════════════════════════════════════════════════════ */
 :root {
-  --color-bg:           #f6f5ff;
-  --color-surface:      #ffffff;
-  --color-border:       #e4e1f5;
-  --color-text:         #1a1640;
-  --color-text-muted:   #5a5580;
+  --color-bg:          #fefce8; /* Soft warm cream */
+  --color-surface:     #ffffff; /* Crisp white for cards/surfaces */
+  --color-border:      #eab30822; /* Subtle warm border tint */
+  --color-text:        #171717; /* Deep charcoal for high contrast */
+  --color-text-muted:  #525252; /* Muted neutral gray */
 
-  /* Primary = Indigo */
-  --accent:             #4f46e5;
-  --accent-hover:       #3730a3;
-  --accent-light:       #eef2ff;
-  --accent-border:      #c7d2fe;
+  /* Primary = Dynamic Red */
+  --accent:            #ef4444;
+  --accent-hover:      #dc2626;
+  --accent-light:      #fef2f2;
+  --accent-border:     #fee2e2;
 
-  /* Secondary = Violet */
-  --violet:             #7c3aed;
-  --violet-light:       #f5f3ff;
-  --violet-border:      #ddd6fe;
+  /* Secondary = Emerald Green */
+  --emerald:           #22c55e;
+  --emerald-light:     #f0fdf4;
+  --emerald-border:    #bbf7d0;
 
-  /* Tertiary = Teal */
-  --teal:               #0d9488;
-  --teal-light:         #f0fdfa;
-  --teal-border:        #99f6e4;
+  /* Tertiary = Amber/Yellow */
+  --amber:             #eab308;
+  --amber-light:       #fffde6;
+  --amber-border:      #fef08a;
 
   /* Amber for highlights */
   --amber:              #d97706;
@@ -31,10 +31,10 @@
   --amber-border:       #fde68a;
 
   /* Tags */
-  --tag-blue:   #dbeafe; --tag-blue-t:   #1d4ed8;
-  --tag-teal:   #ccfbf1; --tag-teal-t:   #0f766e;
-  --tag-violet: #ede9fe; --tag-violet-t: #6d28d9;
-  --tag-orange: #ffedd5; --tag-orange-t: #c2410c;
+  --tag-blue:   #dbeafe; --tag-blue-t:   #991b1b;
+  --tag-teal:   #ccfbf1; --tag-teal-t:   #166534;
+  --tag-violet: #ede9fe; --tag-violet-t: #1e40af;
+  --tag-orange: #ffedd5; --tag-orange-t: #854d0e;
 
   --font-sans:    "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono:    "JetBrains Mono", "Fira Code", ui-monospace, monospace;
@@ -171,7 +171,7 @@ img { max-width: 100%; display: block; }
 .home-body { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: flex-start; }
 
 /* Sticky section nav sidebar */
-.home-sidebar { position: sticky; top: calc(var(--nav-h) + 24px); max-height: calc(100vh - var(--nav-h) - 48px); }
+.home-sidebar { position: sticky; top: calc(var(--nav-h) + 8px); max-height: calc(100vh - var(--nav-h) - 24px); }
 .home-sidebar-inner { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 18px 16px; box-shadow: var(--shadow-sm); }
 .sidebar-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--color-text-muted); margin-bottom: 14px; }
 .sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 2px; }
@@ -251,11 +251,12 @@ img { max-width: 100%; display: block; }
 .teaser-title { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
 .teaser-desc  { font-size: .83rem; color: var(--color-text-muted); line-height: 1.6; }
 
-/* ════ TAG UTILITIES ════ */
-.tag--blue   { background: var(--tag-blue);   color: var(--tag-blue-t);   border: 1px solid #bfdbfe; }
-.tag--teal   { background: var(--tag-teal);   color: var(--tag-teal-t);   border: 1px solid #99f6e4; }
-.tag--violet { background: var(--tag-violet); color: var(--tag-violet-t); border: 1px solid #ddd6fe; }
-.tag--orange { background: var(--tag-orange); color: var(--tag-orange-t); border: 1px solid #fed7aa; }
+/* ════ TAG UTILITIES — token-based, overridden by semantic block below ════ */
+/* Kept as fallback; authoritative definitions are in SEMANTIC TAG block */
+.tag--blue   { background: var(--accent-light); color: var(--accent-hover); border: 1px solid var(--accent-border); }
+.tag--teal   { background: var(--teal-light);   color: var(--teal);         border: 1px solid var(--teal-border); }
+.tag--violet { background: var(--violet-light); color: var(--violet);       border: 1px solid var(--violet-border); }
+.tag--orange { background: var(--amber-light);  color: var(--amber);        border: 1px solid var(--amber-border); }
 
 /* ════ PROJECTS PAGE ════ */
 .projects-section { max-width: var(--max-w); margin: 0 auto; padding: 56px 24px 80px; }
@@ -282,11 +283,12 @@ img { max-width: 100%; display: block; }
 
 /* Card context badges */
 .card-context { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
-.card-context-badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .66rem; font-weight: 700; letter-spacing: .04em; }
-.badge--iitgn    { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
-.badge--isro     { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
-.badge--thesis   { background: var(--violet-light); color: var(--violet); border: 1px solid var(--violet-border); }
-.badge--ongoing  { background: #fef9c3; color: #854d0e; border: 1px solid #fef08a; }
+.card-context-badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .66rem; font-weight: 700; letter-spacing: .04em; border: 1px solid; }
+/* authoritative badge colours defined in SEMANTIC TAG block below; these are initial defaults */
+.badge--iitgn  { background: var(--accent-light);   color: var(--accent);    border-color: var(--accent-border); }
+.badge--isro   { background: var(--teal-light);     color: var(--teal);      border-color: var(--teal-border); }
+.badge--thesis { background: var(--violet-light);   color: var(--violet);    border-color: var(--violet-border); }
+.badge--ongoing{ background: #fef9c3; color: #854d0e; border-color: #fef08a; }
 
 .card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
 .card-tag  { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .68rem; font-weight: 700; letter-spacing: .05em; align-self: flex-start; }
@@ -586,12 +588,19 @@ img { max-width: 100%; display: block; }
   color: #fff; border-color: var(--accent);
 }
 
-/* ── Hero domain chips spectrum ── */
+/* ── Hero domain chips — semantic colours (Palette A default) ── */
+/* 1: Spatio-Temporal AI → Indigo */
 .hero-domains .domain-chip:nth-child(1) { background: var(--accent-light); border-color: var(--accent-border); color: var(--accent); }
+/* 2: Climate & Scientific ML → Teal */
 .hero-domains .domain-chip:nth-child(2) { background: var(--teal-light);   border-color: var(--teal-border);   color: var(--teal); }
+/* 3: Computer Vision → Violet */
 .hero-domains .domain-chip:nth-child(3) { background: var(--violet-light); border-color: var(--violet-border); color: var(--violet); }
-.hero-domains .domain-chip:nth-child(4) { background: var(--amber-light);  border-color: var(--amber-border);  color: var(--amber); }
+/* 4: Climate & Finance → Sage */
+.hero-domains .domain-chip:nth-child(4) { background: var(--sage-light);   border-color: var(--sage-border);   color: var(--sage-hover); }
+/* 5: HPC & Geospatial → Sky */
 .hero-domains .domain-chip:nth-child(5) { background: var(--sky-light);    border-color: var(--sky-border);    color: var(--sky); }
+/* 6: LLM & GenAI → Amber */
+.hero-domains .domain-chip:nth-child(6) { background: var(--amber-light);  border-color: var(--amber-border);  color: var(--amber); }
 
 /* ════════════════════════════════════════════════════════════
    SIDEBAR POSITION FIX — sits flush under hero, not nav
@@ -758,19 +767,63 @@ img { max-width: 100%; display: block; }
   --sage-border: #c8ddd7;
 }
 
-/* ── Domain chip: 6th slot (Scientific ML) ── */
-.hero-domains .domain-chip:nth-child(6) {
-  background: var(--sage-light);
-  border-color: var(--sage-border);
-  color: var(--sage-hover);
-}
+/* ════════════════════════════════════════════════════════════
+   SEMANTIC TAG COLOUR SYSTEM
+   One colour per concept — consistent across projects,
+   blog categories, skills, and homepage chips.
 
-/* ── Project tag: sage category ── */
-.tag--sage {
-  background: var(--sage-light);
-  color: var(--sage-hover);
-  border: 1px solid var(--sage-border);
-}
+   Indigo  → Spatio-Temporal AI / Deep Learning / general ML
+   Teal    → Space / Satellite / Computer Vision (earth observation)
+   Violet  → Medical AI / research-heavy / academic
+   Sage    → Climate × Finance / interdisciplinary bridge
+   Sky     → HPC / Systems / WRF / infrastructure
+   Amber   → LLM / RAG / GenAI / NLP
+   Emerald → Community / leadership / open-source
+════════════════════════════════════════════════════════════ */
+
+/* ── Project card & teaser tags ── */
+.tag--blue   { background: var(--accent-light); color: var(--accent-hover); border: 1px solid var(--accent-border); }
+.tag--teal   { background: var(--teal-light);   color: var(--teal);         border: 1px solid var(--teal-border); }
+.tag--violet { background: var(--violet-light); color: var(--violet);       border: 1px solid var(--violet-border); }
+.tag--sage   { background: var(--sage-light);   color: var(--sage-hover);   border: 1px solid var(--sage-border); }
+.tag--orange { background: var(--amber-light);  color: var(--amber);        border: 1px solid var(--amber-border); }
+.tag--sky    { background: var(--sky-light);    color: var(--sky);          border: 1px solid var(--sky-border); }
+.tag--emerald{ background: var(--emerald-light);color: var(--emerald);      border: 1px solid var(--emerald-border); }
+
+/* ── Blog post category pills ── */
+/* WRF / HPC posts → Sky */
+.post-category,
+.post-category.cat--hpc  { background: var(--sky-light);    border-color: var(--sky-border);    color: var(--sky); }
+/* Deep Learning / ML posts → Indigo */
+.post-category.cat--dl   { background: var(--accent-light); border-color: var(--accent-border); color: var(--accent); }
+/* Satellite / Space posts → Teal */
+.post-category.cat--sat  { background: var(--teal-light);   border-color: var(--teal-border);   color: var(--teal); }
+/* Climate Finance posts → Sage */
+.post-category.cat--fin  { background: var(--sage-light);   border-color: var(--sage-border);   color: var(--sage-hover); }
+/* General ML tag alongside finance → Indigo */
+.post-category.cat--ml   { background: var(--accent-light); border-color: var(--accent-border); color: var(--accent); }
+
+/* ── Blog index category class map (blog.md uses these) ── */
+/* Applied via Jekyll: forloop assigns class based on category name */
+
+/* ── Skills card icons — consistent with semantic map ── */
+/* 1 Deep Learning    → Indigo */ .skill-card:nth-child(1) .skill-icon { background: var(--accent-light); }
+/* 2 Scientific/Geo   → Teal   */ .skill-card:nth-child(2) .skill-icon { background: var(--teal-light); }
+/* 3 GenAI / NLP      → Amber  */ .skill-card:nth-child(3) .skill-icon { background: var(--amber-light); }
+/* 4 Languages / Data → Sage   */ .skill-card:nth-child(4) .skill-icon { background: var(--sage-light); }
+/* 5 MLOps / Deploy   → Sky    */ .skill-card:nth-child(5) .skill-icon { background: var(--sky-light); }
+/* 6 Viz / Cloud      → Violet */ .skill-card:nth-child(6) .skill-icon { background: var(--violet-light); }
+
+/* ── Badge utilities ── */
+.badge--iitgn  { background: var(--accent-light); color: var(--accent);    border-color: var(--accent-border); }
+.badge--isro   { background: var(--teal-light);   color: var(--teal);      border-color: var(--teal-border); }
+.badge--thesis { background: var(--violet-light);  color: var(--violet);    border-color: var(--violet-border); }
+.badge--ongoing{ background: #fef9c3; color: #854d0e; border-color: #fef08a; }
+.badge--live   { background: var(--emerald-light); color: var(--emerald);   border-color: var(--emerald-border); }
+.badge--sage   { background: var(--sage-light);    color: var(--sage-hover);border-color: var(--sage-border); }
+
+/* ── Reading time on blog posts → Sage ── */
+.post-reading-time { color: var(--sage); }
 
 /* ── Skill card: 2nd card (Scientific & Geospatial) icon bg ── */
 .skill-card:nth-child(2) .skill-icon { background: var(--sage-light); }
