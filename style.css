@@ -3,38 +3,39 @@
    Colourful accent palette: Indigo primary · Violet/Teal secondary
 ════════════════════════════════════════════════════════════ */
 :root {
-  --color-bg:          #fefce8; /* Soft warm cream */
-  --color-surface:     #ffffff; /* Crisp white for cards/surfaces */
-  --color-border:      #eab30822; /* Subtle warm border tint */
-  --color-text:        #171717; /* Deep charcoal for high contrast */
-  --color-text-muted:  #525252; /* Muted neutral gray */
+  /* Backgrounds */
+  --color-bg:         #fffdf8;
+  --color-surface:    #ffffff;
+  --color-border:     #ebe7dd;
+  --color-text:       #171717;
+  --color-text-muted: #5e5e5e;
 
   /* Primary = Dynamic Red */
-  --accent:            #ef4444;
-  --accent-hover:      #dc2626;
-  --accent-light:      #fef2f2;
-  --accent-border:     #fee2e2;
+  --accent:           #ef4444;
+  --accent-hover:     #dc2626;
+  --accent-light:     #fef2f2;
+  --accent-border:    #fecaca;
 
   /* Secondary = Emerald Green */
-  --emerald:           #22c55e;
-  --emerald-light:     #f0fdf4;
-  --emerald-border:    #bbf7d0;
+  --violet:           #22c55e;
+  --violet-light:     #f0fdf4;
+  --violet-border:    #bbf7d0;
 
-  /* Tertiary = Amber/Yellow */
-  --amber:             #eab308;
-  --amber-light:       #fffde6;
-  --amber-border:      #fef08a;
+  /* Tertiary = Teal */
+  --teal:             #0891b2;
+  --teal-light:       #ecfeff;
+  --teal-border:      #a5f3fc;
 
-  /* Amber for highlights */
-  --amber:              #d97706;
-  --amber-light:        #fffbeb;
-  --amber-border:       #fde68a;
+  /* Highlight = Golden Yellow */
+  --amber:            #eab308;
+  --amber-light:      #fefce8;
+  --amber-border:     #fde68a;
 
   /* Tags */
-  --tag-blue:   #dbeafe; --tag-blue-t:   #991b1b;
-  --tag-teal:   #ccfbf1; --tag-teal-t:   #166534;
-  --tag-violet: #ede9fe; --tag-violet-t: #1e40af;
-  --tag-orange: #ffedd5; --tag-orange-t: #854d0e;
+  --tag-blue:   #dbeafe; --tag-blue-t:   #1d4ed8;
+  --tag-teal:   #ccfbf1; --tag-teal-t:   #0f766e;
+  --tag-violet: #ede9fe; --tag-violet-t: #6d28d9;
+  --tag-orange: #ffedd5; --tag-orange-t: #c2410c;
 
   --font-sans:    "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono:    "JetBrains Mono", "Fira Code", ui-monospace, monospace;

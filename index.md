@@ -30,7 +30,7 @@ description: "M.Tech Gold Medalist & ML Research Engineer - Spatio-Temporal AI, 
         <span class="domain-chip">LLM &amp; GenAI</span>
       </div>
       <p class="hero-bio">
-        I design and train deep learning pipelines that process terabytes of scientific and satellite data — from ERA5 atmospheric reanalysis to INSAT-3D imagery. Currently a Junior Research Fellow at IIT Gandhinagar's Sustainability Lab, co-authoring a KDD 2026 paper on neural weather forecasting. Previously an ML intern at ISRO's Space Applications Centre. Actively targeting applied ML roles in quantitative finance and space-tech startups where physical-world reasoning meets real-world impact.
+        I design and train deep learning pipelines that process terabytes of scientific and satellite data — from ERA5 atmospheric reanalysis to INSAT-3D imagery. Currently a Junior Research Fellow at IIT Gandhinagar's Sustainability Lab, co-authoring a spaper on neural weather forecasting. Previously an ML intern at ISRO's Space Applications Centre. Actively targeting applied ML roles in quantitative finance and space-tech startups where physical-world reasoning meets real-world impact.
       </p>
       <div class="hero-links">
         <a href="mailto:deenalad06@gmail.com" class="hero-btn hero-btn--primary">
