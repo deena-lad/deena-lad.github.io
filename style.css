@@ -3,32 +3,32 @@
    Colourful accent palette: Indigo primary · Violet/Teal secondary
 ════════════════════════════════════════════════════════════ */
 :root {
-  --color-bg:         #f8f8ff;
-  --color-surface:    #ffffff;
-  --color-border:     #e8e7fb;
-  --color-text:       #1d1b39;
-  --color-text-muted: #6c6985;
+  --color-bg:           #f6f5ff;
+  --color-surface:      #030303;
+  --color-border:       #e4e1f5;
+  --color-text:         #1a1640;
+  --color-text-muted:   #5a5580;
 
-  /* Electric Indigo */
-  --accent:           #5b5cf0;
-  --accent-hover:     #4338ca;
-  --accent-light:     #eef2ff;
-  --accent-border:    #c7d2fe;
+  /* Primary = Indigo */
+  --accent:             #4f46e5;
+  --accent-hover:       #3730a3;
+  --accent-light:       #eef2ff;
+  --accent-border:      #c7d2fe;
 
-  /* Pink */
-  --violet:           #ec4899;
-  --violet-light:     #fdf2f8;
-  --violet-border:    #fbcfe8;
+  /* Secondary = Violet */
+  --violet:             #4f3876;
+  --violet-light:       #f5f3ff;
+  --violet-border:      #ddd6fe;
 
-  /* Emerald */
-  --teal:             #10b981;
-  --teal-light:       #ecfdf5;
-  --teal-border:      #a7f3d0;
+  /* Tertiary = Teal */
+  --teal:               #0d9488;
+  --teal-light:         #f0fdfa;
+  --teal-border:        #99f6e4;
 
-  /* Gold */
-  --amber:            #f59e0b;
-  --amber-light:      #fff7ed;
-  --amber-border:     #fed7aa;
+  /* Amber for highlights */
+  --amber:              #d97706;
+  --amber-light:        #fffbeb;
+  --amber-border:       #fde68a;
 
   /* Tags */
   --tag-blue:   #dbeafe; --tag-blue-t:   #1d4ed8;
