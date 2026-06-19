@@ -62,7 +62,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
     <p class="about-text">
       I build <strong>deep learning systems</strong> for atmospheric science, satellite remote sensing, and medical imaging.
       Currently researching neural weather surrogates at <strong>IIT Gandhinagar's Sustainability Lab</strong> under Prof. Nipun Batra.
-      M.Tech thesis at <strong>ISRO SAC</strong> on tropical cyclone intensity estimation using ConvLSTM on 1.5 TB of INSAT-3D satellite data.
+      M.Tech thesis at <strong>ISRO SAC</strong> on tropical cyclone intensity estimation on 1.5 TB of INSAT-3D satellite data.
       My work is directly transferable to <strong>quantitative finance</strong> and <strong>space-tech</strong>.
     </p>
   </section>
