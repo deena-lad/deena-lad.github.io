@@ -1,5 +1,5 @@
 title: "Deena Lad | ML Research Engineer"
-description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientific ML. Open to applied ML roles in quantitative finance and space-tech."
+description: "M.Tech Gold Medalist & ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientific Computing. Open to applied ML roles in quantitative finance and space-tech."
 url: "https://deena-lad.github.io"
 baseurl: ""
 
@@ -32,7 +32,7 @@ plugins:
 collections:
   posts:
     output: true
-    permalink: /blog/:year/:month/:day/:title/
+    permalink: /writing/:year/:month/:day/:title/
 
 defaults:
   - scope:
