@@ -45,12 +45,12 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
       </div>
     </div>
   </div>
-  <div class="hero-stats">
+  <!-- <div class="hero-stats">
     <div><div class="stat-val">4</div><div class="stat-label">Research projects</div></div>
     <div><div class="stat-val">3+ TB</div><div class="stat-label">Data processed</div></div>
     <div><div class="stat-val">IIT GN</div><div class="stat-label">Current affiliation</div></div>
     <div><div class="stat-val">ISRO</div><div class="stat-label">M.Tech thesis</div></div>
-  </div>
+  </div> -->
 </section>
 
 <!-- ══ HOME BODY ══ -->
@@ -61,7 +61,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
     <div class="sec-hd"><span class="sec-title">About</span></div>
     <p class="about-text">
       I build <strong>deep learning systems</strong> for atmospheric science, satellite remote sensing, and medical imaging.
-      Currently researching neural weather surrogates at <strong>IIT Gandhinagar's Sustainability Lab</strong> under Prof. Nipun Batra — targeting KDD 2026.
+      Currently researching neural weather surrogates at <strong>IIT Gandhinagar's Sustainability Lab</strong> under Prof. Nipun Batra.
       M.Tech thesis at <strong>ISRO SAC</strong> on tropical cyclone intensity estimation using ConvLSTM on 1.5 TB of INSAT-3D satellite data.
       My work is directly transferable to <strong>quantitative finance</strong> and <strong>space-tech</strong>.
     </p>
@@ -230,7 +230,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
           <ul class="exp-bullets">
             <li>End-to-end ML pipeline on 500 GB WRF + 2+ TB ERA5 data — scalable NetCDF loading, distributed preprocessing, GPU training on HPC (SLURM).</li>
             <li>Spatio-temporal surrogate models (U-Net + FiLM, Transformers) for 3–24 h forecasting; RMSE ≈ 2.4 °C — <strong>10× faster than WRF baselines</strong>.</li>
-            <li>Co-authoring paper submitted to <strong>KDD 2026 (AI for Science)</strong>; mentoring 3 junior students.</li>
+            <li>Co-authoring paper; mentoring 3 junior students.</li>
           </ul>
           <span class="exp-badge exp-badge--ongoing">⬤ Ongoing Research</span>
         </div>
@@ -286,8 +286,8 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
           <p class="edu-degree">M.Tech in Data Science</p>
           <p class="edu-school">Pandit Deendayal Energy University, Gandhinagar</p>
           <p class="edu-detail">GPA: 9.61 / 10</p>
-          <p class="edu-detail">Thesis: <a href="/projects#cyclone-analysis">Tropical Cyclone Intensity Estimation using Deep Learning</a> — ISRO SAC</p>
-          <span class="edu-medal">🥇 Gold Medalist — Top Graduate of Program</span>
+          <p class="edu-detail">Thesis: <a href="/projects#cyclone-analysis">Tropical Cyclone Intensity Estimation using Deep Learning</a> - ISRO SAC</p>
+          <span class="edu-medal">🥇 Gold Medalist - Top Graduate of Program</span>
         </div>
         <span class="edu-date">Jul 2023 — May 2025</span>
       </div>
