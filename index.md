@@ -10,19 +10,19 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
     <div class="hero-left">
       <p class="hero-eyebrow">ML Research Engineer</p>
       <h1 class="hero-name">Deena Lad</h1>
-      <p class="hero-role">Building ML systems for climate, space &amp; scientific computing.</p>
+      <p class="hero-role">Creating AI - ML systems for scientific and interdisciplinary applications.</p>
       <div class="hero-specialty">
         <span class="spec-tag spec-tag--accent">Open to work</span>
         <span class="spec-tag">Spatio-Temporal AI</span>
-        <span class="spec-tag">Climate ML</span>
-        <span class="spec-tag">Scientific Computing</span>
+        <span class="spec-tag">Scientific ML</span>
+        <span class="spec-tag">Computational Modeling</span>
       </div>
       <div class="hero-actions">
-        <a href="/projects" class="hero-btn hero-btn--primary">View Projects</a>
+        <!-- <a href="/projects" class="hero-btn hero-btn--primary">View Projects</a>
         <button class="hero-btn hero-btn--resume" id="heroResumeBtn" aria-haspopup="dialog" aria-label="View and download resume">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           Résumé
-        </button>
+        </button> -->
         <a href="https://www.linkedin.com/in/deena-lad-307645214/" target="_blank" rel="noopener" class="hero-btn hero-btn--outline">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
@@ -60,10 +60,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
   <section class="home-section" id="sec-about">
     <div class="sec-hd"><span class="sec-title">About</span></div>
     <p class="about-text">
-      I build <strong>deep learning systems</strong> for atmospheric science, satellite remote sensing, and medical imaging.
-      Currently researching neural weather surrogates at <strong>IIT Gandhinagar's Sustainability Lab</strong> under Prof. Nipun Batra.
-      M.Tech thesis at <strong>ISRO SAC</strong> on tropical cyclone intensity estimation on 1.5 TB of INSAT-3D satellite data.
-      My work is directly transferable to <strong>quantitative finance</strong> and <strong>space-tech</strong>.
+      I create AI and machine learning systems that turn complex data into actionable solutions. My work spans scientific computing, deep learning, predictive modeling, and large-scale data analysis. I have conducted research on AI-based emulators for numerical models at IIT Gandhinagar's Sustainability Lab under Prof. Nipun Batra and completed my M.Tech thesis at ISRO SAC, where I developed models for tropical cyclone intensity estimation using large-scale satellite datasets. I am passionate about applying AI to solve challenging problems across industries and disciplines.
     </p>
   </section>
 
@@ -224,13 +221,13 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
         <div class="exp-card">
           <div class="exp-header">
             <span class="exp-role">Junior Research Fellow</span>
-            <span class="exp-date">Aug 2025 — Present</span>
+            <span class="exp-date">Aug 2025 - May 2026</span>
           </div>
           <p class="exp-org">Sustainability Lab, IIT Gandhinagar · PI: Prof. Nipun Batra</p>
           <ul class="exp-bullets">
-            <li>End-to-end ML pipeline on 500 GB WRF + 2+ TB ERA5 data — scalable NetCDF loading, distributed preprocessing, GPU training on HPC (SLURM).</li>
-            <li>Spatio-temporal surrogate models (U-Net + FiLM, Transformers) for 3–24 h forecasting; RMSE ≈ 2.4 °C — <strong>10× faster than WRF baselines</strong>.</li>
-            <li>Co-authoring paper; mentoring 3 junior students.</li>
+            <li>End-to-end ML pipeline on 500 GB WRF + 2+ TB ERA5 data using scalable NetCDF loading, distributed preprocessing, GPU training on HPC.</li>
+            <li>Spatio-temporal surrogate models (U-Net + FiLM, Transformers) for 3–24 h forecasting; RMSE ≈ 2.4 °C while also giving more than 10× faster results than WRF baselines</strong>.</li>
+            <li>Co-authoring paper; mentored 3 junior students.</li>
           </ul>
           <span class="exp-badge exp-badge--ongoing">⬤ Ongoing Research</span>
         </div>
@@ -243,14 +240,14 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
         </div>
         <div class="exp-card">
           <div class="exp-header">
-            <span class="exp-role">Research Intern — Deep Learning for Satellite Imagery</span>
-            <span class="exp-date">Jul 2024 — Apr 2025</span>
+            <span class="exp-role">Research Intern - Deep Learning for Satellite Imagery</span>
+            <span class="exp-date">Jul 2024 - Apr 2025</span>
           </div>
           <p class="exp-org">Space Applications Centre, ISRO · Ahmedabad</p>
           <ul class="exp-bullets">
-            <li>CNN + ConvLSTM models for tropical cyclone intensity estimation and next-frame forecasting on 1.5+ TB INSAT-3D HDF5 data (2013–2023).</li>
+            <li>CNN + ConvLSTM models for tropical cyclone intensity estimation and next-frame forecasting on 1.5+ TB INSAT-3D HDF5 data (2013–2023) of the Indian Ocean.</li>
             <li>End-to-end preprocessing pipeline using IMD track data and Advanced Dvorak Technique; curated 10K annotated images.</li>
-            <li>Delivered operational storm-evolution models — M.Tech thesis, graded outstanding.</li>
+            <li>Delivered storm-evolution models — M.Tech thesis, graded outstanding.</li>
           </ul>
           <span class="exp-badge exp-badge--thesis">M.Tech Thesis Project</span>
         </div>
@@ -262,8 +259,8 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
         </div>
         <div class="exp-card">
           <div class="exp-header">
-            <span class="exp-role">ML / Data Engineering Intern</span>
-            <span class="exp-date">May 2024 — Jul 2024</span>
+            <span class="exp-role">Summer Intern</span>
+            <span class="exp-date">May 2024 - Jul 2024</span>
           </div>
           <p class="exp-org">Jio Platforms Limited, Reliance · Remote</p>
           <ul class="exp-bullets">
@@ -286,10 +283,10 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
           <p class="edu-degree">M.Tech in Data Science</p>
           <p class="edu-school">Pandit Deendayal Energy University, Gandhinagar</p>
           <p class="edu-detail">GPA: 9.61 / 10</p>
-          <p class="edu-detail">Thesis: <a href="/projects#cyclone-analysis">Tropical Cyclone Intensity Estimation using Deep Learning</a> - ISRO SAC</p>
+          <p class="edu-detail">Thesis: <a href="/projects#cyclone-analysis">Tropical Cyclone Intensity Estimation and Next Frame Forecasting using Deep Learning</a> - ISRO SAC</p>
           <span class="edu-medal">🥇 Gold Medalist - Top Graduate of Program</span>
         </div>
-        <span class="edu-date">Jul 2023 — May 2025</span>
+        <span class="edu-date">Jul 2023 - May 2025</span>
       </div>
 
       <div class="edu-card">
@@ -298,7 +295,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
           <p class="edu-school">Babaria Institute of Technology (GTU), Vadodara</p>
           <p class="edu-detail">GPA: 9.02 / 10</p>
         </div>
-        <span class="edu-date">Jul 2019 — May 2023</span>
+        <span class="edu-date">Jul 2019 - May 2023</span>
       </div>
 
     </div>
@@ -312,24 +309,24 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
       <div class="comm-card">
         <div class="comm-icon">🔬</div>
         <div>
-          <p class="comm-title">IEEE Computer Society, PDEU — Vice Chair → Chair → Advisor</p>
-          <p class="comm-sub">2023–2025 · Led technical workshops, hackathons, and community initiatives for 200+ student members.</p>
+          <p class="comm-title">IEEE Computer Society, PDEU - Vice Chair → Chair → Advisor</p>
+          <p class="comm-sub">2023-2025 · Led technical workshops, hackathons, and community initiatives for 200+ student members.</p>
         </div>
       </div>
 
       <div class="comm-card">
         <div class="comm-icon">🎨</div>
         <div>
-          <p class="comm-title">Google Developer Student Club (GDSC), BIT — Design Team</p>
-          <p class="comm-sub">2021–2022 · Created visual assets and managed design communications for developer events.</p>
+          <p class="comm-title">Google Developer Student Club (GDSC), BIT - Design Team</p>
+          <p class="comm-sub">2021-2022 · Created visual assets and managed design communications for developer events.</p>
         </div>
       </div>
 
       <div class="comm-card">
         <div class="comm-icon">🌱</div>
         <div>
-          <p class="comm-title">National Service Scheme (NSS), GTU — Volunteer</p>
-          <p class="comm-sub">2020–2023 · Community service, rural outreach, and social welfare programmes.</p>
+          <p class="comm-title">National Service Scheme (NSS), GTU - Volunteer</p>
+          <p class="comm-sub">2020-2023 · Community service, rural outreach, and social welfare programmes.</p>
         </div>
       </div>
 
@@ -350,7 +347,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
 <div id="resumeModal" class="resume-modal-overlay" role="dialog" aria-modal="true" aria-label="Resume viewer" hidden>
   <div class="resume-modal">
     <div class="resume-modal-header">
-      <span class="resume-modal-title">Deena Lad — Résumé</span>
+      <span class="resume-modal-title">Deena Lad - Resume</span>
       <div class="resume-modal-actions">
         <a href="/assets/resume/Deena_Lad_Resume.pdf" download class="resume-dl-btn">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
