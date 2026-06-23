@@ -65,7 +65,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
   </section>
 
   <!-- ── PROJECTS ── -->
-  <section class="home-section" id="sec-projects">
+  <!-- <section class="home-section" id="sec-projects">
     <div class="sec-hd">
       <span class="sec-title">Projects</span>
       <a href="/projects" class="sec-link">View all →</a>
@@ -97,10 +97,10 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
       {% endunless %}
       {% endfor %}
     </div>
-  </section>
+  </section> -->
 
   <!-- ── SKILLS ── -->
-  <section class="home-section" id="sec-skills">
+  <!-- <section class="home-section" id="sec-skills">
     <div class="sec-hd">
       <span class="sec-title">Skills</span>
       <a href="/skills" class="sec-link">Full breakdown →</a>
@@ -162,10 +162,10 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ── WRITING ── -->
-  <section class="home-section" id="sec-writing">
+  <!-- <section class="home-section" id="sec-writing">
     <div class="sec-hd">
       <span class="sec-title">Writing</span>
       <a href="/writing" class="sec-link">All posts →</a>
@@ -206,7 +206,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
       </div>
       {% endif %}
     </div>
-  </section>
+  </section> -->
 
   <!-- ── EXPERIENCE ── -->
   <section class="home-section" id="sec-experience">
