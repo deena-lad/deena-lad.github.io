@@ -157,12 +157,12 @@
     - GitHub Actions
  
 - id: rag-weather
-  title: "RAG Weather Assistant"
+  title: "RAG Document Assistant"
   tag: "LLM / RAG"
   tag_color: "orange"
   institution: ""
   badges: []
-  short_desc: "LLM-powered retrieval-augmented assistant for querying atmospheric datasets and research papers."
+  short_desc: "LLM-powered retrieval-augmented assistant for querying datasets and documents."
   long_desc: ""
   coming_soon: true
   gallery:
