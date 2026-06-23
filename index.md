@@ -10,7 +10,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
     <div class="hero-left">
       <p class="hero-eyebrow">ML Research Engineer</p>
       <h1 class="hero-name">Deena Lad</h1>
-      <p class="hero-role">Creating AI - ML systems for scientific and interdisciplinary applications.</p>
+      <p class="hero-role">Creating AI - ML systems for scientific and interdisciplinary applications. I create AI and machine learning systems that turn complex data into actionable solutions. My work spans scientific computing, deep learning, predictive modeling, and large-scale data analysis. I have conducted research on AI-based emulators for numerical models at IIT Gandhinagar's Sustainability Lab under Prof. Nipun Batra and completed my M.Tech thesis at ISRO SAC, where I developed models for tropical cyclone intensity estimation using large-scale satellite datasets. I am passionate about applying AI to solve challenging problems across industries and disciplines.</p>
       <div class="hero-specialty">
         <span class="spec-tag spec-tag--accent">Open to work</span>
         <span class="spec-tag">Spatio-Temporal AI</span>
@@ -57,12 +57,12 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
 <div class="home-body">
 
   <!-- ── ABOUT ── -->
-  <section class="home-section" id="sec-about">
+  <!-- <section class="home-section" id="sec-about">
     <div class="sec-hd"><span class="sec-title">About</span></div>
     <p class="about-text">
       I create AI and machine learning systems that turn complex data into actionable solutions. My work spans scientific computing, deep learning, predictive modeling, and large-scale data analysis. I have conducted research on AI-based emulators for numerical models at IIT Gandhinagar's Sustainability Lab under Prof. Nipun Batra and completed my M.Tech thesis at ISRO SAC, where I developed models for tropical cyclone intensity estimation using large-scale satellite datasets. I am passionate about applying AI to solve challenging problems across industries and disciplines.
     </p>
-  </section>
+  </section> -->
 
   <!-- ── PROJECTS ── -->
   <!-- <section class="home-section" id="sec-projects">
