@@ -19,13 +19,13 @@
     weather forecasting, achieving RMSE ≈ 2.4 °C for temperature and surpassing physics-based NWP baselines in
     inference speed by more than 10×.
   gallery:
-    - src: "/assets/images/projects/emulator/d1_t2.png"
+    - src: "/assets/images/projects/emulator/d1_T2.png"
       caption: "Forecast vs ground truth of 2 m temperature (°C) of domain 1 (India)"
-    - src: "/assets/images/projects/emulator/d2_t2.png"
+    - src: "/assets/images/projects/emulator/d2_T2.png"
       caption: "Forecast vs ground truth of 2 m temperature (°C) of domain 2 (Delhi and surroundings)"
-    - src: "/assets/images/projects/emulator/d3_t2.png"
+    - src: "/assets/images/projects/emulator/d3_T2.png"
       caption: "Forecast vs ground truth of 2 m temperature (°C) of domain 3 (Bengaluru and surroundings)"
-    - src: "/assets/images/projects/emulator/d4_t2.png"
+    - src: "/assets/images/projects/emulator/d4_T2.png"
       caption: "Forecast vs ground truth of 2 m temperature (°C) of domain 4 (Kolkata and surroundings)"
   tech_tags:
     - PyTorch
