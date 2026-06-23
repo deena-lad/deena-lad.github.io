@@ -1,5 +1,5 @@
 - id: neural-weather
-  title: "Neural Weather Forecasting"
+  title: "AI based Emulators for Numerical Models"
   tag: "Spatio-Temporal ML"
   tag_color: "blue"
   # image: "/assets/images/weather.png"
@@ -10,24 +10,23 @@
       style: "iitgn"
     - label: "Ongoing Research"
       style: "ongoing"
-  short_desc: "Ongoing neural surrogate for 3–24 h atmospheric forecasting at IIT Gandhinagar — 10× faster than WRF baselines, KDD 2026 submission."
+  short_desc: "Ongoing research on AI based emulators for 3–24 h atmospheric forecasting at IIT Gandhinaga baselines."
   long_desc: >
     Ongoing research at IIT Gandhinagar's Sustainability Lab (PI: Prof. Nipun Batra). Architected an end-to-end
     ML pipeline ingesting 500 GB WRF simulations and 2+ TB ERA5 atmospheric reanalysis data using scalable NetCDF
     loading, distributed preprocessing, and GPU-accelerated training on HPC (SLURM). Designed and trained
     spatio-temporal surrogate models (U-Net + FiLM conditioning, Transformer architectures) for 3–24 hour regional
     weather forecasting, achieving RMSE ≈ 2.4 °C for temperature and surpassing physics-based NWP baselines in
-    inference speed by 10×. The forecasting methodology and time-series signal extraction pipeline are directly 
-    transferable to quantitative finance applications (alpha signal generation, regime detection over structured temporal data).
+    inference speed by more than 10×.
   gallery:
-    - src: "/assets/images/projects/weather.png"
-      caption: "Forecast vs ground truth"
-    # - src: "/assets/images/projects/weather-arch.svg"
-    #   caption: "U-Net + FiLM architecture with skip connections and bottleneck"
-    # - src: "/assets/images/projects/placeholder-1.jpg"
-    #   caption: "ERA5 temperature field — predicted vs actual (24h horizon)"
-    # - src: "/assets/images/projects/placeholder-2.jpg"
-    #   caption: "Training loss curves: MSE + spectral term over 120 epochs"
+    - src: "/assets/images/projects/emulator/d1_t2.png"
+      caption: "Forecast vs ground truth of 2 m temperature (°C) of domain 1 (India)"
+    - src: "/assets/images/projects/emulator/d2_t2.png"
+      caption: "Forecast vs ground truth of 2 m temperature (°C) of domain 2 (Delhi and surroundings)"
+    - src: "/assets/images/projects/emulator/d3_t2.png"
+      caption: "Forecast vs ground truth of 2 m temperature (°C) of domain 3 (Bengaluru and surroundings)"
+    - src: "/assets/images/projects/emulator/d4_t2.png"
+      caption: "Forecast vs ground truth of 2 m temperature (°C) of domain 4 (Kolkata and surroundings)"
   tech_tags:
     - PyTorch
     - U-Net
@@ -39,7 +38,7 @@
 
 - id: cyclone-analysis
   title: "Tropical Cyclone Analysis"
-  tag: "Computer Vision / Space"
+  tag: "Computer Vision / Spatio-Temporal ML"
   tag_color: "teal"
   # image: "/assets/images/cyclone.png"
   # image_placeholder: "🌀"
