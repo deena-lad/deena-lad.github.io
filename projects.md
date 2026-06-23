@@ -7,7 +7,7 @@ description: "ML research projects spanning atmospheric AI, satellite remote sen
 <section class="projects-section">
   <div class="page-header">
     <h1 class="page-title">Projects</h1>
-    <p class="page-subtitle">Research spanning atmospheric science, satellite remote sensing, and medical imaging — production-grade ML pipelines built on multi-terabyte scientific datasets, with direct applicability to quantitative finance and space-tech.</p>
+    <p class="page-subtitle">From scientific computing and deep learning to predictive modeling and large-scale data analysis, these projects showcase AI systems built to solve complex, data-driven problems across disciplines.</p>
   </div>
 
   <div class="projects-grid">
