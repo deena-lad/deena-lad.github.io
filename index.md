@@ -225,9 +225,9 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
           </div>
           <p class="exp-org">Sustainability Lab, IIT Gandhinagar · PI: Prof. Nipun Batra</p>
           <ul class="exp-bullets">
-            <li>End-to-end ML pipeline on 500 GB WRF + 2+ TB ERA5 data using scalable NetCDF loading, distributed preprocessing, GPU training on HPC.</li>
-            <li>Spatio-temporal surrogate models (U-Net + FiLM, Transformers) for 3–24 h forecasting; RMSE ≈ 2.4 °C while also giving more than 10× faster results than WRF baselines</strong>.</li>
-            <li>Co-authoring paper; mentored 3 junior students.</li>
+            <li>Developed end-to-end ML pipeline on 500 GB WRF + 2+ TB ERA5 data using scalable NetCDF loading, distributed preprocessing, GPU training on HPC.</li>
+            <li>Spatio-temporal surrogate models (U-Net + FiLM, Transformers) for 3–24 h forecasting resulting in significant drop in RMSE while also giving more than 10× faster results than WRF baselines.</li>
+            <li>Co-authoring paper and collaborated with peers across domains.</li>
           </ul>
           <span class="exp-badge exp-badge--ongoing">⬤ Ongoing Research</span>
         </div>
@@ -245,9 +245,9 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
           </div>
           <p class="exp-org">Space Applications Centre, ISRO · Ahmedabad</p>
           <ul class="exp-bullets">
-            <li>CNN + ConvLSTM models for tropical cyclone intensity estimation and next-frame forecasting on 1.5+ TB INSAT-3D HDF5 data (2013–2023) of the Indian Ocean.</li>
-            <li>End-to-end preprocessing pipeline using IMD track data and Advanced Dvorak Technique; curated 10K annotated images.</li>
-            <li>Delivered storm-evolution models — M.Tech thesis, graded outstanding.</li>
+            <li>CNN + ConvLSTM based models for tropical cyclone intensity estimation and next-frame forecasting on 1.5+ TB INSAT-3D HDF5 data (2013 - 2023) of the Indian Ocean.</li>
+            <li>End-to-end preprocessing pipeline using IMD track data and Advanced Dvorak Technique resulting in 10,000 annotated class-imbalanced addressed dataset.</li>
+            <li>M.Tech thesis, graded outstanding.</li>
           </ul>
           <span class="exp-badge exp-badge--thesis">M.Tech Thesis Project</span>
         </div>
