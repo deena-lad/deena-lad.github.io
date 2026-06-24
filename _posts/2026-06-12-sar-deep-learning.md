@@ -5,14 +5,14 @@ date: 2026-06-12
 categories: [Deep Learning, Remote Sensing]
 tags: [SAR, PyTorch, Sentinel-1, Change Detection, Semantic Segmentation, Remote Sensing]
 description: >
-  A technical deep-dive into Synthetic Aperture Radar — how it works, why it matters for
+  A technical deep-dive into Synthetic Aperture Radar: how it works, why it matters for
   Earth observation, and how to build deep learning models that extract intelligence from
   complex-valued backscatter data.
 ---
 
 Optical sensors are blind in the dark and through clouds. Synthetic Aperture Radar is not.
 
-SAR satellites like Sentinel-1, ALOS-2, and NISAR transmit microwave pulses and record the reflected signal, producing imagery regardless of illumination or atmospheric conditions. The result is a rich, physically grounded signal — but one that looks nothing like a photograph and requires careful handling before any deep learning model can extract meaning from it.
+SAR satellites like Sentinel-1, ALOS-2, and NISAR transmit microwave pulses and record the reflected signal, producing imagery regardless of illumination or atmospheric conditions. The result is a rich, physically grounded signal but, one that looks nothing like a photograph and requires careful handling before any deep learning model can extract meaning from it.
 
 This post walks through the physics of SAR, the preprocessing pipeline, and three canonical deep learning tasks: speckle suppression, semantic segmentation, and change detection.
 
@@ -20,7 +20,7 @@ This post walks through the physics of SAR, the preprocessing pipeline, and thre
 
 ## How SAR Works
 
-A SAR sensor moves along a flight path (the azimuth direction) while transmitting pulses perpendicular to it (the range direction). The "synthetic aperture" comes from combining returns across many pulse positions to simulate a much larger antenna — dramatically improving azimuth resolution without physically building a kilometre-long dish.
+A SAR sensor moves along a flight path (the azimuth direction) while transmitting pulses perpendicular to it (the range direction). The "synthetic aperture" comes from combining returns across many pulse positions to simulate a much larger antenna, dramatically improving azimuth resolution without physically building a kilometre-long dish.
 
 The raw data is a **complex-valued** signal. Each pixel stores:
 
@@ -38,7 +38,7 @@ The ratio $\text{VH}/\text{VV}$ is a powerful feature for land cover discriminat
 
 ### The Speckle Problem
 
-SAR suffers from **speckle** — a granular noise pattern caused by coherent interference of returns from many sub-resolution scatterers. Speckle is multiplicative:
+SAR suffers from **speckle** which is a granular noise pattern caused by coherent interference of returns from many sub-resolution scatterers. Speckle is multiplicative:
 
 $$I_{\text{observed}} = I_{\text{true}} \cdot \eta$$
 
@@ -97,11 +97,11 @@ def preprocess_sar(vv_path: str, vh_path: str) -> np.ndarray:
     return stack.astype(np.float32)
 ```
 
-**Why dB?** SAR backscatter spans several orders of magnitude. Log-scaling compresses the dynamic range and makes the distribution approximately Gaussian — much friendlier for gradient-based optimisation.
+**Why dB?** SAR backscatter spans several orders of magnitude. Log-scaling compresses the dynamic range and makes the distribution approximately Gaussian which is much friendlier for gradient-based optimisation.
 
 ---
 
-## Task 1 — Speckle Suppression with a Residual CNN
+## Task 1 - Speckle Suppression with a Residual CNN
 
 The classic approach (Lee filter, Gamma MAP) applies fixed spatial kernels. A learned residual network can suppress speckle while preserving sharp edges at building boundaries and water-land interfaces.
 
@@ -197,7 +197,7 @@ class HybridLoss(nn.Module):
 
 ---
 
-## Task 2 — Semantic Segmentation with a SAR U-Net
+## Task 2 - Semantic Segmentation with a SAR U-Net
 
 Land cover mapping from SAR is challenging: water, urban, and bare soil can share similar backscatter values. A U-Net with attention gates addresses this by learning to focus on spatially informative regions.
 
@@ -374,7 +374,7 @@ class FocalDiceLoss(nn.Module):
 
 ---
 
-## Task 3 — Change Detection with Siamese Networks
+## Task 3 - Change Detection with Siamese Networks
 
 Change detection compares two co-registered SAR acquisitions of the same scene taken at different times, flagging pixels where land cover has changed. Applications range from flood mapping to deforestation monitoring.
 
@@ -460,8 +460,8 @@ These are baseline results without test-time augmentation or ensemble methods. T
 
 ## Key Takeaways
 
-SAR is not a drop-in replacement for optical data — it requires different preprocessing (dB scaling, speckle handling, complex-value awareness) and different model design choices (loss functions that handle class imbalance, architectures that respect spatial coherence). But in return, it provides all-weather, day-night coverage that optical sensors simply cannot.
+SAR is not a drop-in replacement for optical data, it requires different preprocessing (dB scaling, speckle handling, complex-value awareness) and different model design choices (loss functions that handle class imbalance, architectures that respect spatial coherence). But in return, it provides all-weather, day-night coverage that optical sensors simply cannot.
 
-The three architectures here — residual despeckling, attention U-Net, and Siamese change detector — form a solid foundation for any SAR-based ML project. Each maps cleanly onto the physical structure of the problem, and each transfers to adjacent domains: ocean eddy detection, infrastructure monitoring, and disaster rapid mapping.
+The three architectures here: residual despeckling, attention U-Net, and Siamese change detector — form a solid foundation for any SAR-based ML project. Each maps cleanly onto the physical structure of the problem, and each transfers to adjacent domains: ocean eddy detection, infrastructure monitoring, and disaster rapid mapping.
 
 SAR PyTorch Sentinel-1 Change Detection Semantic Segmentation Remote Sensing

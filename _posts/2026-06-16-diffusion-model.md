@@ -574,8 +574,8 @@ The architectural core (U-Net + timestep conditioning) remains consistent across
 
 ## Key Takeaways
 
-Diffusion models achieve state-of-the-art generation quality by decomposing an intractable generative task into a sequence of small, tractable denoising problems. The full derivation reduces to training a network to predict Gaussian noise — an MSE objective that is globally stable and free of the mode collapse and training instability that plagued GANs.
+Diffusion models achieve state-of-the-art generation quality by decomposing an intractable generative task into a sequence of small, tractable denoising problems. The full derivation reduces to training a network to predict Gaussian noise which is an MSE objective that is globally stable and free of the mode collapse and training instability that plagued GANs.
 
-The components built here — the diffusion engine, the time-conditioned U-Net, DDIM sampling, and classifier-free guidance — are the exact primitives that underlie production systems like Stable Diffusion, DALL·E 3, and GenCast. Mastering them at this level means the architecture of any modern diffusion system becomes immediately legible.
+The components built here: the diffusion engine, the time-conditioned U-Net, DDIM sampling, and classifier-free guidance are the exact primitives that underlie production systems like Stable Diffusion, DALL·E 3, and GenCast. Mastering them at this level means the architecture of any modern diffusion system becomes immediately legible.
 
 Diffusion Models DDPM DDIM Score Matching PyTorch Generative AI U-Net
