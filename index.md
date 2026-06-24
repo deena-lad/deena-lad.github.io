@@ -293,6 +293,7 @@ description: "ML Research Engineer — Spatio-Temporal AI, Climate ML, Scientifi
         <div>
           <p class="edu-degree">B.E. in Computer Science &amp; Engineering</p>
           <p class="edu-school">Babaria Institute of Technology (GTU), Vadodara</p>
+          <p class="edu-school">(now) KPGU, Vadodara</p>
           <p class="edu-detail">GPA: 9.02 / 10</p>
         </div>
         <span class="edu-date">Jul 2019 - May 2023</span>
