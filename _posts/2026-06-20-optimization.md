@@ -28,7 +28,7 @@ This is intractable to minimize exactly for large $N$, so we use **stochastic gr
 
 $$\mathbf{g}_t = \nabla_\theta \frac{1}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \ell(f_\theta(\mathbf{x}_i), y_i)$$
 
-This estimate is **unbiased**: $$\mathbb{E}[\mathbf{g}_t] = \nabla_\theta \mathcal{L}(\theta)$$, but it has variance $\sigma^2 / |\mathcal{B}|$. Everything that follows, every optimizer, is a different strategy for using $\mathbf{g}_t$ to update $\theta$.
+This estimate is **unbiased**: $$\mathbb{E}[\mathbf{g}_t] = \nabla_\theta \mathcal{L}(\theta)$$, but it has variance $$\sigma^2 / \vert\mathcal{B}\vert$$. Everything that follows, every optimizer, is a different strategy for using $$\mathbf{g}_t$$ to update $$\theta$$.
 
 ---
 
@@ -162,7 +162,7 @@ SGD with momentum, by contrast, takes larger steps in high-gradient directions a
 
 ### The Learning Rate Scaling Problem
 
-For a batch size $|\mathcal{B}|$, the variance of the stochastic gradient scales as $$\sigma^2 / |\mathcal{B}|$$. For SGD, the **linear scaling rule** (Goyal et al., 2017) says: multiply the learning rate by $k$ when multiplying the batch size by $k$. This keeps the noise-to-signal ratio constant and transfers well across batch sizes.
+For a batch size $$\vert\mathcal{B}\vert$$, the variance of the stochastic gradient scales as $$\sigma^2 / \vert\mathcal{B}\vert$$. For SGD, the **linear scaling rule** (Goyal et al., 2017) says: multiply the learning rate by $$k$$ when multiplying the batch size by $$k$$. This keeps the noise-to-signal ratio constant and transfers well across batch sizes.
 
 Adam has no clean scaling rule. Its second moment estimate $\hat{\mathbf{v}}_t$ depends on gradient variance, which itself changes with batch size. Scaling Adam across batch sizes is empirically messy.
 
