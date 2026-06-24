@@ -673,7 +673,64 @@ img { max-width: 100%; display: block; }
 }
 
 /* ════ WRITING / BLOG PAGE ════ */
-.blog-section { max-width: var(--max-w); margin: 0 auto; padding: 56px 24px 80px; }
+.writing-page { max-width: var(--max-w); margin: 0 auto; padding: 56px 24px 80px; }
+.blog-section  { max-width: var(--max-w); margin: 0 auto; padding: 56px 24px 80px; }
+
+/* Two-column layout: sidebar + feed */
+.writing-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* ── Sidebar ── */
+.writing-sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+.sidebar-label {
+  font-size: .68rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--ink-3); margin-bottom: 10px;
+}
+.cat-filter-list {
+  list-style: none; display: flex; flex-direction: column; gap: 2px;
+}
+.cat-filter-btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; padding: 7px 10px; border-radius: 6px;
+  font-size: .82rem; font-weight: 400; color: var(--ink-2);
+  background: transparent; border: none; cursor: pointer; text-align: left;
+  font-family: var(--font-sans);
+  transition: background var(--t), color var(--t);
+}
+.cat-filter-btn:hover { background: var(--surface-2); color: var(--ink); }
+.cat-filter-btn.active {
+  background: var(--accent-tint); color: var(--accent);
+  font-weight: 500; border: 0.5px solid var(--accent-border);
+}
+.cat-count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 20px; height: 18px; padding: 0 5px;
+  border-radius: 20px; font-size: .68rem; font-weight: 500;
+  background: var(--surface-2); color: var(--ink-3);
+  border: 0.5px solid var(--border);
+}
+.cat-filter-btn.active .cat-count {
+  background: var(--accent-light); color: var(--accent-hover);
+  border-color: var(--accent-border);
+}
+.writing-feed { min-width: 0; }
+.no-results { font-size: .88rem; color: var(--ink-3); padding: 32px 0; }
+
+@media (max-width: 720px) {
+  .writing-layout { grid-template-columns: 1fr; gap: 24px; }
+  .writing-sidebar { position: static; }
+  .cat-filter-list { flex-direction: row; flex-wrap: wrap; }
+  .cat-filter-btn { width: auto; }
+}
+
 .post-list { display: flex; flex-direction: column; }
 .post-list-item { padding: 28px 0; border-bottom: 0.5px solid var(--border); }
 .post-list-item:first-child { padding-top: 0; }
