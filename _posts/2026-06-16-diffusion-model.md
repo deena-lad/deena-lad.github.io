@@ -5,12 +5,12 @@ date: 2026-06-23
 categories: [Deep Learning, Generative Models]
 tags: [Diffusion Models, DDPM, Score Matching, PyTorch, Generative AI, U-Net]
 description: >
-  A rigorous walkthrough of denoising diffusion probabilistic models — the forward and
+  A rigorous walkthrough of denoising diffusion probabilistic models: the forward and
   reverse processes, the variational lower bound, score matching, and a complete
   PyTorch implementation of DDPM with a time-conditioned U-Net.
 ---
 
-Generative adversarial networks dominated image synthesis for nearly a decade. Then diffusion models arrived — and outperformed them on almost every benchmark while being more stable to train and easier to reason about theoretically.
+Generative adversarial networks dominated image synthesis for nearly a decade. Then diffusion models arrived and outperformed them on almost every benchmark while being more stable to train and easier to reason about theoretically.
 
 This post explains *why* that happened, starting from first principles: the forward noising process, the reverse denoising process, the variational lower bound, and how all of it reduces to a surprisingly simple training objective. Then we build the full stack in PyTorch.
 
@@ -36,7 +36,7 @@ where $\beta_1 < \beta_2 < \cdots < \beta_T$ is a **noise schedule** (typically 
 
 ### The Closed-Form Shortcut
 
-The crucial insight that makes training tractable: we can sample $\mathbf{x}_t$ directly from $\mathbf{x}_0$ *without* running all $t$ steps. Define $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \prod_{s=1}^{t} \alpha_s$. Then:
+The crucial insight that makes training tractable: we can sample $$\mathbf{x}_t$$ directly from $$\mathbf{x}_0$$ *without* running all $$t$$ steps. Define $$\alpha_t = 1 - \beta_t$$ and $$\bar{\alpha}_t = \prod_{s=1}^{t} \alpha_s$$. Then:
 
 $$q(\mathbf{x}_t \mid \mathbf{x}_0) = \mathcal{N}\!\left(\mathbf{x}_t;\, \sqrt{\bar{\alpha}_t}\,\mathbf{x}_0,\, (1-\bar{\alpha}_t)\mathbf{I}\right)$$
 
